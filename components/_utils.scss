@@ -1,0 +1,23 @@
+.flex {
+  display: flex;
+}
+
+.flex-v-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.flex-h-center {
+  display: flex;
+  flex-flow: row, wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.v-splitter {
+  width: 0;
+  height: 0;
+  border: solid;
+}
