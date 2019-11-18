@@ -1,6 +1,15 @@
 const withSass = require('@zeit/next-sass')
 const withCSS = require('@zeit/next-css')
-if (typeof require !== 'undefined') {
+const withTM = require('@weco/next-plugin-transpile-modules')
+
+if (typeof require !== 'undefined' && process.env.NODE_ENV === 'development') {
+  console.log('hi there, in dev mode')
   require.extensions['.css'] = file => {}
 }
-module.exports = withCSS(withSass({}))
+module.exports = withSass(
+  withCSS(
+    withTM({
+      transpileModules: ['oapack'],
+    }),
+  ),
+)

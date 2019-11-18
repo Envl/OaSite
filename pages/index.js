@@ -9,8 +9,8 @@ function Me(props) {
         Hi there! ddI'm Ming YAO
         <br />A
       </h2>
-      <Link className='resume' href='/post/[id]' as='/post/ddd'>
-        <a href=''>Resume</a>
+      <Link href='/post/[id]' as='/post/ddd'>
+        <span className='resume'>Resume</span>
       </Link>
       {/* <Portrait /> */}
     </div>
@@ -23,9 +23,9 @@ function HomePage() {
       <div className='content flex-v-center'>
         <Card />
         <Button type='toggle'>test</Button>
-        <DropDown>
-          <div>aa</div>
-          <div>aa</div>
+        <DropDown title='I am a'>
+          <div>UX Designer</div>
+          <div>Full Stack Developer</div>
         </DropDown>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
