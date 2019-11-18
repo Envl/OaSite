@@ -1,5 +1,4 @@
 import Link from 'next/link'
-// import {Button} from '@envl/oapack'
 import {Button, Card, DropDown} from 'oapack'
 import './_index.scss'
 
@@ -10,7 +9,9 @@ function Me(props) {
         Hi there! ddI'm Ming YAO
         <br />A
       </h2>
-      {/* <Link className='resume'>Resume</Link> */}
+      <Link className='resume' href='/post/[id]' as='/post/ddd'>
+        <a href=''>Resume</a>
+      </Link>
       {/* <Portrait /> */}
     </div>
   )
@@ -21,7 +22,7 @@ function HomePage() {
     <div className='home flex-h-center'>
       <div className='content flex-v-center'>
         <Card />
-        <Button>test</Button>
+        <Button type='toggle'>test</Button>
         <DropDown>
           <div>aa</div>
           <div>aa</div>
