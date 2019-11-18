@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import {Button} from '@envl/oapack'
-
+// import {Button} from '@envl/oapack'
+import {Button, Card, DropDown} from 'oapack'
 import './_index.scss'
 
 function Me(props) {
@@ -10,7 +10,6 @@ function Me(props) {
         Hi there! ddI'm Ming YAO
         <br />A
       </h2>
-      <Button>dssd</Button>
       {/* <Link className='resume'>Resume</Link> */}
       {/* <Portrait /> */}
     </div>
@@ -21,8 +20,12 @@ function HomePage() {
   return (
     <div className='home flex-h-center'>
       <div className='content flex-v-center'>
-        {/* <Card /> */}
-
+        <Card />
+        <Button>test</Button>
+        <DropDown>
+          <div>aa</div>
+          <div>aa</div>
+        </DropDown>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
         <div style={{maxWidth: `300px`, marginBottom: `1.45rem`}}></div>

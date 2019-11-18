@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["styles"],{
 
-/***/ "../OaPack/oa-react/dist/index.css":
-/*!*****************************************!*\
-  !*** ../OaPack/oa-react/dist/index.css ***!
-  \*****************************************/
+/***/ "./node_modules/oapack/dist/index.css":
+/*!********************************************!*\
+  !*** ./node_modules/oapack/dist/index.css ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29,7 +29,7 @@
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1573946825963");
+            injectCss(link, link.href.split("?")[0] + "?unix=1574101875549");
           });
       }
     }
@@ -66,7 +66,7 @@
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1573945433285");
+            injectCss(link, link.href.split("?")[0] + "?unix=1574101875476");
           });
       }
     }
