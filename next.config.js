@@ -10,6 +10,7 @@ module.exports = withSass(
   withCSS(
     withTM({
       transpileModules: ['oapack'],
+      // target: 'serverless',
     }),
   ),
 )

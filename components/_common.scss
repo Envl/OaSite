@@ -1,0 +1,19 @@
+@import './variables';
+@import './util-classes';
+@import './media-query';
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@include greater-than(700px) {
+  .oa-sidebar {
+    border-width: 0 2px 33px 0;
+    height: 99vh;
+  }
+}

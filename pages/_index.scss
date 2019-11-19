@@ -1,4 +1,4 @@
-@import "../components/utils";
+@import '../components/common';
 
 .home {
   justify-content: space-around;
@@ -9,5 +9,51 @@
 }
 
 .me-block {
-  width: 30%;
+  width: 260px;
+  height: 30vh;
+  display: flex;
+  display: grid;
+  grid-template:
+    'img img' 1fr
+    'title dscp ' 1fr
+    'playarea cube ' 1fr/ 1fr 2fr;
+  // justify-items: center;
+  // align-items: center;
+  .card {
+    grid-area: title;
+    h2 {
+      margin: 4px 0 0 0;
+      // justify-self: center;
+      // align-self: center;
+    }
+  }
+  .dscp {
+    grid-area: dscp;
+    font-weight: bold;
+    font-size: 16px !important;
+    .dropdown-title {
+      font-weight: bold;
+      font-size: 16px !important;
+    }
+  }
+  img {
+    border-radius: $comic-radius;
+    grid-area: img;
+    width: calc(100% - 6px);
+    margin: $control-margin;
+    // overflow: hidden;
+  }
+  .resume {
+    grid-area: playarea;
+    height: 400px;
+  }
+  .cube {
+    margin: 30px;
+    grid-area: cube;
+    .cube-facet {
+      border: solid 1px black;
+      color: black;
+      // box-shadow: 0px 0px 6px #888 inset;
+    }
+  }
 }
