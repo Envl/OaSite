@@ -4,11 +4,30 @@
 
 body {
   overflow-x: hidden;
+  font-family: 'Merriweather', sans-serif;
 }
-
 img {
   width: 100%;
   object-fit: cover;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.oa-sidebar {
+  border-width: 0 !important;
+  height: 100vh !important;
+  background: #2c2c2c;
+  .sidebar-item-brief,
+  .sidebar-item-detail {
+    color: $secondaryClr;
+  }
+  .sidebar-active {
+    color: $bgClr;
+    &::before {
+      background: $bgClr;
+    }
+  }
 }
 
 @include greater-than(700px) {
