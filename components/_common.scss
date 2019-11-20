@@ -1,8 +1,10 @@
 @import './variables';
-@import './util-classes';
 @import './media-query';
 
+@import './util-classes';
+
 body {
+  color: $fontClr;
   overflow-x: hidden;
   font-family: 'Merriweather', sans-serif;
 }
