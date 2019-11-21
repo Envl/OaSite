@@ -275,12 +275,12 @@ function Contents({opts}) {
         <p>
           I often think about our actions in the digital world, and in the real
           world.
-          <br /> "Is that right? Could it be improved?" "Yes, and yes."
+          <br /> "Is that right? Could it be improved?" "Yes, and still yes."
           <br />
         </p>
         <p>
-          That's why I'm studying Human-Computer Interaction & Design with I&E
-          minor at
+          To confirm my answer, I'm studying Human-Computer Interaction & Design
+          with I&E minor at
           <a
             className='oa-hover-underline'
             href='https://www.kth.se/student/kurser/program/TIVNM/20182/arskurs1?l=en'
