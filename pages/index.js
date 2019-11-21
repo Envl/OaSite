@@ -14,6 +14,7 @@ import './_index.scss'
 function Me({setOpts, opts}) {
   return (
     <div className='me-block'>
+      <div className='me-status'>❤️: 🎮🍟📷🚴‍♂️🏸🎵🏓</div>
       <Button type='toggle' className='btn-hi' pressed={true}>
         {/* <h2>Hi,</h2> */}
         Hi
@@ -73,14 +74,14 @@ function Posts(props) {
   return (
     <div className={`posts ${props.className ? props.className : ''}`}>
       <Card className='post'>
-        <span className='post-title'>BOOKIO</span>
+        <span className='post-title oa-underline'>BOOKIO</span>
         <span className='post-content'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
           tincidunt diam felis, sed tempor est pellentesque vel.
         </span>
       </Card>
       <Card className='post'>
-        <span className='post-title'>SEIM</span>
+        <span className='post-title oa-underline'>SEIM</span>
         <span className='post-content'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
           tincidunt diam felis, sed tempor est pellentesque vel.
@@ -88,7 +89,7 @@ function Posts(props) {
       </Card>
       <Link href='/post/[id]'>
         <Card className='post'>
-          <span className='post-title'>OaPack</span>
+          <span className='post-title oa-underline'>OaPack</span>
           <span className='post-content'>
             With the intention to create a playful UI package and with the
             inspiration from pop art, I've created an UI component library for
@@ -97,28 +98,30 @@ function Posts(props) {
         </Card>
       </Link>
       <Card className='post'>
-        <span className='post-title'>Rugbeats</span>
+        <span className='post-title oa-underline'>Rugbeats</span>
         <span className='post-content'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
           tincidunt diam felis, sed tempor est pellentesque vel.
         </span>
       </Card>
       <Card className='post'>
-        <span className='post-title'>Shop Walker</span>
+        <span className='post-title oa-underline'>Shop Walker</span>
         <span className='post-content'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
           tincidunt diam felis, sed tempor est pellentesque vel.
         </span>
       </Card>
       <Card className='post'>
-        <span className='post-title'>Bagroutte</span>
+        <span className='post-title oa-underline'>Bagroutte</span>
         <span className='post-content'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
           tincidunt diam felis, sed tempor est pellentesque vel.
         </span>
       </Card>
       <Card className='post'>
-        <span className='post-title'>Tangible Browsing Interaction</span>
+        <span className='post-title oa-underline'>
+          Tangible Browsing Interaction
+        </span>
         <span className='post-content'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
           tincidunt diam felis, sed tempor est pellentesque vel.
@@ -193,7 +196,7 @@ function Contents({opts}) {
           That's why I'm studying Human-Computer Interaction & Design with I&E
           minor at
           <a
-            className='oa-underline'
+            className='oa-hover-underline'
             href='https://www.kth.se/student/kurser/program/TIVNM/20182/arskurs1?l=en'
             target='__blank'>
             &nbsp;KTH Royal Institute of Technology&nbsp;
@@ -202,12 +205,12 @@ function Contents({opts}) {
           <a
             href='https://www.universite-paris-saclay.fr/en/education/master/m2-hcid-eit-digital#presentation-m2'
             target='__blank'
-            className='oa-underline'>
+            className='oa-hover-underline'>
             &nbsp;Université Paris-Sud&nbsp;
           </a>
         </p>
         <p>
-          With a background of B.E. in Digital Media Technology, I also build
+          With a background of B.E. in Digital Media Technology, I also build🔨
           stuffs.
         </p>
         {/* <p>Now go build something great.</p> */}
@@ -219,14 +222,14 @@ function Contents({opts}) {
         u=':)'
         f={
           <Link href='/CV_Ming_YAO.pdf'>
-            <a className='oa-underline' target='__blank'>
+            <a className='oa-hover-underline' target='__blank'>
               Resume
             </a>
           </Link>
         }
         r={
           <a
-            className='oa-underline'
+            className='oa-hover-underline'
             href='https://github.com/envl'
             target='__blank'>
             Github
@@ -235,11 +238,13 @@ function Contents({opts}) {
       />
       {/* </Button> */}
       {/* <div style={{maxWidth: `300px`, marginBottom: `1.45rem`}}></div> */}
+      {/* <Card> */}
       <Posts
         className={`${
           opts && opts.includes('contents') ? 'visible' : 'opt-hide'
         }`}
       />
+      {/* </Card> */}
     </div>
   )
 }

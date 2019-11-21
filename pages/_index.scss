@@ -27,6 +27,7 @@
   display: grid;
   grid-template:
     'img img' 1fr
+    'status status' 1fr
     'title dscp ' 1fr
     'title2 brick ' 1fr
     'opts opts' 1fr
@@ -36,6 +37,10 @@
   // justify-items: center;
   // align-items: center;
   color: $fontClr !important;
+  .me-status {
+    grid-area: status;
+    margin: 0 0 5px 3px;
+  }
   .me-contact {
     grid-area: contact;
     justify-self: center;
@@ -186,6 +191,7 @@
   column-count: 2;
 }
 .post {
+  cursor: pointer;
   margin-top: 0;
   margin-bottom: 20px;
   min-width: 300px;
