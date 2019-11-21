@@ -74,18 +74,104 @@ function Posts(props) {
   return (
     <div className={`posts ${props.className ? props.className : ''}`}>
       <Card className='post'>
-        <span className='post-title oa-underline'>BOOKIO</span>
-        <span className='post-content'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          tincidunt diam felis, sed tempor est pellentesque vel.
-        </span>
+        <div>
+          <img className='post-img' src='/me2.jpg' alt='' />
+          <span className='post-title oa-underline'>BOOKIO</span>
+          <span className='post-content'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            tincidunt diam felis, sed tempor est pellentesque vel.
+          </span>
+        </div>
+      </Card>
+      <Card className='post post-lr'>
+        <div>
+          <span className='post-title oa-underline'>SEIM</span>
+          <span className='post-content'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            tincidunt diam felis, sed tempor est pellentesque vel.
+          </span>
+        </div>
+        <img className='post-img' src='/me2.jpg' alt='' />
       </Card>
       <Card className='post'>
-        <span className='post-title oa-underline'>SEIM</span>
-        <span className='post-content'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          tincidunt diam felis, sed tempor est pellentesque vel.
-        </span>
+        <div>
+          <img className='post-img' src='/me2.jpg' alt='' />
+          <span className='post-title oa-underline'>BOOKIO</span>
+          <span className='post-content'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            tincidunt diam felis, sed tempor est pellentesque vel.
+          </span>
+        </div>
+      </Card>
+      <Card className='post post-lr'>
+        <div>
+          <span className='post-title oa-underline'>SEIM</span>
+          <span className='post-content'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            tincidunt diam felis, sed tempor est pellentesque vel.
+          </span>
+        </div>
+        <img className='post-img' src='/me2.jpg' alt='' />
+      </Card>
+      <Card className='post'>
+        <div>
+          <img className='post-img' src='/me2.jpg' alt='' />
+          <span className='post-title oa-underline'>BOOKIO</span>
+          <span className='post-content'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            tincidunt diam felis, sed tempor est pellentesque vel.
+          </span>
+        </div>
+      </Card>
+      <Card className='post post-lr'>
+        <div>
+          <span className='post-title oa-underline'>SEIM</span>
+          <span className='post-content'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            tincidunt diam felis, sed tempor est pellentesque vel.
+          </span>
+        </div>
+        <img className='post-img' src='/me2.jpg' alt='' />
+      </Card>
+      <Card className='post'>
+        <div>
+          <img className='post-img' src='/me2.jpg' alt='' />
+          <span className='post-title oa-underline'>BOOKIO</span>
+          <span className='post-content'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            tincidunt diam felis, sed tempor est pellentesque vel.
+          </span>
+        </div>
+      </Card>
+      <Card className='post post-lr'>
+        <div>
+          <span className='post-title oa-underline'>SEIM</span>
+          <span className='post-content'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            tincidunt diam felis, sed tempor est pellentesque vel.
+          </span>
+        </div>
+        <img className='post-img' src='/me2.jpg' alt='' />
+      </Card>
+      <Card className='post'>
+        <div>
+          <img className='post-img' src='/me2.jpg' alt='' />
+          <span className='post-title oa-underline'>BOOKIO</span>
+          <span className='post-content'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            tincidunt diam felis, sed tempor est pellentesque vel.
+          </span>
+        </div>
+      </Card>
+      <Card className='post post-lr'>
+        <div>
+          <span className='post-title oa-underline'>SEIM</span>
+          <span className='post-content'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            tincidunt diam felis, sed tempor est pellentesque vel.
+          </span>
+        </div>
+        <img className='post-img' src='/me2.jpg' alt='' />
       </Card>
       <Link href='/post/[id]'>
         <Card className='post'>
@@ -187,7 +273,7 @@ function Contents({opts}) {
           opts && opts.includes('about me') ? 'visible' : 'opt-hide'
         }`}>
         <p>
-          I always think about our actions in the digital world, and in the real
+          I often think about our actions in the digital world, and in the real
           world.
           <br /> "Is that right? Could it be improved?" "Yes, and yes."
           <br />
@@ -271,7 +357,7 @@ function HomePage() {
       className={`${
         opts && opts.includes('sidebar') ? 'visible' : 'opt-hide'
       }`}>
-      <div className='home flex-h-center'>
+      <div className='home-page'>
         <Me setOpts={setOpts} opts={opts} />
         <Contents opts={opts} />
       </div>

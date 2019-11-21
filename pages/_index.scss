@@ -1,11 +1,14 @@
 @import '../components/common';
 
-.home {
+.home-page {
   justify-content: center;
   margin-top: 1%;
+  display: flex;
+  flex-flow: row, wrap;
+  width: 100%;
 }
 .opt-hide {
-  display: none;
+  display: none !important;
   // height: 0 !important;
   // position: fixed;
   // left: -5000;
@@ -194,7 +197,7 @@
   cursor: pointer;
   margin-top: 0;
   margin-bottom: 20px;
-  min-width: 300px;
+  // min-width: 300px;
   max-width: 30vw;
   display: flex;
   // width: ;
@@ -214,6 +217,22 @@
   .post-content {
     color: $fontSecondaryClr;
   }
+  .post-img {
+    object-fit: cover;
+    // width: 100px;
+    height: 300px;
+    border-radius: $comic-radius;
+    margin: 5px 0;
+  }
+  // display: flex;
+  // flex-direction: row;
+}
+.post-lr {
+  display: flex;
+  .post-img {
+    width: 100px;
+    height: auto !important;
+  }
 }
 
 .oa-card,
@@ -224,4 +243,59 @@
 .oa-btn::after {
   box-shadow: rebeccapurple !important;
   border-color: $secondaryClr;
+}
+
+@include smaller-than(768px) {
+  .home-page {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebar-placeholder {
+    margin: 0;
+  }
+  .me-block {
+    margin-left: 0;
+    margin-bottom: 20px;
+    // justify-items: center;
+    width: 80vw;
+    height: min-content;
+    grid-template:
+      'img img' auto
+      'status status' auto
+      'title dscp ' auto
+      'title2 brick ' auto
+      'opts opts' auto
+      'socialmedia socialmedia' auto
+      'contact contact' auto
+      / 1fr 3fr;
+    img {
+      // justify-self: start;
+      width: 260px;
+    }
+    .dropdown {
+      width: max-content;
+    }
+    .btn-hi,
+    .btn-i {
+      justify-self: end;
+      width: -webkit-fill-available;
+    }
+    .dscp {
+      justify-self: start;
+    }
+  }
+  .content {
+    margin-left: 0;
+    margin-right: 0;
+    .posts {
+      column-count: 1;
+    }
+  }
+  .site-intro,
+  .posts,
+  .post {
+    max-width: initial;
+    display: table;
+    // width: 90%;
+  }
 }
