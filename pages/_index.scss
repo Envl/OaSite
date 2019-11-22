@@ -28,12 +28,12 @@
   display: grid;
   grid-template:
     'img img' 1fr
-    'status status' 1fr
-    'title dscp ' 1fr
-    'title2 brick ' 1fr
-    'opts opts' 1fr
-    'socialmedia socialmedia' 1fr
-    'contact contact' 1fr
+    'status status' min-content
+    'title dscp ' min-content
+    'title2 brick ' min-content
+    'opts opts' min-content
+    'socialmedia socialmedia' min-content
+    'contact contact' min-content
     / 1fr 2fr;
   // justify-items: center;
   // align-items: center;
@@ -267,17 +267,17 @@
     width: 80vw;
     height: min-content;
     grid-template:
-      'img img' auto
-      'status status' auto
-      'title dscp ' auto
-      'title2 brick ' auto
-      'opts opts' auto
+      'img img' 1fr
+      'status status' min-content
+      'title dscp ' 52px
+      'title2 brick ' min-content
+      'opts opts' min-content
       'socialmedia socialmedia' auto
       'contact contact' auto
       / 1fr 3fr;
     img {
       // justify-self: start;
-      width: 260px;
+      width: 160px;
     }
     .dropdown {
       width: max-content;

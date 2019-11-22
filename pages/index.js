@@ -16,7 +16,7 @@ function Me({setOpts, opts}) {
   return (
     <div className='me-block'>
       <div className='me-status'>❤️: 🎮🍟📷🚴‍♂️🏸🎵🏓</div>
-      <Button type='toggle' className='btn-hi' pressed={true}>
+      <Button type='toggle' className='btn-hi' pressed='true'>
         {/* <h2>Hi,</h2> */}
         Hi
       </Button>
@@ -351,9 +351,11 @@ function HomePage() {
           />
         </>
       }
-      className={`${opts.includes('sidebar') ? 'visible' : 'opt-hide'}`}>
+      className={`${
+        opts && opts.includes('sidebar') ? 'visible' : 'opt-hide'
+      }`}>
       <Head>
-        <title>Ming YAO</title>
+        <title className='hidden'>Ming YAO</title>
         <link rel='icon' href='/icon.png' type='image/jpg' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
