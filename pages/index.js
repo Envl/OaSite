@@ -30,7 +30,7 @@ function Me({setOpts, opts}) {
       </Button>
       <FilterGroup
         className='block-filters'
-        filters={[
+        initialFilters={[
           {name: 'c', pushed: false},
           {name: 'o', pushed: false},
           {name: 'd', pushed: true},
@@ -47,7 +47,7 @@ function Me({setOpts, opts}) {
       />
       <FilterGroup
         className='site-filters'
-        filters={[
+        initialFilters={[
           {name: 'about me', pushed: opts.includes('about me')},
           {name: 'cube', pushed: opts.includes('cube')},
           {name: 'contents', pushed: opts.includes('contents')},
