@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Head from 'next/head'
 import {useEffect, useState} from 'react'
 import {
   Button,
@@ -55,12 +56,11 @@ function Me({setOpts, opts}) {
         ]}
         onFilterUpdate={options => {
           setOpts(options)
-          console.log(options)
         }}
       />
       <a
         href='mailto:yyaomingm@outlook.com'
-        target='__blank'
+        target='_blank'
         className={`me-contact ${
           opts && opts.includes('contact me') ? 'visible' : 'opt-hide'
         }`}>
@@ -284,13 +284,13 @@ function Contents({opts}) {
           <a
             className='oa-hover-underline'
             href='https://www.kth.se/student/kurser/program/TIVNM/20182/arskurs1?l=en'
-            target='__blank'>
+            target='_blank'>
             &nbsp;KTH Royal Institute of Technology&nbsp;
           </a>
           and
           <a
             href='https://www.universite-paris-saclay.fr/en/education/master/m2-hcid-eit-digital#presentation-m2'
-            target='__blank'
+            target='_blank'
             className='oa-hover-underline'>
             &nbsp;Université Paris-Sud&nbsp;
           </a>
@@ -308,7 +308,7 @@ function Contents({opts}) {
         u=':)'
         f={
           <Link href='/CV_Ming_YAO.pdf'>
-            <a className='oa-hover-underline' target='__blank'>
+            <a className='oa-hover-underline' target='_blank'>
               Resume
             </a>
           </Link>
@@ -317,7 +317,7 @@ function Contents({opts}) {
           <a
             className='oa-hover-underline'
             href='https://github.com/envl'
-            target='__blank'>
+            target='_blank'>
             Github
           </a>
         }
@@ -337,14 +337,11 @@ function Contents({opts}) {
 
 function HomePage() {
   const [opts, setOpts] = useState(['about me', 'cube', 'contents', 'sidebar'])
-  useEffect(() => {
-    console.log('in browser')
-  }, [])
   return (
     <SidebarInjector
       items={
         <>
-          <SidebarItem to='/cv' brief='CV' detail='CV' />
+          <SidebarItem to='/CV_Ming_YAO.pdf' brief='CV' detail='CV' />
           <SidebarItem to='/projects' brief='P.' detail='Projects' />
           <SidebarItem
             to='/'
@@ -354,9 +351,12 @@ function HomePage() {
           />
         </>
       }
-      className={`${
-        opts && opts.includes('sidebar') ? 'visible' : 'opt-hide'
-      }`}>
+      className={`${opts.includes('sidebar') ? 'visible' : 'opt-hide'}`}>
+      <Head>
+        <title>Ming YAO</title>
+        <link rel='icon' href='/icon.png' type='image/jpg' />
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      </Head>
       <div className='home-page'>
         <Me setOpts={setOpts} opts={opts} />
         <Contents opts={opts} />
