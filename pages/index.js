@@ -10,6 +10,10 @@ import {
   CubeMenu,
   FilterGroup,
 } from 'oapack'
+
+import Footer from '../components/Footer'
+import PostCard from '../components/PostCard'
+
 import './_index.scss'
 
 function Me({setOpts, opts}) {
@@ -73,146 +77,22 @@ function Me({setOpts, opts}) {
 function Posts(props) {
   return (
     <div className={`posts ${props.className ? props.className : ''}`}>
-      <Card className='post'>
-        <div>
-          <img className='post-img' src='/me2.jpg' alt='' />
-          <span className='post-title oa-underline'>BOOKIO</span>
-          <span className='post-content'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            tincidunt diam felis, sed tempor est pellentesque vel.
-          </span>
-        </div>
-      </Card>
-      <Card className='post post-lr'>
-        <div>
-          <span className='post-title oa-underline'>SEIM</span>
-          <span className='post-content'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            tincidunt diam felis, sed tempor est pellentesque vel.
-          </span>
-        </div>
-        <img className='post-img' src='/me2.jpg' alt='' />
-      </Card>
-      <Card className='post'>
-        <div>
-          <img className='post-img' src='/me2.jpg' alt='' />
-          <span className='post-title oa-underline'>BOOKIO</span>
-          <span className='post-content'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            tincidunt diam felis, sed tempor est pellentesque vel.
-          </span>
-        </div>
-      </Card>
-      <Card className='post post-lr'>
-        <div>
-          <span className='post-title oa-underline'>SEIM</span>
-          <span className='post-content'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            tincidunt diam felis, sed tempor est pellentesque vel.
-          </span>
-        </div>
-        <img className='post-img' src='/me2.jpg' alt='' />
-      </Card>
-      <Card className='post'>
-        <div>
-          <img className='post-img' src='/me2.jpg' alt='' />
-          <span className='post-title oa-underline'>BOOKIO</span>
-          <span className='post-content'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            tincidunt diam felis, sed tempor est pellentesque vel.
-          </span>
-        </div>
-      </Card>
-      <Card className='post post-lr'>
-        <div>
-          <span className='post-title oa-underline'>SEIM</span>
-          <span className='post-content'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            tincidunt diam felis, sed tempor est pellentesque vel.
-          </span>
-        </div>
-        <img className='post-img' src='/me2.jpg' alt='' />
-      </Card>
-      <Card className='post'>
-        <div>
-          <img className='post-img' src='/me2.jpg' alt='' />
-          <span className='post-title oa-underline'>BOOKIO</span>
-          <span className='post-content'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            tincidunt diam felis, sed tempor est pellentesque vel.
-          </span>
-        </div>
-      </Card>
-      <Card className='post post-lr'>
-        <div>
-          <span className='post-title oa-underline'>SEIM</span>
-          <span className='post-content'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            tincidunt diam felis, sed tempor est pellentesque vel.
-          </span>
-        </div>
-        <img className='post-img' src='/me2.jpg' alt='' />
-      </Card>
-      <Card className='post'>
-        <div>
-          <img className='post-img' src='/me2.jpg' alt='' />
-          <span className='post-title oa-underline'>BOOKIO</span>
-          <span className='post-content'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            tincidunt diam felis, sed tempor est pellentesque vel.
-          </span>
-        </div>
-      </Card>
-      <Card className='post post-lr'>
-        <div>
-          <span className='post-title oa-underline'>SEIM</span>
-          <span className='post-content'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            tincidunt diam felis, sed tempor est pellentesque vel.
-          </span>
-        </div>
-        <img className='post-img' src='/me2.jpg' alt='' />
-      </Card>
-      <Link href='/post/[id]'>
-        <Card className='post'>
-          <span className='post-title oa-underline'>OaPack</span>
-          <span className='post-content'>
-            With the intention to create a playful UI package and with the
-            inspiration from pop art, I've created an UI component library for
-            React.js. It is partly used in my website now :)
-          </span>
-        </Card>
-      </Link>
-      <Card className='post'>
-        <span className='post-title oa-underline'>Rugbeats</span>
-        <span className='post-content'>
+      {[
+        'BOOKIO',
+        'SEIM',
+        'Rugbeats',
+        'Bagroutte',
+        'ShopWalker',
+        'Tangible Browser',
+        'OaPack',
+        'StyleBox',
+        'Spotioid',
+      ].map(l => (
+        <PostCard className='post-lr' title={l} key={l}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
           tincidunt diam felis, sed tempor est pellentesque vel.
-        </span>
-      </Card>
-      <Card className='post'>
-        <span className='post-title oa-underline'>Shop Walker</span>
-        <span className='post-content'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          tincidunt diam felis, sed tempor est pellentesque vel.
-        </span>
-      </Card>
-      <Card className='post'>
-        <span className='post-title oa-underline'>Bagroutte</span>
-        <span className='post-content'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          tincidunt diam felis, sed tempor est pellentesque vel.
-        </span>
-      </Card>
-      <Card className='post'>
-        <span className='post-title oa-underline'>
-          Tangible Browsing Interaction
-        </span>
-        <span className='post-content'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          tincidunt diam felis, sed tempor est pellentesque vel.
-        </span>
-      </Card>
+        </PostCard>
+      ))}
       <Card className='post'>
         <span>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
@@ -224,30 +104,6 @@ function Posts(props) {
           Mauris tempus convallis. Lorem ipsum dolor sit amet, consectetur
           adipiscing elit. Donec tincidunt diam felis, sed tempor est
           pellentesque vel. Mauris tempus convallis.
-        </span>
-      </Card>
-      <Card className='post'>
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          tincidunt diam felis, sed tempor est pellentesque vel. Mauris tempus
-          convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Donec tincidunt diam felis, sed tempor est pellentesque vel. Mauris
-          tempus convallis.
-        </span>
-      </Card>
-      <Card className='post'>
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          tincidunt diam felis, sed tempor est pellentesque vel. Mauris tempus
-          convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Donec tincidunt diam felis, sed tempor est pellentesque vel. Mauris
-          tempus convallis.convallis. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Donec tincidunt diam felis, sed tempor est
-          pellentesque vel. Mauris tempus convallis.convallis. Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit. Donec tincidunt diam felis, sed
-          tempor est pellentesque vel. Mauris tempus convallis.convallis. Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt
-          diam felis, sed tempor est pellentesque vel. Mauris tempus convallis.
         </span>
       </Card>
       <Card className='post'>
@@ -336,7 +192,12 @@ function Contents({opts}) {
 }
 
 function HomePage() {
-  const [opts, setOpts] = useState(['about me', 'cube', 'contents', 'sidebar'])
+  const [opts, setOpts] = useState(
+    typeof window !== 'undefined' && window.innerWidth > 768
+      ? ['about me', 'cube', 'contents']
+      : ['about me', 'cube', 'contents', 'sidebar'],
+  )
+
   return (
     <SidebarInjector
       items={
@@ -355,7 +216,7 @@ function HomePage() {
         opts && opts.includes('sidebar') ? 'visible' : 'opt-hide'
       }`}>
       <Head>
-        <title className='hidden'>Ming YAO</title>
+        <title className='hidden'>Ming YAO / @GnimOay</title>
         <link rel='icon' href='/icon.png' type='image/jpg' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
@@ -363,6 +224,7 @@ function HomePage() {
         <Me setOpts={setOpts} opts={opts} />
         <Contents opts={opts} />
       </div>
+      <Footer />
     </SidebarInjector>
   )
 }

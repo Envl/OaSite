@@ -1,5 +1,7 @@
 @import '../components/common';
-
+.element-with-sidebar {
+  flex-direction: column;
+}
 .home-page {
   justify-content: center;
   margin-top: 1%;
