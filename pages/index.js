@@ -10,7 +10,7 @@ import {
   CubeMenu,
   FilterGroup,
 } from 'oapack'
-
+import ReactGA from 'react-ga'
 import Footer from '../components/Footer'
 import PostCard from '../components/PostCard'
 
@@ -199,13 +199,16 @@ function HomePage() {
       : ['about me', 'cube', 'contents', 'sidebar', 'footer'],
   )
   useEffect(() => {
-    window.dataLayer = window.dataLayer || []
-    function gtag() {
-      window.dataLayer.push(arguments)
-    }
-    gtag('js', new Date())
-
-    gtag('config', 'G-REWTHY2S75')
+    ReactGA.initialize('G-REWTHY2S75')
+    // ReactGA.initialize('G-REWTHY2S75')
+    ReactGA.pageview(window.location.pathname + window.location.search)
+    // This should be part of your setup
+    // This would be in the component/js you are testing
+    // This would be how you check that the calls are made correctly
+    // ReactGA.testModeAPI.calls.should.eql([
+    //   ['create', 'foo', 'auto'],
+    //   ['send', 'pageview', '/mypage'],
+    // ])
   }, [])
 
   return (
