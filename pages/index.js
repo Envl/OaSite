@@ -199,7 +199,7 @@ function HomePage() {
       : ['about me', 'cube', 'contents', 'sidebar', 'footer'],
   )
   useEffect(() => {
-    ReactGA.initialize('G-REWTHY2S75')
+    ReactGA.initialize('G-REWTHY2S75', {debug: true})
     // ReactGA.initialize('G-REWTHY2S75')
     ReactGA.pageview(window.location.pathname + window.location.search)
     // This should be part of your setup
