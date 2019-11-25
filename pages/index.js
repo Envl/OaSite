@@ -56,6 +56,7 @@ function Me({setOpts, opts}) {
           {name: 'cube', pushed: opts.includes('cube')},
           {name: 'contents', pushed: opts.includes('contents')},
           {name: 'sidebar', pushed: opts.includes('sidebar')},
+          {name: 'footer', pushed: opts.includes('footer')},
           {name: 'contact me', pushed: opts.includes('contact me')},
         ]}
         onFilterUpdate={options => {
@@ -194,9 +195,18 @@ function Contents({opts}) {
 function HomePage() {
   const [opts, setOpts] = useState(
     typeof window !== 'undefined' && window.innerWidth > 768
-      ? ['about me', 'cube', 'contents']
-      : ['about me', 'cube', 'contents', 'sidebar'],
+      ? ['about me', 'cube', 'contents', 'footer']
+      : ['about me', 'cube', 'contents', 'sidebar', 'footer'],
   )
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      window.dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+
+    gtag('config', 'G-REWTHY2S75')
+  }, [])
 
   return (
     <SidebarInjector
@@ -219,12 +229,20 @@ function HomePage() {
         <title className='hidden'>Ming YAO / @GnimOay</title>
         <link rel='icon' href='/icon.png' type='image/jpg' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+        <script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=G-REWTHY2S75'></script>
       </Head>
       <div className='home-page'>
         <Me setOpts={setOpts} opts={opts} />
         <Contents opts={opts} />
       </div>
-      <Footer />
+      <Footer
+        className={` ${
+          opts && opts.includes('footer') ? 'visible' : 'opt-hide'
+        }`}
+      />
     </SidebarInjector>
   )
 }

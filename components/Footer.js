@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './_footer.scss'
-const Footer = () => {
+const Footer = props => {
   const [visitCount, setVisitCount] = useState(0)
   useEffect(() => {
     fetch(
@@ -11,7 +11,7 @@ const Footer = () => {
       .then(data => setVisitCount(data.value))
   }, [])
   return (
-    <div className='footer'>
+    <div className={`footer ${props.className ? props.className : ''}`}>
       <div>All rights reserved</div>
       <p>Design&Code by me :)</p>
       <div>
