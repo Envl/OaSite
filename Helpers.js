@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import ReactGA from 'react-ga'
 import * as firebase from 'firebase/app'
 import 'firebase/firestore'
+import {firebase_Config} from './_ApiKeys'
 
 ReactGA.initialize('G-REWTHY2S75')
 export const withTracker = (WrappedComponent, options = {}) => {
@@ -23,16 +24,7 @@ export const withTracker = (WrappedComponent, options = {}) => {
 }
 
 if (!firebase.apps.length) {
-  firebase.initializeApp({
-    apiKey: 'AIzaSyCJdlzhnQdsONLmv1KGQIHY9FhiChyqCBA',
-    authDomain: 'oa-site.firebaseapp.com',
-    databaseURL: 'https://oa-site.firebaseio.com',
-    projectId: 'oa-site',
-    storageBucket: 'oa-site.appspot.com',
-    messagingSenderId: '926252173661',
-    appId: '1:926252173661:web:8b170a46a40e78405380b4',
-    measurementId: 'G-YW09J10NBL',
-  })
+  firebase.initializeApp(firebase_Config)
 }
 export function withFirebase(Component) {
   function HOC(props) {
