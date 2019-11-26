@@ -13,6 +13,7 @@ import {
 import ReactGA from 'react-ga'
 import Footer from '../components/Footer'
 import PostCard from '../components/PostCard'
+import {withTracker, withFirebase} from '../Helpers'
 
 import './_index.scss'
 
@@ -192,16 +193,43 @@ function Contents({opts}) {
   )
 }
 
-function HomePage() {
+function HomePage(props) {
   const [opts, setOpts] = useState(
     typeof window !== 'undefined' && window.innerWidth > 768
       ? ['about me', 'cube', 'contents', 'footer']
       : ['about me', 'cube', 'contents', 'sidebar', 'footer'],
   )
   useEffect(() => {
-    ReactGA.initialize('G-REWTHY2S75', {debug: true})
     // ReactGA.initialize('G-REWTHY2S75')
-    ReactGA.pageview(window.location.pathname + window.location.search)
+    // // ReactGA.initialize('G-REWTHY2S75')
+    // ReactGA.pageview(window.location.pathname + window.location.search)
+    const log = Object.keys(Object.getPrototypeOf(navigator))
+      .filter(k => !['object', 'function'].includes(typeof navigator[k]))
+      .reduce(
+        (pre, cur) => {
+          return {
+            ...pre,
+            [cur]: navigator[cur],
+            hash:
+              pre.hash +
+              (navigator[cur].toString().length > 0
+                ? navigator[cur].toString()[0]
+                : ''),
+          }
+        },
+        {
+          hash: '',
+          timestamps: props.firebase.firestore.FieldValue.arrayUnion(
+            Date.now(),
+          ),
+        },
+      )
+    props.firebase
+      .firestore()
+      .collection('visitor')
+      .doc(log.hash)
+      .set(log, {merge: true})
+    console.log('-------------------', Object.keys(navigator))
     // This should be part of your setup
     // This would be in the component/js you are testing
     // This would be how you check that the calls are made correctly
@@ -249,4 +277,4 @@ function HomePage() {
     </SidebarInjector>
   )
 }
-export default HomePage
+export default withFirebase(withTracker(HomePage))

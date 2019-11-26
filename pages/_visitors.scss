@@ -1,0 +1,17 @@
+.tb-title {
+  background: red;
+  & > * {
+    margin-left: 100px;
+  }
+}
+
+.record-item {
+  display: flex;
+  flex-direction: row;
+  & > * {
+    margin-left: 100px;
+  }
+  &:nth-child(2n-1) {
+    background: #0003;
+  }
+}

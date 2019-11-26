@@ -262,6 +262,12 @@
     height: min-content;
     padding: 5px 1px;
   }
+  .oa-cube {
+    position: absolute;
+    top: 0;
+    right: 10vw;
+    transform: rotateX(-25deg) rotateY(-45deg) !important;
+  }
   .me-block {
     margin-left: 0;
     margin-bottom: 20px;
