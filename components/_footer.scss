@@ -1,17 +1,25 @@
 @import './variables';
+@import './media-query';
 
 .footer {
-  height: 72vh;
+  height: 100vh;
   width: 100vw;
+  margin-top: 10vh;
   // display: grid;
   // grid-area: 3 3;
   z-index: -1;
   display: flex;
   flex-direction: column;
-  background: $dark-bg;
+  background: linear-gradient(rgb(62, 66, 90) 0%, rgb(4, 9, 40) 100%);
   color: $bgClr;
   position: relative;
   bottom: -20px;
   justify-content: center;
   align-items: center;
+}
+
+@include greater-than(768px) {
+  .footer {
+    z-index: 9999;
+  }
 }

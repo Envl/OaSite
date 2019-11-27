@@ -1,20 +1,39 @@
 import React, {useEffect, useState} from 'react'
+import fetch from 'isomorphic-unfetch'
+import MarkDown from 'react-markdown'
+import './_post.scss'
+import {SidebarInjector} from 'oapack'
+import Layout from '../../components/Layout'
+import MD from 'markdown-to-jsx'
 
-const Index = () => {
-  const [list, setList] = useState([])
-  useEffect(() => {
-    fetch('https://api.tvmaze.com/search/shows?q=batman')
-      .then(rsp => rsp.json())
-      .then(data => setList(data.map(d => d.show)))
-  }, [])
+const Index = props => {
   return (
-    <div>
-      {list.map(l => (
-        <div key={l.id}>{l.name}</div>
-      ))}
-      <div>{typeof window !== 'undefined' && window.location.href}</div>
-    </div>
+    <Layout>
+      <div className='post-page'>
+        {props.status === 200 ? (
+          <>
+            <MD className='oa-md'>{props.post}</MD>
+          </>
+        ) : (
+          <div dangerouslySetInnerHTML={{__html: props.post}}></div>
+        )}
+      </div>
+    </Layout>
   )
+}
+Index.getInitialProps = async function(context) {
+  const res = await fetch(
+    `${
+      process.env.NODE_ENV !== 'production'
+        ? 'http://localhost:3000'
+        : 'https://gnimoay.com'
+    }/mdfiles/${context.query.id}.md`,
+  )
+  const data = await res.text()
+  return {
+    post: data,
+    status: res.status,
+  }
 }
 
 export default Index

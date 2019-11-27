@@ -1,7 +1,6 @@
 @import './variables';
 @import './media-query';
-
-@import './util-classes';
+@import './utils';
 
 body {
   color: $fontClr;
@@ -11,12 +10,11 @@ body {
   margin: 0;
 }
 img {
-  width: 100%;
+  // width: 100%;
   object-fit: cover;
 }
 a {
   text-decoration: none;
-  color: black;
 }
 
 @include smaller-than(768px) {

@@ -1,6 +1,27 @@
 @import '../components/common';
-.element-with-sidebar {
-  flex-direction: column;
+
+@include greater-than(768px) {
+  .element-with-sidebar {
+    justify-content: center;
+  }
+  .oa-sidebar {
+    transition-duration: $tm-mid;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.1s;
+    & + .sidebar-placeholder ~ * {
+      transition-delay: 0.1s;
+      transition-duration: $tm-mid;
+      transition-timing-function: ease-in-out;
+    }
+    &:hover {
+      width: 160px;
+      transition-delay: 0s;
+      & + .sidebar-placeholder ~ * {
+        transition-delay: 0s;
+        transform: translateX(120px);
+      }
+    }
+  }
 }
 .home-page {
   justify-content: center;
@@ -24,6 +45,7 @@
 }
 .me-block {
   margin-left: 5%;
+  min-width: 256px;
   width: 260px;
   height: 30vh;
   display: flex;
@@ -196,6 +218,8 @@
 }
 .post {
   cursor: pointer;
+  padding-left: 15px;
+  padding-right: 15px;
   margin-top: 0;
   margin-bottom: 20px;
   font-weight: normal;
@@ -215,6 +239,7 @@
     font-weight: bold;
     font-size: 18px;
     margin-right: 5px;
+    cursor: pointer;
   }
   .post-content {
     color: $fontSecondaryClr;
@@ -224,7 +249,12 @@
     // width: 100px;
     height: 150px;
     border-radius: $comic-radius;
-    margin: 5px 0;
+    margin: 5px 0 5px 15px;
+    transition-duration: $tm-mid;
+    transition-timing-function: ease-in-out;
+    &:hover {
+      transform: scale(2.3);
+    }
   }
   // display: flex;
   // flex-direction: row;
@@ -307,10 +337,20 @@
     }
   }
   .site-intro,
-  .posts,
-  .post {
+  .posts {
     max-width: initial;
     display: table;
-    // width: 90%;
+    .post {
+      max-width: initial;
+      padding-left: 10px;
+      padding-right: 10px;
+      // display: flex;
+      // flex-direction: row;
+      img {
+        max-height: 100px;
+        margin-left: 10px;
+        height: min-content;
+      }
+    }
   }
 }

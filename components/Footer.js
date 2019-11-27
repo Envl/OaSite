@@ -5,7 +5,10 @@ const Footer = props => {
   useEffect(() => {
     fetch(
       'https://api.countapi.xyz/hit/gnimoay.com/visit-count-' +
-        window.location.pathname,
+        window.location.pathname
+          .split('/')
+          .slice(1)
+          .join('-'),
     )
       .then(res => res.json())
       .then(data => setVisitCount(data.value))

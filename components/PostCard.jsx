@@ -7,10 +7,14 @@ const PostCard = props => {
       {...props}
       className={`post ${props.className ? props.className : ''}`}>
       <div>
-        <span className='post-title oa-underline'>{props.title}</span>
+        {props.title && (
+          <span className='post-title oa-underline'>{props.title}</span>
+        )}
         <span className='post-content'>{props.children}</span>
       </div>
-      <img className='post-img' src='/me2.jpg' alt='' />
+      {props.coverUrl && (
+        <img className='post-img' src={props.coverUrl} alt='' />
+      )}
     </Card>
   )
 }
