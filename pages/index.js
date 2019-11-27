@@ -99,25 +99,6 @@ function Posts(props) {
           brief: 'The UI library used in this website :)',
         },
         {title: 'ShopWalker', coverUrl: '/bookio.png'},
-
-        {
-          title: 'StyleBox',
-          coverUrl: '/stylebox.png',
-          brief:
-            'It borrows the concept of class and the idea of CSS from coding to create a tool that makes styling shapes in design software easier',
-        },
-        {
-          title: 'Bagroutte',
-          coverUrl: '/bagroutte.png',
-          brief:
-            'An design concept derives from StyleBox into a map App, which facilitate the edit, manipulationg and reuse of route',
-        },
-        {
-          title: 'Tangible X',
-          coverUrl: '/tangiblex.png',
-          brief:
-            'A exploration on tangible interaction for browser and gaming using Kinect',
-        },
         {
           title: 'Tetris.Dual',
           coverUrl: '/tetris.png',
@@ -136,6 +117,25 @@ function Posts(props) {
           brief:
             'An app to introduce traditional Chinese culture about Bocarro, built with Unity3D',
         },
+        {
+          title: 'StyleBox',
+          coverUrl: '/stylebox.png',
+          brief:
+            'It borrows the concept of class and the idea of CSS from coding to create a tool that makes styling shapes in design software easier',
+        },
+        {
+          title: 'Bagroutte',
+          coverUrl: '/bagroutte.png',
+          brief:
+            'An design concept derives from StyleBox into a map App, which facilitate the edit, manipulationg and reuse of route',
+        },
+        {
+          title: 'Tangible X',
+          coverUrl: '/tangiblex.png',
+          brief:
+            'A exploration on tangible interaction for browser and gaming using Kinect',
+        },
+
         {
           title: 'Spotioid',
           coverUrl: '/spotify.png',
@@ -305,13 +305,37 @@ function HomePage(props) {
   }, [])
 
   return (
-    <Layout>
-      {' '}
+    <SidebarInjector
+      className={opts && opts.includes('sidebar') ? 'visible' : 'opt-hide'}
+      items={
+        <>
+          <SidebarItem to='/CV_Ming_YAO.pdf' brief='CV' detail='CV' />
+          <SidebarItem to='/projects' brief='P.' detail='Projects' />
+          <SidebarItem
+            to='/'
+            brief='H.'
+            detail='Home'
+            // className='sidebar-active'
+          />
+        </>
+      }>
+      <Head>
+        <title className='hidden'>Ming YAO / @GnimOay</title>
+        <link rel='icon' href='/icon.png' type='image/jpg' />
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+        <script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=G-REWTHY2S75'></script>
+      </Head>
       <div className='home-page'>
         <Me setOpts={setOpts} opts={opts} />
         <Contents opts={opts} />
       </div>
-    </Layout>
+      <Footer
+        className={opts && opts.includes('contact me') ? 'visible' : 'opt-hide'}
+      />
+    </SidebarInjector>
   )
 }
 export default withFirebase(withTracker(HomePage))

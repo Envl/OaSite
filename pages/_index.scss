@@ -1,9 +1,11 @@
 @import '../components/common';
 
+.element-with-sidebar {
+  // justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 @include greater-than(768px) {
-  .element-with-sidebar {
-    justify-content: center;
-  }
   .oa-sidebar {
     transition-duration: $tm-mid;
     transition-timing-function: ease-in-out;

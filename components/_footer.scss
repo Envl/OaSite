@@ -17,9 +17,3 @@
   justify-content: center;
   align-items: center;
 }
-
-@include greater-than(768px) {
-  .footer {
-    z-index: 9999;
-  }
-}
