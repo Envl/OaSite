@@ -55,7 +55,7 @@ function Me({setOpts, opts}) {
         className='site-filters'
         initialFilters={[
           {name: 'about me', pushed: opts.includes('about me')},
-          {name: 'cube', pushed: opts.includes('cube')},
+          // {name: 'cube', pushed: opts.includes('cube')},
           {name: 'contents', pushed: opts.includes('contents')},
           {name: 'sidebar', pushed: opts.includes('sidebar')},
           {name: 'footer', pushed: opts.includes('footer')},
@@ -84,7 +84,8 @@ function Posts(props) {
         {
           title: 'BOOKIO',
           coverUrl: '/bookio.png',
-          brief: 'An free book sharing platform created using React.js',
+          url: 'https://bookio-5c798.firebaseapp.com/',
+          brief: 'A free book sharing platform created using React.js',
         },
         {
           title: 'Rugbeats',
@@ -98,7 +99,7 @@ function Posts(props) {
           // coverUrl: '/oapack.png',
           brief: 'The UI library used in this website :)',
         },
-        {title: 'ShopWalker', coverUrl: '/bookio.png'},
+        {title: 'ShopWalker', coverUrl: '/shopwalker.png'},
         {
           title: 'Tetris.Dual',
           coverUrl: '/tetris.png',
@@ -108,12 +109,14 @@ function Posts(props) {
         {
           title: 'SEIM',
           coverUrl: '/seim.png',
+          url: 'https://github.com/Envl/SEIM',
           brief:
             'An interactive music installation that involves projection mapping, tangible interaction, generative animation, etc',
         },
         {
           title: 'Boccaro',
           coverUrl: '/boccaro.png',
+          url: 'https://github.com/Envl/Boccaro',
           brief:
             'An app to introduce traditional Chinese culture about Bocarro, built with Unity3D',
         },
@@ -127,7 +130,7 @@ function Posts(props) {
           title: 'Bagroutte',
           coverUrl: '/bagroutte.png',
           brief:
-            'An design concept derives from StyleBox into a map App, which facilitate the edit, manipulationg and reuse of route',
+            'A design concept derives from StyleBox into a map App, which facilitate the edit, manipulationg and reuse of route',
         },
         {
           title: 'Tangible X',
@@ -161,17 +164,17 @@ function Posts(props) {
             'A online multiplayer version of the board game Da Vinci Code, built with Unity3D',
         },
       ].map(l => (
-        <Link href={'/post/' + l.title.split(' ').join('-')}>
-          <PostCard
-            className='post-lr'
-            title={l.title}
-            // href={'/post/' + l.title.split(' ').join('-')}
-            coverUrl={l.coverUrl}>
-            {l.brief
-              ? l.brief
-              : '(Coming Soon...)Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt diam felis, sed tempor est pellentesque vel.'}
-          </PostCard>
-        </Link>
+        <PostCard
+          className='post-lr'
+          title={l.title}
+          url={l.url}
+          // href={l.url ? l.url : '/post/' + l.title.split(' ').join('-')}
+          href={'/post/' + l.title.split(' ').join('-')}
+          coverUrl={l.coverUrl}>
+          {l.brief
+            ? l.brief
+            : '(Coming Soon...)Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt diam felis, sed tempor est pellentesque vel.'}
+        </PostCard>
       ))}
 
       {/* <Card className='post'>
@@ -227,7 +230,7 @@ function Contents({opts}) {
       </Card>
       <CubeMenu
         className={`home-cube ${
-          opts && opts.includes('cube') ? 'visible' : 'opt-hide'
+          opts && opts.includes('about me') ? 'visible' : 'opt-hide'
         }`}
         u=':)'
         f={
@@ -261,9 +264,10 @@ function Contents({opts}) {
 
 function HomePage(props) {
   const [opts, setOpts] = useState(
-    typeof window !== 'undefined' && window.innerWidth > 768
-      ? ['about me', 'cube', 'contents', 'footer']
-      : ['about me', 'cube', 'contents', 'sidebar', 'footer'],
+    ['about me', 'contents', 'sidebar', 'footer'],
+    // typeof window !== 'undefined' && window.innerWidth > 768
+    //   ? ['about me', 'contents', 'footer']
+    //   : ['about me', 'contents', 'sidebar', 'footer'],
   )
   useEffect(() => {
     ReactGA.initialize('G-REWTHY2S75')
@@ -309,13 +313,18 @@ function HomePage(props) {
       className={opts && opts.includes('sidebar') ? 'visible' : 'opt-hide'}
       items={
         <>
-          <SidebarItem to='/CV_Ming_YAO.pdf' brief='CV' detail='CV' />
+          <SidebarItem
+            to='/CV_Ming_YAO.pdf'
+            target='_blank'
+            brief='CV'
+            detail='CV'
+          />
           <SidebarItem to='/projects' brief='P.' detail='Projects' />
           <SidebarItem
             to='/'
             brief='H.'
             detail='Home'
-            // className='sidebar-active'
+            className='sidebar-active'
           />
         </>
       }>
@@ -333,7 +342,7 @@ function HomePage(props) {
         <Contents opts={opts} />
       </div>
       <Footer
-        className={opts && opts.includes('contact me') ? 'visible' : 'opt-hide'}
+        className={opts && opts.includes('footer') ? 'visible' : 'opt-hide'}
       />
     </SidebarInjector>
   )

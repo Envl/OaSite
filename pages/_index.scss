@@ -5,6 +5,9 @@
   flex-direction: column;
   align-items: center;
 }
+.sidebar-active {
+  color: $primaryClr !important;
+}
 @include greater-than(768px) {
   .oa-sidebar {
     transition-duration: $tm-mid;
@@ -14,6 +17,9 @@
       transition-delay: 0.1s;
       transition-duration: $tm-mid;
       transition-timing-function: ease-in-out;
+    }
+    &:not(:hover) {
+      background: transparent;
     }
     &:hover {
       width: 160px;
@@ -191,6 +197,7 @@
   }
   .cube-facet {
     // border: solid 1px black;
+    font-size: 1.25rem;
     color: black;
     box-shadow: 0px 0px 2px rgb(0, 0, 0) inset;
   }
@@ -219,7 +226,7 @@
   column-count: 2;
 }
 .post {
-  cursor: pointer;
+  // cursor: pointer;
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 0;
@@ -242,6 +249,7 @@
     font-size: 18px;
     margin-right: 5px;
     cursor: pointer;
+    color: $fontClr;
   }
   .post-content {
     color: $fontSecondaryClr;
@@ -256,6 +264,7 @@
     transition-timing-function: ease-in-out;
     &:hover {
       transform: scale(2.3);
+      cursor: default;
     }
   }
   // display: flex;
