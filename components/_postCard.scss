@@ -74,11 +74,14 @@
     &:hover {
       transform: scale(2.3);
       cursor: default;
+      @include smaller-than(768px) {
+        transform: scale(2.5);
+        transform-origin: right;
+      }
     }
   }
-  // display: flex;
-  // flex-direction: row;
 }
+
 .post-lr {
   display: flex;
   .post-img {
