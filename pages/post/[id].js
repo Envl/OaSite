@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import fetch from 'isomorphic-unfetch'
 import MarkDown from 'react-markdown'
-import './_post.scss'
+import './_postPage.scss'
 import {SidebarInjector} from 'oapack'
 import Layout from '../../components/Layout'
 import MD from 'markdown-to-jsx'
 
 const Index = props => {
+  console.log(props.dd, 'uurrrll')
   return (
     <Layout>
       <div className='post-page'>
@@ -33,6 +34,10 @@ Index.getInitialProps = async function(context) {
   return {
     post: data,
     status: res.status,
+    dd: {
+      a: context.req.connection.remoteAddress,
+      b: context.req.headers['x-forwarded-for'],
+    },
   }
 }
 
