@@ -1,0 +1,88 @@
+@import './common';
+
+.post {
+  // cursor: pointer;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: normal;
+  // min-width: 300px;
+  max-width: 30vw;
+  display: flex;
+  justify-content: space-between;
+  // width: ;
+  // border: none;
+  word-wrap: break-word;
+  display: block;
+  -webkit-column-break-inside: avoid;
+  &:hover {
+    transform: none;
+  }
+  @include smaller-than(768px) {
+    max-width: initial;
+    padding-left: 10px;
+    padding-right: 10px;
+    // display: flex;
+    // flex-direction: row;
+    img {
+      max-height: 100px;
+      margin-left: 10px;
+      height: min-content;
+    }
+  }
+  ////////////
+  .card-text {
+    display: grid;
+    align-content: flex-start;
+  }
+  .tag-list {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    margin-top: 7px;
+    font-size: 0.7rem;
+    .post-tag {
+      border-radius: 2px 3px 2px 3px;
+      background: rgb(245, 245, 245);
+      color: $secondaryClr;
+      margin-right: 5px;
+      padding: 0 3px;
+    }
+    .tag-wip {
+      background-color: #ffe9d5;
+    }
+  }
+  .post-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: $fontClr;
+  }
+  .post-content {
+    color: $fontSecondaryClr;
+  }
+  .post-img {
+    object-fit: cover;
+    // width: 100px;
+    height: 150px;
+    border-radius: $comic-radius;
+    margin: 5px 0 5px 15px;
+    transition-duration: $tm-mid;
+    transition-timing-function: ease-in-out;
+    &:hover {
+      transform: scale(2.3);
+      cursor: default;
+    }
+  }
+  // display: flex;
+  // flex-direction: row;
+}
+.post-lr {
+  display: flex;
+  .post-img {
+    width: 100px;
+    height: auto !important;
+  }
+}

@@ -25,6 +25,7 @@
 
 .oa-underline {
   position: relative;
+  width: fit-content;
   // color: $primaryClr;
   // @include smaller-than(760px) {
   //   border: solid $secondaryClr;
@@ -52,6 +53,7 @@
 .oa-hover-underline {
   position: relative;
   color: $primaryClr;
+  width: fit-content;
   @include smaller-than(760px) {
     border: solid $secondaryClr;
     border-width: 0 0 3px 0;
@@ -78,4 +80,8 @@
 
 .hidden {
   display: none;
+}
+
+.dark-bg {
+  background: $dark-bg;
 }
