@@ -20,7 +20,6 @@ export const withTracker = (WrappedComponent, options = {}) => {
         typeof window !== 'undefined' &&
         (trackPage(window.location.pathname), [window.location.pathname]),
     )
-    console.log('HOC', props)
     return <WrappedComponent {...props} />
   }
 

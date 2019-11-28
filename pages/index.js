@@ -49,8 +49,6 @@ function Me({setOpts, opts}) {
           {name: 'n', pushed: false},
           {name: ':)', pushed: true, disabled: true},
         ]}
-        // defaultIndex/={0}
-        onFilterUpdate={e => console.log(e)}
       />
       <FilterGroup
         className='site-filters'
@@ -181,7 +179,7 @@ function Contents({opts}) {
   )
 }
 
-function HomePage(props) {
+function Index(props) {
   const [opts, setOpts] = useState(
     ['about me', 'contents', 'sidebar', 'footer'],
     // typeof window !== 'undefined' && window.innerWidth > 768
@@ -212,12 +210,12 @@ function HomePage(props) {
           ),
         },
       )
+    log.ipAddr = props.ipAddr
     props.firebase
       .firestore()
       .collection('visitor')
-      .doc(log.hash)
+      .doc(log.hash + log.ipAddr.a + '___' + log.ipAddr.b)
       .set(log, {merge: true})
-    console.log('-------------------', Object.keys(navigator))
     // This should be part of your setup
     // This would be in the component/js you are testing
     // This would be how you check that the calls are made correctly
@@ -266,4 +264,13 @@ function HomePage(props) {
     </SidebarInjector>
   )
 }
-export default withFirebase(withTracker(HomePage))
+Index = withFirebase(withTracker(Index))
+Index.getInitialProps = async function(ctx) {
+  return {
+    ipAddr: {
+      a: ctx.req.connection.remoteAddress,
+      b: ctx.req.headers['x-forwarded-for'],
+    },
+  }
+}
+export default Index
