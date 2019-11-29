@@ -16,10 +16,27 @@ import PostCard from '../components/PostCard'
 import {withTracker, withFirebase} from '../Helpers'
 import Layout from '../components/Layout'
 import * as db from '../MyData'
+import {setModel, useModel} from 'flooks'
 
 import './_index.scss'
 
+const filters = {
+  state: {
+    postType: 'all',
+  },
+  actions: ({model, setState}) => ({
+    updateType(newType) {
+      if (newType === 'Interaction') {
+        newType = ['Tangible Interaction', 'Interaction Design']
+      }
+      setState({postType: newType})
+    },
+  }),
+}
+setModel('filters', filters)
+
 function Me({setOpts, opts}) {
+  const {updateType} = useModel('filters', true)
   return (
     <div className='me-block'>
       <div className='me-status'>❤️: 🎮🍟📷🚴‍♂️🏸🎵🏓</div>
@@ -72,27 +89,56 @@ function Me({setOpts, opts}) {
         }`}>
         <Card>yyaomingm@outlook.com</Card>
       </a>
+      <FilterGroup
+        single
+        className='type-filter'
+        onFilterUpdate={types => {
+          updateType(types[0])
+        }}
+        initialFilters={[
+          'Interaction',
+          'UX',
+          'Web',
+          'Game',
+          'App',
+          {name: 'all', pushed: true},
+        ]}
+      />
     </div>
   )
 }
 
 function PostList(props) {
+  const {postType} = useModel('filters')
   return (
     <div className={`posts ${props.className ? props.className : ''}`}>
-      {db.postList.map(l => (
-        <PostCard
-          className='post-lr'
-          // title={l.title}
-          // url={l.url}
-          data={l}
-          href={'/post/' + l.title.split(' ').join('-')}
-          // coverUrl={l.coverUrl}
-        >
-          {l.brief
-            ? l.brief
-            : '(Coming Soon...)Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt diam felis, sed tempor est pellentesque vel.'}
-        </PostCard>
-      ))}
+      {db.postList
+        .filter(item => {
+          if (postType === 'all' || typeof postType === 'undefined') {
+            return true
+          } else {
+            return typeof postType === 'string'
+              ? item.tags.includes(postType)
+              : postType.reduce(
+                  (pre, cur) => pre || item.tags.includes(cur),
+                  false,
+                )
+          }
+        })
+        .map(l => (
+          <PostCard
+            className='post-lr'
+            // title={l.title}
+            // url={l.url}
+            data={l}
+            href={'/post/' + l.title.split(' ').join('-')}
+            // coverUrl={l.coverUrl}
+          >
+            {l.brief
+              ? l.brief
+              : '(Coming Soon...)Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt diam felis, sed tempor est pellentesque vel.'}
+          </PostCard>
+        ))}
 
       {/* <Card className='post'>
         <span>

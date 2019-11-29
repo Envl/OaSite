@@ -74,7 +74,11 @@
     &:hover {
       transform: scale(2.3);
       cursor: default;
-      @include smaller-than(768px) {
+    }
+    @include smaller-than(768px) {
+      transform: scale(1);
+      &:hover {
+        z-index: 9999;
         transform: scale(2.5);
         transform-origin: right;
       }

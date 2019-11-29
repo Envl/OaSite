@@ -5,13 +5,16 @@ import './_postPage.scss'
 import {SidebarInjector} from 'oapack'
 import Layout from '../../components/Layout'
 import MD from 'markdown-to-jsx'
+import {useRouter} from 'next/router'
 
 const Index = props => {
+  const router = useRouter()
   return (
-    <Layout>
+    <Layout heading={router.query.id}>
       <div className='post-page'>
         {props.status === 200 ? (
           <>
+            <h1>{router.query.id}</h1>
             <MD className='oa-md'>{props.post}</MD>
           </>
         ) : (

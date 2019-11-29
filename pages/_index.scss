@@ -66,6 +66,7 @@
     'opts opts' min-content
     'socialmedia socialmedia' min-content
     'contact contact' min-content
+    'type type' max-content
     / 1fr 2fr;
   // justify-items: center;
   // align-items: center;
@@ -99,6 +100,9 @@
     .oa-filter-toggle {
       color: $fontClr;
     }
+  }
+  .type-filter {
+    grid-area: type;
   }
   .btn-hi {
     // height: auto;

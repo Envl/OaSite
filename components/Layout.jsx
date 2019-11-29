@@ -20,7 +20,7 @@ const Layout = props => {
           </>
         }>
         <Head>
-          <title className='hidden'>Ming YAO / @GnimOay</title>
+          <title className='hidden'>{props.heading} / @GnimOay</title>
           <link rel='icon' href='/icon.png' type='image/jpg' />
           <meta
             name='viewport'

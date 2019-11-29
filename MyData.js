@@ -12,7 +12,7 @@ export const postList = [
     url: 'https://github.com/Envl/Rugbeats',
     brief:
       'A rhythm action rugby game where two players have to get the "ball" into another player\'s home.',
-    tags: ['Game'],
+    tags: ['Game', 'Java'],
   },
 
   {
@@ -34,7 +34,7 @@ export const postList = [
     coverUrl: '/tetris.png',
     url: 'https://github.com/Envl/Tetris.dual',
     brief: 'Dual player Tetris game on Android that uses Bluetooth to connect.',
-    tags: ['Game'],
+    tags: ['Game', 'Android'],
   },
   {
     title: 'SEIM',
@@ -56,7 +56,7 @@ export const postList = [
     title: 'sPomo',
     coverUrl: '/spomo.png',
     brief: 'Simple Pomodoro software on windows, built with AutoHotKey.',
-    tags: ['Productivity Tool'],
+    tags: ['Productivity Tool', 'AHK'],
     url: 'https://github.com/Envl/sPomo',
   },
   {
@@ -118,6 +118,6 @@ export const postList = [
     coverUrl: '/davinci.png',
     brief:
       'A online multiplayer version of the board game Da Vinci Code, built with Unity3D.',
-    tags: ['Game'],
+    tags: ['Game', 'Unity3D'],
   },
 ]
