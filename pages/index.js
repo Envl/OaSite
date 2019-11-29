@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import {
   Button,
   Card,
@@ -13,10 +13,10 @@ import {
 import ReactGA from 'react-ga'
 import Footer from '../components/Footer'
 import PostCard from '../components/PostCard'
-import {withTracker, withFirebase} from '../Helpers'
+import { withTracker, withFirebase } from '../Helpers'
 import Layout from '../components/Layout'
 import * as db from '../MyData'
-import {setModel, useModel} from 'flooks'
+import { setModel, useModel } from 'flooks'
 
 import './_index.scss'
 
@@ -24,19 +24,19 @@ const filters = {
   state: {
     postType: 'all',
   },
-  actions: ({model, setState}) => ({
+  actions: ({ model, setState }) => ({
     updateType(newType) {
       if (newType === 'Interaction') {
         newType = ['Tangible Interaction', 'Interaction Design']
       }
-      setState({postType: newType})
+      setState({ postType: newType })
     },
   }),
 }
 setModel('filters', filters)
 
-function Me({setOpts, opts}) {
-  const {updateType} = useModel('filters', true)
+function Me({ setOpts, opts }) {
+  const { updateType } = useModel('filters', true)
   return (
     <div className='me-block'>
       <div className='me-status'>❤️: 🎮🍟📷🚴‍♂️🏸🎵🏓</div>
@@ -55,27 +55,27 @@ function Me({setOpts, opts}) {
       <FilterGroup
         className='block-filters'
         initialFilters={[
-          {name: 'c', pushed: false},
-          {name: 'o', pushed: false},
-          {name: 'd', pushed: true},
-          {name: 'e', pushed: true},
+          { name: 'c', pushed: false },
+          { name: 'o', pushed: false },
+          { name: 'd', pushed: true },
+          { name: 'e', pushed: true },
 
-          {name: 's', pushed: false},
-          {name: 'i', pushed: false},
-          {name: 'g', pushed: false},
-          {name: 'n', pushed: false},
-          {name: ':)', pushed: true, disabled: true},
+          { name: 's', pushed: false },
+          { name: 'i', pushed: false },
+          { name: 'g', pushed: false },
+          { name: 'n', pushed: false },
+          { name: ':)', pushed: true, disabled: true },
         ]}
       />
       <FilterGroup
         className='site-filters'
         initialFilters={[
-          {name: 'about me', pushed: opts.includes('about me')},
+          { name: 'about me', pushed: opts.includes('about me') },
           // {name: 'cube', pushed: opts.includes('cube')},
-          {name: 'contents', pushed: opts.includes('contents')},
-          {name: 'sidebar', pushed: opts.includes('sidebar')},
-          {name: 'footer', pushed: opts.includes('footer')},
-          {name: 'contact me', pushed: opts.includes('contact me')},
+          { name: 'contents', pushed: opts.includes('contents') },
+          { name: 'sidebar', pushed: opts.includes('sidebar') },
+          { name: 'footer', pushed: opts.includes('footer') },
+          { name: 'contact me', pushed: opts.includes('contact me') },
         ]}
         onFilterUpdate={options => {
           setOpts(options)
@@ -86,7 +86,7 @@ function Me({setOpts, opts}) {
         target='_blank'
         className={`me-contact ${
           opts && opts.includes('contact me') ? 'visible' : 'opt-hide'
-        }`}>
+          }`}>
         <Card>yyaomingm@outlook.com</Card>
       </a>
       <FilterGroup
@@ -101,7 +101,7 @@ function Me({setOpts, opts}) {
           'Web',
           'Game',
           'App',
-          {name: 'all', pushed: true},
+          { name: 'all', pushed: true },
         ]}
       />
     </div>
@@ -109,7 +109,7 @@ function Me({setOpts, opts}) {
 }
 
 function PostList(props) {
-  const {postType} = useModel('filters')
+  const { postType } = useModel('filters')
   return (
     <div className={`posts ${props.className ? props.className : ''}`}>
       {db.postList
@@ -119,10 +119,7 @@ function PostList(props) {
           } else {
             return typeof postType === 'string'
               ? item.tags.includes(postType)
-              : postType.reduce(
-                  (pre, cur) => pre || item.tags.includes(cur),
-                  false,
-                )
+              : item.tags.some(tag => postType.includes(tag))
           }
         })
         .map(l => (
@@ -132,7 +129,7 @@ function PostList(props) {
             // url={l.url}
             data={l}
             href={'/post/' + l.title.split(' ').join('-')}
-            // coverUrl={l.coverUrl}
+          // coverUrl={l.coverUrl}
           >
             {l.brief
               ? l.brief
@@ -152,7 +149,7 @@ function PostList(props) {
     </div>
   )
 }
-function Contents({opts}) {
+function Contents({ opts }) {
   return (
     <div className='content'>
       {/* <Button type='toggle'>test</Button>
@@ -161,7 +158,7 @@ function Contents({opts}) {
       <Card
         className={`site-intro ${
           opts && opts.includes('about me') ? 'visible' : 'opt-hide'
-        }`}>
+          }`}>
         <p>
           I often think about our actions in the digital world, and in the real
           world.
@@ -194,7 +191,7 @@ function Contents({opts}) {
       <CubeMenu
         className={`home-cube ${
           opts && opts.includes('about me') ? 'visible' : 'opt-hide'
-        }`}
+          }`}
         u=':)'
         f={
           <Link href='/CV_Ming_YAO.pdf'>
@@ -218,7 +215,7 @@ function Contents({opts}) {
       <PostList
         className={`${
           opts && opts.includes('contents') ? 'visible' : 'opt-hide'
-        }`}
+          }`}
       />
       {/* </Card> */}
     </div>
@@ -260,8 +257,8 @@ function Index(props) {
     props.firebase
       .firestore()
       .collection('visitor')
-      .doc(log.hash + log.ipAddr.a + '___' + log.ipAddr.b)
-      .set(log, {merge: true})
+      .doc(log.ipAddr.a + '___' + log.ipAddr.b)
+      .set(log, { merge: true })
     // This should be part of your setup
     // This would be in the component/js you are testing
     // This would be how you check that the calls are made correctly
@@ -311,7 +308,7 @@ function Index(props) {
   )
 }
 Index = withFirebase(withTracker(Index))
-Index.getInitialProps = async function(ctx) {
+Index.getInitialProps = async function (ctx) {
   return {
     ipAddr: {
       a: ctx.req.connection.remoteAddress,
