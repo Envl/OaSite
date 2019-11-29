@@ -5,6 +5,9 @@ export const postList = [
     url: 'https://bookio-5c798.firebaseapp.com/',
     brief: 'A free book sharing platform created using React.js.',
     tags: ['UX', 'Web'],
+    time: 'Nov, 2018 - Mar, 2019',
+    type: 'Course Project',
+    role: ['Development', 'UX'],
   },
   {
     title: 'Rugbeats',
