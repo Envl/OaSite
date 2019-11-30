@@ -10,7 +10,6 @@ import {
   CubeMenu,
   FilterGroup,
 } from 'oapack'
-import ReactGA from 'react-ga'
 import Footer from '../components/Footer'
 import PostCard from '../components/PostCard'
 import {withTracker, withFirebase} from '../Helpers'
@@ -220,8 +219,14 @@ function Index(props) {
     s.parentNode.insertBefore(hm, s)
 
     //---------------------
-    ReactGA.initialize('G-REWTHY2S75')
-    ReactGA.pageview(window.location.pathname + window.location.search)
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+
+    gtag('config', 'G-REWTHY2S75')
+
     const log = Object.keys(Object.getPrototypeOf(navigator))
       .filter(k => !['object', 'function'].includes(typeof navigator[k]))
       .reduce(
