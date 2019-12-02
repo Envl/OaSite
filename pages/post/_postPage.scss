@@ -24,7 +24,9 @@
     }
   }
   img {
-    max-width: 80%;
+    max-width: 80vw;
+    // width: 80vw;
+    margin: 5vw;
     align-self: center;
     transition-duration: $tm-short;
     transition-timing-function: ease-in-out;
@@ -35,5 +37,23 @@
   p {
     display: flex;
     flex-direction: column;
+    font-size: 1.4rem;
+  }
+}
+
+@include smaller-than(768px) {
+  .post-page {
+    h1 {
+      margin-left: 5vw;
+    }
+  }
+  .oa-md {
+    width: 90vw;
+    p {
+      font-size: 1.2rem;
+      img {
+        max-width: 100vw;
+      }
+    }
   }
 }

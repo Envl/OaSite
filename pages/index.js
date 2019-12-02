@@ -295,12 +295,14 @@ function Index(props) {
           src='https://www.googletagmanager.com/gtag/js?id=G-REWTHY2S75'></script>
       </Head>
       <div className='home-page'>
-        <Me setOpts={setOpts} opts={opts} />
-        <Contents opts={opts} />
+        <div className='home-body'>
+          <Me setOpts={setOpts} opts={opts} />
+          <Contents opts={opts} />
+        </div>
+        <Footer
+          className={opts && opts.includes('footer') ? 'visible' : 'opt-hide'}
+        />
       </div>
-      <Footer
-        className={opts && opts.includes('footer') ? 'visible' : 'opt-hide'}
-      />
     </SidebarInjector>
   )
 }

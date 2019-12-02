@@ -1,10 +1,10 @@
 @import '../components/common';
 
-.element-with-sidebar {
-  // justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
+// .element-with-sidebar {
+//   // justify-content: center;
+//   flex-direction: column;
+//   align-items: center;
+// }
 .sidebar-active {
   color: $primaryClr !important;
 }
@@ -32,11 +32,16 @@
   }
 }
 .home-page {
-  justify-content: center;
+  left: -40px;
+  position: relative;
   margin-top: 1%;
   display: flex;
-  flex-flow: row, wrap;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+  .home-body {
+    display: flex;
+  }
 }
 .opt-hide {
   display: none !important;
@@ -52,7 +57,6 @@
   width: calc(100% - 7px);
 }
 .me-block {
-  margin-left: 5%;
   min-width: 256px;
   width: 260px;
   height: 30vh;
@@ -145,8 +149,7 @@
 }
 
 .content {
-  margin-left: 3%;
-  margin-right: 5%;
+  margin: 0 0 0 3%;
   // width: 70%;
   display: flex;
   flex-direction: column;
@@ -244,7 +247,7 @@
 }
 
 @include smaller-than(768px) {
-  .home-page {
+  .home-body {
     flex-direction: column;
     align-items: center;
   }
@@ -254,6 +257,7 @@
   .oa-sidebar {
     height: min-content;
     padding: 5px 1px;
+    bottom: 50px;
   }
   .oa-cube {
     position: absolute;
@@ -262,9 +266,7 @@
     transform: rotateX(-25deg) rotateY(-45deg) !important;
   }
   .me-block {
-    margin-left: 0;
     margin-bottom: 20px;
-    // justify-items: center;
     width: 80vw;
     height: min-content;
     grid-template:
