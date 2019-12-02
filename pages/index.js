@@ -149,7 +149,7 @@ function Contents({opts}) {
         </p>
         <p>
           To confirm my answer, I'm studying Human-Computer Interaction & Design
-          with I&E minor at
+          with Innovation & Entrepreneurship Minor at
           <a
             className='oa-hover-underline'
             href='https://www.kth.se/student/kurser/program/TIVNM/20182/arskurs1?l=en'
