@@ -28,7 +28,9 @@ const PostCard = ({data, ...props}) => {
         {data.tags && (
           <div className='tag-list'>
             {data.tags.map(tag => (
-              <div className={`post-tag ${tag === 'WIP' ? 'tag-wip' : ''}`}>
+              <div
+                key={tag}
+                className={`post-tag ${tag === 'WIP' ? 'tag-wip' : ''}`}>
                 {tag}
               </div>
             ))}

@@ -12,7 +12,7 @@ import {
 } from 'oapack'
 import Footer from '../components/Footer'
 import PostCard from '../components/PostCard'
-import {withTracker, withFirebase} from '../Helpers'
+import {withFirebase} from '../Helpers'
 import Layout from '../components/Layout'
 import * as db from '../MyData'
 import {setModel, useModel} from 'flooks'
@@ -123,6 +123,7 @@ function PostList(props) {
         })
         .map(l => (
           <PostCard
+            key={l.title}
             className='post-lr'
             data={l}
             href={'/post/' + l.title.split(' ').join('-')}>
@@ -303,7 +304,7 @@ function Index(props) {
     </SidebarInjector>
   )
 }
-Index = withFirebase(withTracker(Index))
+Index = withFirebase(Index)
 Index.getInitialProps = async function(ctx) {
   return {
     ipAddr: {
