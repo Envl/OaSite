@@ -1,4 +1,4 @@
-@import "../components/common";
+@import '../components/common';
 
 .element-with-sidebar {
   // justify-content: center;
@@ -58,14 +58,14 @@
   height: 30vh;
   display: grid;
   grid-template:
-    "img img" 1fr
-    "status status" min-content
-    "title dscp " min-content
-    "title2 brick " min-content
-    "opts opts" min-content
-    "socialmedia socialmedia" min-content
-    "contact contact" min-content
-    "type type" max-content
+    'img img' 1fr
+    'status status' min-content
+    'title dscp ' min-content
+    'title2 brick ' min-content
+    'opts opts' min-content
+    'socialmedia socialmedia' min-content
+    'contact contact' min-content
+    'type type' max-content
     / 1fr 2fr;
   // justify-items: center;
   // align-items: center;
@@ -231,7 +231,7 @@
 
 .site-intro,
 .post {
-  border-color: $thirdClr !important;
+  // border-color: $thirdClr !important;
 }
 .oa-card,
 .oa-filters-wrapper::after,
@@ -239,8 +239,8 @@
 .cube-facet,
 .oa-button,
 .oa-btn::after {
-  border-color: $secondaryClr;
-  // border-color: #00000044;
+  // border-color: $secondaryClr;
+  border-color: #c0c0c0;
 }
 
 @include smaller-than(768px) {
@@ -268,14 +268,14 @@
     width: 80vw;
     height: min-content;
     grid-template:
-      "img img" 1fr
-      "status status" min-content
-      "title dscp " 52px
-      "title2 brick " min-content
-      "opts opts" min-content
-      "socialmedia socialmedia" auto
-      "contact contact" auto
-      "type type" auto
+      'img img' 1fr
+      'status status' min-content
+      'title dscp ' 52px
+      'title2 brick ' min-content
+      'opts opts' min-content
+      'socialmedia socialmedia' auto
+      'contact contact' auto
+      'type type' auto
       / 1fr 3fr;
     img {
       // justify-self: start;
