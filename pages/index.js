@@ -71,7 +71,7 @@ function Me({setOpts, opts}) {
         initialFilters={[
           {name: 'about me', pushed: opts.includes('about me')},
           // {name: 'cube', pushed: opts.includes('cube')},
-          {name: 'contents', pushed: opts.includes('contents')},
+          // {name: 'contents', pushed: opts.includes('contents')},
           {name: 'sidebar', pushed: opts.includes('sidebar')},
           {name: 'footer', pushed: opts.includes('footer')},
           {name: 'contact me', pushed: opts.includes('contact me')},
@@ -195,9 +195,10 @@ function Contents({opts}) {
       {/* <div style={{maxWidth: `300px`, marginBottom: `1.45rem`}}></div> */}
       {/* <Card> */}
       <PostList
-        className={`${
-          opts && opts.includes('contents') ? 'visible' : 'opt-hide'
-        }`}
+
+      // className={`${
+      //   opts && opts.includes('contents') ? 'visible' : 'opt-hide'
+      // }`}
       />
       {/* </Card> */}
     </div>
@@ -206,7 +207,7 @@ function Contents({opts}) {
 
 function Index(props) {
   const [opts, setOpts] = useState(
-    ['about me', 'contents', 'sidebar', 'footer'],
+    ['about me', 'sidebar', 'footer'],
     // typeof window !== 'undefined' && window.innerWidth > 768
     //   ? ['about me', 'contents', 'footer']
     //   : ['about me', 'contents', 'sidebar', 'footer'],
