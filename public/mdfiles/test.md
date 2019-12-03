@@ -27,15 +27,16 @@ React.render(
 )
 ```
 
+<iframe width="1447" height="523" src="https://www.youtube.com/embed/ay87rjPXSaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 Pretty neat, eh?
 
 ## Tables?
 
-| Featre    | Support |
-| --------- | ------- |
-| tables ✔  |
-| alignment | ✔       |
-| wewt      | ✔       |
+| Featre     | Support |
+| ---------- | ------- |
+| tables ✔ |
+| alignment  | ✔     |
+| wewt       | ✔     |
 
 ## More info?
 

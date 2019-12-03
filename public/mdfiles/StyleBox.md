@@ -4,9 +4,11 @@ The StyleBox which in concept is a styled template that can be shared across sev
 
 These style sheets can be connected to objects by dragging a line from the DOT to the objects. Or you can use mouse to select objects while pressing CTRL key. And all objects linked to that "theme" will inherit all these styles. You can click on the "link" line to unlink an object from a theme.
 
+![20191203210402.png](https://i.loli.net/2019/12/04/4lvDLGAzm3fOH9P.png)
+
 A "theme" is a shape as well that it represents all its properties visually. What you see is what you get. We can show or hide properties of a theme.
 
-![img](https://i.loli.net/2019/11/27/nrLEDQC7JtPkb2N.png)
+![20191203210259.png](https://i.loli.net/2019/12/04/5De4N6MUrkzWtfX.png)
 
 On the other hand, an object can be linked to multiple theme as well. If there are several presences of a property in multiple themes. The property at the top has the higher priority.
 
