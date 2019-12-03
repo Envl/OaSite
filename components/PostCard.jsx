@@ -16,6 +16,9 @@ const PostCard = ({data, ...props}) => {
               href={data.url}
               className='post-title oa-underline'>
               {data.title}
+              <span>
+                <i className='fas fa-link'></i>
+              </span>
             </a>
           ) : (
             <Link href={props.href}>

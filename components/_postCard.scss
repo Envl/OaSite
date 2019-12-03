@@ -1,7 +1,6 @@
 @import './common';
 
 .post {
-  // cursor: pointer;
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 0;
@@ -93,4 +92,9 @@
     width: 100px;
     height: auto !important;
   }
+}
+
+.fa-link {
+  margin: 0 0 3px 5px;
+  font-size: 0.7rem;
 }
