@@ -26,7 +26,7 @@ export const postList = [
       'A playful React UI library I design & developed for this website :)',
     tags: ['Web', 'Design', 'WIP', '2019'],
     // url: 'https://github.com/Envl/OaPack',
-    url: '/oapack',
+    url: '/post/oapack',
     time: 'Nov, 2019 - Now',
   },
   {

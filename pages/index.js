@@ -95,12 +95,12 @@ function Me({setOpts, opts}) {
           updateType(types[0])
         }}
         initialFilters={[
+          {name: 'all', pushed: true},
           'Interaction',
           'UX',
           'Web',
           'Game',
           'App',
-          {name: 'all', pushed: true},
         ]}
       />
     </div>

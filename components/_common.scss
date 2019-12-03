@@ -17,8 +17,40 @@ a {
   text-decoration: none;
 }
 
-@include smaller-than(768px) {
+.sidebar-active {
+  color: $primaryClr !important;
+}
+@include greater-than(768px) {
   .oa-sidebar {
+    transition-duration: $tm-mid;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.1s;
+    & + .sidebar-placeholder ~ * {
+      transition-delay: 0.1s;
+      transition-duration: $tm-mid;
+      transition-timing-function: ease-in-out;
+    }
+    &:not(:hover) {
+      background: transparent;
+    }
+    &:hover {
+      width: 160px;
+      transition-delay: 0s;
+      & + .sidebar-placeholder ~ * {
+        transition-delay: 0s;
+        transform: translateX(120px);
+      }
+    }
+  }
+}
+@include smaller-than(768px) {
+  .sidebar-placeholder {
+    margin: 0;
+  }
+  .oa-sidebar {
+    height: min-content;
+    // padding: 5px 1px;
+    bottom: 50px;
     padding: 10px 1px !important;
   }
   .oa-sidebar:hover > .sidebar-item-detail:not(:last-child) {

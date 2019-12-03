@@ -9,214 +9,210 @@ import {
   SidebarInjector,
   SidebarItem,
 } from 'oapack'
+import Footer from '../../components/Footer'
+import './_oapack.scss'
 
-function Cards() {
+function Cards(props) {
   return (
     <Card>
       <Card className='ss'>
         <Card>
           <Card onClick={() => console.log('second')}>
-            <Card>
-              <Button onClick={() => console.log('bttn')}>btn</Button>
-            </Card>
+            <Card>{props.children}</Card>
           </Card>
         </Card>
       </Card>
     </Card>
   )
 }
-
-function DrawingLine({line}) {
-  const pathData = 'M ' + line.map(p => p.x + ' ' + p.y).join(' L ')
-  return <path d={pathData} />
-}
-function Drawing({lines}) {
-  return (
-    lines.length > 0 && (
-      <svg className='svg-lines'>
-        {lines.map((line, index) => (
-          <DrawingLine key={index} line={line} />
-        ))}
-      </svg>
-    )
-  )
-}
-
-function Test(props) {
-  const [pressed, setPressed] = useState(false)
-  return (
-    <button
-      className={pressed ? 'btn-a' : 'btn-b'}
-      onClick={() => setPressed(!pressed)}>
-      test
-    </button>
-  )
-}
-function lineLen(line) {
-  return Math.sqrt(
-    (line[0].x - line[1].x) * (line[0].x - line[1].x) +
-      (line[0].y - line[1].y) * (line[0].y - line[1].y),
-  )
+function Psuedo(props) {
+  return <span className='psuedo'>{props.children}</span>
 }
 function Index() {
-  const [ls, setLines] = useState([])
   const ref = useRef(null)
-  const [target, setTarget] = useState(false)
-  useEffect(() => {
-    console.log(ref.current.childNodes, 'ffff')
-  }, [])
-  return (
-    <SidebarInjector
-      items={
-        <>
-          <SidebarItem
-            target='_blank'
-            to='/test'
-            brief='CV'
-            detail='CV'></SidebarItem>
-          <SidebarItem to='/' brief='P.' detail='Projects'></SidebarItem>
-          <SidebarItem to='/' brief='H.' detail='Home'></SidebarItem>
-        </>
-      }>
-      <div
-        ref={ref}
-        className='App'
-        style={{display: 'flex'}}
-        onClick={e => {
-          if (target && target.click) {
-            console.log(target)
-            console.log(ref.current.childNodes)
-            target.click()
-          }
-        }}
-        onMouseMove={e => {
-          const lines = ['dd']
-          let len = 1000000
-          ref.current.childNodes.forEach(elem => {
-            if (elem.localName !== 'button') {
-              return
-            }
-            const rect = elem.getBoundingClientRect()
-            const ldist = [
-              {x: e.pageX, y: e.pageY},
-              {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
-            ]
-            const ldraw = [
-              {x: e.clientX, y: e.clientY},
-              {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2},
-            ]
-            const newLen = lineLen(ldist)
-            if (newLen < len) {
-              len = newLen
-              lines[0] = ldraw
 
-              setTarget(elem)
-            }
-          })
-          setLines(lines)
-        }}>
-        <Button type='toggle'>Laser Pointer</Button>
-        <Button type='toggle'>Laser Pointer</Button>
-        <Button type='toggle'>Laser Pointer</Button>
-        <Button type='toggle'>Laser Pointer</Button>
-        <Button type='toggle'>Laser Pointer</Button>
-        <Button type='toggle'>Laser Pointer</Button>
-        <Button type='toggle'>Laser Pointer</Button>
-        <div className='test'></div>
-        {/* <Drawing lines={ls} /> */}
-        <Test />
-        <DropDown name='Down' onClick={e => console.log(e.target)}>
-          <div>aaa</div>
-          <div>aaa</div>
-          <div>aaa</div>
-        </DropDown>
-        <Test />
-        <Button
-          onClick={() => console.log('ssss')}
-          test='aa'
-          className='sss'
-          style={{width: '100%'}}>
-          btn
-        </Button>
-        {/* use event.isToggleOn to check the status of toggle button */}
-        <Button
-          type={'toggle'}
-          onClick={e => console.log(e.isToggleOn)}
-          disabled>
-          disabled
-        </Button>
-        <Button type={'toggle'} onClick={e => console.log(e.isToggleOn)}>
-          toggle
-        </Button>
-        <button>normllal</button>
-        <Card>
-          <button>normal</button>
-        </Card>
-        <Cards />
-        <FilterGroup
-          single
-          initialFilters={[
-            {name: 'Yes...', disabled: false},
-            {name: 'we', disabled: true},
-            'are..', // enabled by default
-            {name: 'Filters!', pushed: false},
-            'Click MEEE!!!!!!',
-          ]}
-          // defaultIndex/={0}
-          onFilterUpdate={e => console.log(e)}
-        />
-        <FilterGroup
-          onFilterUpdate={e => console.log(e)}
-          className='oa-secret'
-          initialFilters={[
-            '中文',
-            '字体',
-            {name: '也', pushed: true},
-            {name: '还行', pushed: true},
-            '吧',
-          ]}
-          // defaultIndex={0}
-        />
-        <Button className='oa-secret'>测试</Button>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          tincidunt diam felis, sed tempor est pellentesque vel. Mauris tempus
-          convallis. 中文lorem 这是一段测试文字, 门前大桥下游过一群鸭,
-          快来快来数一数, 二四六七八
-        </p>
-        <input
-          className='oa-input'
-          type='text'
-          placeholder='江南皮革厂倒闭了'
-        />
-        <Carousel style={{height: '200px', width: '550px'}}>
-          <input type='text' placeholder='也可以这样' />
-          <Button onClick={e => console.log(e.target.nextSibling)}>Btn2</Button>
-          <Card>
-            <Card>
-              <Card></Card>
-            </Card>
-          </Card>
-          <DropDown name='打开看看' onClick={e => console.log(e.target)}>
-            <div>A</div>
-            <div>b</div>
-            <div>c</div>
+  return (
+    <>
+      <SidebarInjector
+        items={
+          <>
+            <SidebarItem
+              target='_blank'
+              to='/test'
+              brief='CV'
+              detail='CV'></SidebarItem>
+            <SidebarItem to='/' brief='P.' detail='Projects'></SidebarItem>
+            <SidebarItem to='/' brief='H.' detail='Home'></SidebarItem>
+          </>
+        }>
+        <h1>OaPack</h1>
+        <div
+          ref={ref}
+          className='page-oapack reading-settings'
+          // style={{display: 'flex'}}
+        >
+          <p>
+            This is a comic style UI package for React.js. It was designed for
+            desktop, yet compatible with mobile.
+          </p>
+          <a className='oa-link' href='https://github.com/Envl/OaPack'>
+            Github
+          </a>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <a className='oa-link' href='https://www.npmjs.com/package/oapack'>
+            Npm Package
+          </a>
+          <p>
+            It is reported that a person normally clicks the mouse over 5000
+            times a day. Among those clicks, many were devoted to GUI components
+            like Button, Menu, etc.
+            <br />
+            The idea of this project is to create a playful UI kit that makes
+            every mouse click delightful, and maybe a little bit{' '}
+            <strong>addictive</strong>. Beside that, this UI kit is also
+            designed to be minimal enough that won't distract the user from
+            important content.
+          </p>
+          <p>
+            {' '}
+            What I personally like the most is <Psuedo>{`<DropDown>`}</Psuedo>.
+            There are two kinds of <Psuedo>{`<Button>`}</Psuedo>, the normal one
+            and the toggle. All kind of widgets can be disabled by adding
+            property: <Psuedo>disabled</Psuedo>.
+            <br />
+          </p>
+          <DropDown name='DropDown' onClick={e => console.log(e.target)}>
+            <div>Click us</div>
+            <div>It just</div>
+            <div>Feels Good</div>
           </DropDown>
-        </Carousel>
-        <Carousel className='oa-secret'>
-          <h1>dd</h1>
-        </Carousel>
-        <CubeMenu
-          u='sdsg'
-          l={
+          <Button type='toggle'>Toggle</Button>
+          <Button type='toggle' pressed='true'>
+            Toggle
+          </Button>
+          <Button onClick={() => console.log('ssss')} test='aa' className='sss'>
+            button
+          </Button>
+          <Button
+            type={'toggle'}
+            onClick={e => console.log(e.isToggleOn)}
+            disabled>
+            disabled
+          </Button>
+          <Card>
+            A <Psuedo>{`<Card>`}</Psuedo> was usually used as a wrapper for a
+            bunch of contents that were tightly related to each other.
+          </Card>
+          <p>
+            We can make a pyramid by wrapping multiple
+            <Psuedo>{`<Card>`}</Psuedo>s.
+          </p>
+          <Cards>
+            <Button
+              onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+              Top
+            </Button>
+          </Cards>
+          <Cards>
             <Card>
-              <Card></Card>
+              <Card />
             </Card>
-          }
-          f='sdgds'
-        />
-      </div>
-    </SidebarInjector>
+          </Cards>
+          <p>
+            There is a easter egg called <Psuedo>oa-secret</Psuedo>, the content
+            of anything that has this class will be hiddent by default
+          </p>
+          <Button className='oa-secret'>You found me.</Button>
+          <Carousel className='oa-secret'>
+            <h1>Yet another secret</h1>
+          </Carousel>
+          <FilterGroup
+            onFilterUpdate={e => console.log(e)}
+            className='oa-secret'
+            initialFilters={[
+              '中文',
+              '字体',
+              {name: '也', pushed: true},
+              {name: '还行', pushed: true},
+              '吧',
+            ]}
+            // defaultIndex={0}
+          />
+          <p>
+            There is also a <Psuedo>{`<FilterGroup>`}</Psuedo> that contains
+            multiple filters. To make it a single choice filter, just add
+            property: <Psuedo>single</Psuedo>.
+          </p>
+          <FilterGroup
+            initialFilters={[
+              {name: 'Yes...', pushed: true},
+              {name: 'we', disabled: true},
+              'are..', // disabled by default
+              {name: 'Filters!', pushed: true},
+              'Click MEEE!!!!!!',
+            ]}
+            // defaultIndex/={0}
+            onFilterUpdate={e => console.log(e)}
+          />
+          <FilterGroup
+            single
+            initialFilters={[
+              {name: 'I..', pushed: true},
+              {name: 'am'},
+              'single',
+            ]}
+            // defaultIndex/={0}
+            onFilterUpdate={e => console.log(e)}
+          />
+          <input className='oa-input' type='text' placeholder='input here' />
+          <p>
+            I'm a <Psuedo>{`<Carousel>`}</Psuedo> that can contain anything
+            inside.
+          </p>
+          <Carousel style={{height: '200px', width: '550px'}}>
+            <div>
+              <input
+                type='text'
+                className='oa-input'
+                placeholder='a input inside the carousel'
+              />
+              <Button>BTN</Button>
+            </div>
+            <Button onClick={e => console.log(e.target.nextSibling)}>
+              Btn2
+            </Button>
+            <Card>
+              <Card>
+                <Card>Small Pyramid</Card>
+              </Card>
+            </Card>
+            <DropDown
+              className='fit-content'
+              name='Another dropdown'
+              onClick={e => console.log(e.target)}>
+              <div>A</div>
+              <div>b</div>
+              <div>c</div>
+            </DropDown>
+          </Carousel>
+          <p>
+            This is a <Psuedo>{`<CubeMenu>`}</Psuedo> that has 3 facets to
+            contain any stuffs.
+          </p>
+          <CubeMenu
+            className='demo-cube'
+            u={<Button type='toggle'>U</Button>}
+            r={
+              <div>
+                <Button>R</Button>
+              </div>
+            }
+            f='Front'
+          />
+        </div>
+      </SidebarInjector>
+      <Footer className='fooo' />
+    </>
   )
 }
 
