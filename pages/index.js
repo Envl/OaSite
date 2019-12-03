@@ -175,7 +175,12 @@ function Contents({opts}) {
         className={`home-cube ${
           opts && opts.includes('about me') ? 'visible' : 'opt-hide'
         }`}
-        u=':)'
+        class='fab fa-instagram'
+        u={
+          <a href='https://www.instagram.com/sesampicr/' target='_blank'>
+            <i class='fab fa-instagram'></i>
+          </a>
+        }
         f={
           <Link href='/CV_Ming_YAO.pdf'>
             <a className='oa-hover-underline' target='_blank'>
@@ -256,13 +261,6 @@ function Index(props) {
       .collection('visitor')
       .doc(log.ipAddr.b + '___' + log.ipAddr.a)
       .set(log, {merge: true})
-    // This should be part of your setup
-    // This would be in the component/js you are testing
-    // This would be how you check that the calls are made correctly
-    // ReactGA.testModeAPI.calls.should.eql([
-    //   ['create', 'foo', 'auto'],
-    //   ['send', 'pageview', '/mypage'],
-    // ])
   }, [])
 
   return (
@@ -276,7 +274,7 @@ function Index(props) {
             brief='CV'
             detail='CV'
           />
-          <SidebarItem to='/projects' brief='P.' detail='Projects' />
+          {/* <SidebarItem to='/projects' brief='P.' detail='Projects' /> */}
           <SidebarItem
             to='/'
             brief='H.'

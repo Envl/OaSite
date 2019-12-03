@@ -136,39 +136,26 @@
 
 @-webkit-keyframes spinning {
   from {
-    transform: rotateX(-90deg) rotateY(-90deg);
+    transform: rotateX(-90deg) rotateY(0deg);
   }
   to {
-    transform: rotateX(-90deg) rotateY(-450deg);
+    transform: rotateX(-90deg) rotateY(-360deg);
   }
 }
 @keyframes spinning {
   from {
-    transform: rotateX(-90deg) rotateY(-90deg);
+    transform: rotateX(-90deg) rotateY(0deg);
   }
   to {
-    transform: rotateX(-90deg) rotateY(-450deg);
+    transform: rotateX(-90deg) rotateY(-360deg);
   }
 }
 .home-cube {
   grid-area: cube;
-  // margin: 40px 0 52px;
   position: relative;
   transform: rotateX(-25deg) rotateY(-45deg);
-  // transform: rotateX(-20deg) rotateY(-20deg) scale(0.6);
-  // justify-self: center;
-  // margin: 50px 0 0 1vw;
-  // justify-self: center;
   align-self: center;
-  // position: absolute;
-  // right: 5vw;
-  // grid-area: cube;
-  // &:has(> .facet-f:hover) {
-  // }
   perspective: none;
-  // transform: rotateY(-36deg) rotateX(45deg) !important;
-  // &:hover {
-  // }
   &.hover-f {
     transform: none;
   }
@@ -176,7 +163,7 @@
     transform: rotateY(-90deg);
   }
   &.hover-u {
-    transform: rotateX(-90deg) rotateY(-90deg);
+    // transform: rotateX(-90deg) rotateY(0deg);
     animation: 3s linear 0.7s infinite spinning;
   }
   .cube-facet {
@@ -184,6 +171,11 @@
     font-size: 1.25rem;
     color: black;
     box-shadow: 0px 0px 2px rgb(0, 0, 0) inset;
+  }
+  .fa-instagram {
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: $primaryClr;
   }
 }
 

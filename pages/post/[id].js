@@ -10,7 +10,7 @@ import {useRouter} from 'next/router'
 const Index = props => {
   const router = useRouter()
   return (
-    <Layout heading={router.query.id}>
+    <Layout>
       <div className='post-page'>
         {props.status === 200 ? (
           <>
