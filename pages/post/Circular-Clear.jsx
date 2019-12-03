@@ -11,7 +11,7 @@ const CircularClear = () => {
       <h1>Circular Clear</h1>
       <div className='html-post reading-settings'>
         <p>
-          This is a match-three puzzle game that inspired by&nbsp;
+          This is a match-three puzzle game that was inspired by&nbsp;
           <a target='_blank' href='https://en.wikipedia.org/wiki/Spirograph'>
             Spirograph
           </a>
@@ -29,9 +29,9 @@ const CircularClear = () => {
             style={{width: 300}}
             src='https://i.loli.net/2019/12/04/5JBH7NWzqhIwal1.png'></img>
           <div>
-            As shown in this image,the <span>yellow</span> and{' '}
-            <span>green</span> elements are aligned in one line, thus they can
-            be cleard.
+            As shown in this image,the <span className='yellow'>yellow</span>{' '}
+            and <span className='green'>green</span> elements are aligned in one
+            line respectively, thus each of they can be cleard.
           </div>
         </p>
         <p
