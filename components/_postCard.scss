@@ -25,23 +25,25 @@
     // display: flex;
     // flex-direction: row;
     img {
-      max-height: 100px;
+      max-height: 110px;
       margin-left: 10px;
       height: min-content;
     }
   }
   ////////////
   .card-text {
+    flex: 2;
     display: grid;
     align-content: flex-start;
   }
   .tag-list {
     align-self: flex-end;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     margin-top: 7px;
     font-size: 0.7rem;
     .post-tag {
+      white-space: nowrap;
       border-radius: 2px 3px 2px 3px;
       background: rgb(245, 245, 245);
       color: $secondaryClr;
@@ -64,6 +66,7 @@
     color: $fontSecondaryClr;
   }
   .post-img {
+    flex: 1;
     object-fit: cover;
     // width: 100px;
     height: 150px;
