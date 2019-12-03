@@ -11,15 +11,17 @@ const PostCard = ({data, ...props}) => {
       <div className='card-text'>
         {data.title &&
           (typeof data.url !== 'undefined' ? (
-            <a
-              target='_blank'
-              href={data.url}
-              className='post-title oa-underline'>
-              {data.title}
+            <span>
+              <a
+                target='_blank'
+                href={data.url}
+                className='post-title oa-underline'>
+                {data.title}
+              </a>
               <span>
                 <i className='fas fa-link'></i>
               </span>
-            </a>
+            </span>
           ) : (
             <Link href={props.href}>
               <a target='_blank' className='post-title oa-underline'>
