@@ -1,5 +1,3 @@
-//youtu.be/ay87rjPXSaI
-
 //
 import Layout from '../../components/Layout'
 import React from 'react'

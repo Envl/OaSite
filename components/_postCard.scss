@@ -75,6 +75,7 @@
     transition-duration: $tm-mid;
     transition-timing-function: ease-in-out;
     &:hover {
+      z-index: 1111;
       transform: scale(2.3);
       cursor: default;
     }
