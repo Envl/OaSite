@@ -15,4 +15,4 @@
 
 ## Credits
 
-These [nice graphic resource](https://0x72.itch.io/dungeontileset-ii) are from [0x72](https://0x72.itch.io/)
+<span>These [nice graphic resource](https://0x72.itch.io/dungeontileset-ii) are from [0x72](https://0x72.itch.io/)</span>
