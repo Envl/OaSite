@@ -12,3 +12,7 @@
 
 - Two players can use **W A S D** and **Up Down Left Right** to move respectively
 - To get the game started, two characters have to get close to each other.
+
+## Credits
+
+These [nice graphic resource](https://0x72.itch.io/dungeontileset-ii) are from [0x72](https://0x72.itch.io/)

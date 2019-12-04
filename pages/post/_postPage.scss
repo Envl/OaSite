@@ -10,6 +10,7 @@
   justify-content: center;
 }
 .html-post {
+  margin: 0 5vw;
   display: flex;
   flex-flow: row wrap;
 }
@@ -67,6 +68,7 @@ iframe {
     height: auto;
     width: auto;
   }
+  .html-post,
   .post-page {
     h1 {
       margin-left: 5vw;
