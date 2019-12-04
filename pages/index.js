@@ -117,7 +117,7 @@ function Me({setOpts, opts}) {
         </div>
         <Button
           onClick={() => {
-            fetch('https://api.countapi.xyz/get/gnimoay.com/footCount')
+            fetch('https://api.countapi.xyz/hit/gnimoay.com/footCount')
             setFootCount(footCount + 1)
           }}>
           <i className='fas fa-shoe-prints'></i>
