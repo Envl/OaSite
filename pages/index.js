@@ -36,6 +36,13 @@ setModel('filters', filters)
 
 function Me({setOpts, opts}) {
   const {updateType} = useModel('filters', true)
+  const [footCount, setFootCount] = useState(0)
+  useEffect(() => {
+    console.log(window, 'sdssds')
+    fetch('https://api.countapi.xyz/get/gnimoay.com/footCount')
+      .then(res => res.json())
+      .then(data => setFootCount(data.value))
+  }, [])
   return (
     <div className='me-block'>
       <div className='me-status'>❤️: 🎮🍟📷🚴‍♂️🏸🎵🏓</div>
@@ -103,6 +110,19 @@ function Me({setOpts, opts}) {
           'App',
         ]}
       />
+      <div className='foot'>
+        <div>
+          {footCount}
+          <span> 人来踩过</span>
+        </div>
+        <Button
+          onClick={() => {
+            fetch('https://api.countapi.xyz/get/gnimoay.com/footCount')
+            setFootCount(footCount + 1)
+          }}>
+          <i className='fas fa-shoe-prints'></i>
+        </Button>
+      </div>
     </div>
   )
 }
