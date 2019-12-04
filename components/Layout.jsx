@@ -8,7 +8,10 @@ const Layout = props => {
   const router = useRouter()
   console.log(router, 'kkk')
   return (
-    <div className='page-wrapper'>
+    <div
+      className={'page-wrapper ' + (props.className ? props.className : '')}
+      // style={{overflowX: 'hidden', overflowY: 'scroll'}}
+    >
       <SidebarInjector
         items={
           <>
@@ -34,7 +37,7 @@ const Layout = props => {
           <link rel='icon' href='/icon.png' type='image/jpg' />
           <meta
             name='viewport'
-            content='initial-scale=1.0, width=device-width'
+            content='initial-scale=1.0, width=device-width, user-scalable=no'
           />
           <script
             async

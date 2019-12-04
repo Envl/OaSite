@@ -71,7 +71,7 @@ export const postList = [
   },
   {
     title: 'Circular Clear',
-    coverUrl: '',
+    coverUrl: 'https://i.loli.net/2019/12/04/vATUCQqEWw83ZL6.png',
     brief:
       'A match-three puzzle game inspired by Spirograph, built with Unity3D.',
     tags: ['Game', 2016],

@@ -5,6 +5,9 @@
     left: 35vw;
     position: relative !important;
   }
+  .oapack-wrapper h1 {
+    margin-left: 5vw;
+  }
 }
 @include greater-than(768px) {
   .page-oapack {
@@ -12,6 +15,7 @@
   }
 }
 .page-oapack {
+  margin: 0 5vw;
   display: flex;
   flex-flow: row wrap;
 }
@@ -19,4 +23,8 @@
 .fooo {
   justify-content: center;
   align-items: center;
+}
+
+input {
+  width: 50%;
 }

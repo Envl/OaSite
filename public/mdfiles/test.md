@@ -11,7 +11,7 @@ Changes are automatically rendered as you type.
 
 ## HTML block below
 
->This blockquote will change based on the HTML settings above.
+> This blockquote will change based on the HTML settings above.
 
 ## How about some code?
 
@@ -30,11 +30,11 @@ Pretty neat, eh?
 
 ## Tables?
 
-| Featre     | Support |
-| ---------- | ------- |
-| tables ✔ |
-| alignment  | ✔     |
-| wewt       | ✔     |
+| Featre    | Support |
+| --------- | ------- |
+| tables ✔  |
+| alignment | ✔       |
+| wewt      | ✔       |
 
 ## More info?
 
