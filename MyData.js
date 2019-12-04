@@ -12,7 +12,7 @@ export const postList = [
   {
     title: 'Rugbeats',
     coverUrl: '/rugbeats.png',
-    url: 'https://github.com/Envl/Rugbeats',
+    // url: 'https://github.com/Envl/Rugbeats',
     brief:
       'A rhythm action rugby game where two players have to get the "ball" into another player\'s home.',
     tags: ['Game', 'Java', '2019'],
