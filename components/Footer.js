@@ -15,12 +15,21 @@ const Footer = props => {
   }, [])
   return (
     <div className={`footer ${props.className ? props.className : ''}`}>
-      <div>All rights reserved</div>
-      <p>Design&Code by me :)</p>
       <div>
         <span>{visitCount}</span>
         <span> visits</span>
       </div>
+      <div>All rights reserved</div>
+      <p
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}>
+        Design&Code by me :)
+        <div>yyaomingm@outlook.com</div>
+        <p></p>
+      </p>
     </div>
   )
 }
