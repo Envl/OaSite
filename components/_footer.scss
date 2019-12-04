@@ -2,7 +2,7 @@
 @import './media-query';
 
 .footer {
-  height: 100vh;
+  height: 62vh;
   width: 100vw;
   margin-top: 10vh;
   // display: grid;
@@ -10,7 +10,7 @@
   z-index: -1;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(rgb(62, 66, 90) 0%, rgb(4, 9, 40) 100%);
+  background: linear-gradient(rgb(4, 9, 40) 0%, rgb(62, 66, 90) 100%);
   color: $bgClr;
   position: relative;
   bottom: -20px;
