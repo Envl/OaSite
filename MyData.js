@@ -1,13 +1,14 @@
 export const postList = [
   {
-    title: 'BOOKIO',
-    coverUrl: '/bookio.png',
-    url: 'https://bookio-5c798.firebaseapp.com/',
-    brief: 'A free book sharing platform created using React.js.',
-    tags: ['UX', 'Web', '2019'],
-    time: 'Nov, 2018 - Mar, 2019',
+    title: 'Bitcoin-Viz',
+    coverUrl: '/bitcoin-viz.png',
+    url: 'https://observablehq.com/@gnimoay/bitcoin-viz',
+    brief:
+      'Visualization on news about BTC to find their influence on the price.',
+    tags: ['Web', 'Visualization', 'WIP', '2019'],
+    time: 'Dec, 2019 - Now',
     type: 'Course Project',
-    role: ['Development', 'UX'],
+    role: ['Development', 'Design'],
   },
   {
     title: 'Rugbeats',
@@ -34,6 +35,16 @@ export const postList = [
     brief:
       'The design and evaluation of an application which targets to facilitate daily work of a very special group – shopwalkers.',
     time: 'Oct, 2018 - Dec, 2018',
+  },
+  {
+    title: 'BOOKIO',
+    coverUrl: '/bookio.png',
+    url: 'https://bookio-5c798.firebaseapp.com/',
+    brief: 'A free book sharing platform created using React.js.',
+    tags: ['UX', 'Web', '2019'],
+    time: 'Nov, 2018 - Mar, 2019',
+    type: 'Course Project',
+    role: ['Development', 'UX'],
   },
   {
     title: 'Tetris.Dual',
