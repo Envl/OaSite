@@ -19,6 +19,7 @@ const Footer = props => {
         <span>{visitCount}</span>
         <span> visits</span>
       </div>
+
       <div>All rights reserved</div>
       <p
         style={{

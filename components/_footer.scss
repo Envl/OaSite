@@ -2,18 +2,22 @@
 @import './media-query';
 
 .footer {
-  height: 62vh;
-  width: 100vw;
-  margin-top: 10vh;
+  height: 30vh;
+  width: 35vh;
+
+  margin-top: 5vh;
+
   // display: grid;
   // grid-area: 3 3;
   z-index: -1;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(rgb(4, 9, 40) 0%, rgb(62, 66, 90) 100%);
-  color: $bgClr;
-  position: relative;
-  bottom: -20px;
-  justify-content: center;
+  // background: rgb(245, 245, 247);
+  border: 1px solid $light-bg;
+  border-radius: $comic-radius;
+  color: $fontSecondaryClr;
+  // position: relative;
+  // bottom: -20px;
+  justify-content: flex-end;
   align-items: center;
 }

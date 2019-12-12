@@ -158,7 +158,7 @@ function PostList(props) {
 function Contents({opts}) {
   return (
     <div className='content'>
-      <p className='job-seek'>I'm looking for UX internship opportunities.</p>
+      <p className='job-seek'>I'm looking for a UX internship opportunity.</p>
       <Card
         className={`site-intro ${
           opts && opts.includes('about me') ? 'visible' : 'opt-hide'
