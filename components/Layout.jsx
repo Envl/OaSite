@@ -39,6 +39,7 @@ const Layout = props => {
             name='viewport'
             content='initial-scale=1.0, width=device-width, user-scalable=no'
           />
+          <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
           <script
             async
             src='https://www.googletagmanager.com/gtag/js?id=G-REWTHY2S75'></script>

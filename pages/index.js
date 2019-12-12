@@ -158,6 +158,7 @@ function PostList(props) {
 function Contents({opts}) {
   return (
     <div className='content'>
+      <p className='job-seek'>I'm looking for UX internship opportunities.</p>
       <Card
         className={`site-intro ${
           opts && opts.includes('about me') ? 'visible' : 'opt-hide'
@@ -192,9 +193,10 @@ function Contents({opts}) {
         {/* <p>Now go build something great.</p> */}
       </Card>
       <CubeMenu
-        className={`home-cube ${
-          opts && opts.includes('about me') ? 'visible' : 'opt-hide'
-        }`}
+        className='home-cube'
+        // className={`home-cube ${
+        //   opts && opts.includes('about me') ? 'visible' : 'opt-hide'
+        // }`}
         class='fab fa-instagram'
         u={
           <a href='https://www.instagram.com/sesampicr/' target='_blank'>
@@ -233,7 +235,7 @@ function Contents({opts}) {
 
 function Index(props) {
   const [opts, setOpts] = useState(
-    ['about me', 'sidebar', 'footer'],
+    ['job', 'sidebar', 'footer'],
     // typeof window !== 'undefined' && window.innerWidth > 768
     //   ? ['about me', 'contents', 'footer']
     //   : ['about me', 'contents', 'sidebar', 'footer'],
