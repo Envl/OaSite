@@ -267,6 +267,7 @@ function Index(props) {
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <script
           async
+          defer
           src='https://www.googletagmanager.com/gtag/js?id=G-REWTHY2S75'></script>
       </Head>
       <div className='home-page'>
