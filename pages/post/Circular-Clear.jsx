@@ -39,7 +39,10 @@ const CircularClear = () => {
             alignItems: 'center',
           }}>
           A normal Spirograph works in this way:
-          <img src='/spirograph.gif' style={{marginBottom: 0}} />
+          <img
+            src='https://ik.imagekit.io/za0dxwyrw/oasite/spirograph_OGIL0KqJh.gif'
+            style={{marginBottom: 0}}
+          />
           <div style={{justifySelf: 'center'}}>source: wikipedia</div>
         </p>
         <p>

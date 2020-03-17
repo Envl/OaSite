@@ -6,7 +6,7 @@
   margin-top: 0;
   margin-bottom: 20px;
   font-weight: normal;
-  // min-width: 300px;
+  counter-increment: posts;
   max-width: 30vw;
   display: flex;
   justify-content: space-between;
@@ -96,8 +96,9 @@
 .post-lr {
   display: flex;
   .post-img {
-    width: 100px;
-    height: auto !important;
+    width: 0px;
+    // height: auto !important;
+    flex-basis: auto;
     max-height: 150px;
   }
 }

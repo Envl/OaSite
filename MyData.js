@@ -1,7 +1,8 @@
 export const postList = [
   {
     title: 'STKM',
-    coverUrl: 'https://ik.imagekit.io/za0dxwyrw/oasite/stkm_hdf1KaXrP.jpg',
+    coverUrl:
+      'https://ik.imagekit.io/za0dxwyrw/oasite/625059020496351437_LR38BZCrKu.jpg',
     url: 'https://stkm.now.sh/',
     brief:
       'An online camera which allows you to take stacked photos with captions.',
@@ -24,7 +25,7 @@ export const postList = [
     title: '小瓶子',
     coverUrl: 'https://ik.imagekit.io/za0dxwyrw/oasite/bottle_cs0J_cr94S.jpg',
     url: 'https://observablehq.com/@gnimoay/untitled/3',
-    brief: '在线创建你的小瓶子. 快乐小瓶子, 喜欢的导演小瓶子, 等等.',
+    brief: '在线创建你的小瓶子, 然后填满它.',
     tags: ['Web', 'Interaction', '2020'],
     time: 'Feb, 2020',
     type: 'Personal Project',

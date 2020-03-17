@@ -1,11 +1,36 @@
 @import './variables';
 @import './media-query';
 
+.footer-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  button {
+    outline: none;
+    position: absolute;
+    right: 20%;
+    transform: rotate(180deg);
+    background: $fontClr;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 64px;
+    height: 64px;
+    border: none;
+    // margin-left: 20%;
+    > svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
 .footer {
-  height: 30vh;
-  width: 35vh;
-
-  margin-top: 5vh;
+  // height: 30vh;
+  // width: 35vh;
+  width: max-content;
+  height: fit-content;
+  // margin-top: 5vh;
+  padding: 5px 15px;
 
   // display: grid;
   // grid-area: 3 3;
@@ -13,11 +38,15 @@
   display: flex;
   flex-direction: column;
   // background: rgb(245, 245, 247);
-  border: 1px solid $light-bg;
+  // border: 1px solid $light-bg;
   border-radius: $comic-radius;
+  background: linear-gradient(0deg, hsl(96, 100%, 90%), hsl(12, 100%, 90%));
   color: $fontSecondaryClr;
   // position: relative;
   // bottom: -20px;
   justify-content: flex-end;
   align-items: center;
+  p {
+    white-space: nowrap;
+  }
 }
