@@ -41,7 +41,6 @@ const Layout = props => {
           />
           <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
           <script
-            async
             defer
             src='https://www.googletagmanager.com/gtag/js?id=G-REWTHY2S75'></script>
         </Head>

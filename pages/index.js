@@ -266,7 +266,6 @@ function Index(props) {
         <link rel='icon' href='/icon.png' type='image/jpg' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <script
-          async
           defer
           src='https://www.googletagmanager.com/gtag/js?id=G-REWTHY2S75'></script>
       </Head>
