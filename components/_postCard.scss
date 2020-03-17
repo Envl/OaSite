@@ -64,12 +64,15 @@
   }
   .post-content {
     color: $fontSecondaryClr;
+    font-size: $fSize;
+    @include smaller-than(768px) {
+      font-size: $m-fSize;
+    }
   }
   .post-img {
     flex: 1;
     object-fit: cover;
     // width: 100px;
-    height: 150px;
     border-radius: $comic-radius;
     margin: 5px 0 5px 15px;
     transition-duration: $tm-mid;
@@ -95,6 +98,7 @@
   .post-img {
     width: 100px;
     height: auto !important;
+    max-height: 150px;
   }
 }
 

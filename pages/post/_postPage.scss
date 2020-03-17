@@ -44,13 +44,13 @@
 .oa-md {
   max-width: 700px;
   margin: 0 5vw 10vw;
-  font-size: 1.4rem;
+  font-size: $fSize;
   line-height: 1.5;
   word-wrap: break-word;
   p {
     display: flex;
     flex-direction: column;
-    font-size: 1.4rem;
+    font-size: $fSize;
   }
 }
 h3,
@@ -80,7 +80,7 @@ iframe {
   .oa-md {
     width: 90vw;
     p {
-      font-size: 1.2rem;
+      font-size: $m-fSize;
     }
   }
 }

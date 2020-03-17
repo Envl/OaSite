@@ -24,16 +24,15 @@
 .job-seek {
   align-self: center;
   color: gray;
+  padding-left: 15px;
+  padding-right: 15px;
+  @include smaller-than(768px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 .opt-hide {
   display: none !important;
-}
-.dropdown,
-.oa-button,
-.oa-filter-toggle,
-.dropdown-title,
-.oa-card {
-  // font-weight: normal !important;
 }
 .dropdown {
   width: calc(100% - 7px);
@@ -54,8 +53,6 @@
     'type type' max-content
     'foot foot' min-content
     / 1fr 2fr;
-  // justify-items: center;
-  // align-items: center;
   color: $fontClr !important;
   .me-status {
     grid-area: status;
@@ -125,8 +122,11 @@
     transition-timing-function: ease-in-out;
     transition-property: filter transform;
     &:hover {
-      filter: brightness(1.1) blur(20px);
+      filter: brightness(0.9);
       transform: scale(0.95);
+    }
+    &:active {
+      transform: scale(0.5);
     }
   }
   .foot {

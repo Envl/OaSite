@@ -54,7 +54,10 @@ function Me({setOpts, opts}) {
         <div>a UX Designer</div>
         <div>a Developer</div>
       </DropDown>
-      <img src='/me.jpg' alt='' />
+      <img
+        src='https://ik.imagekit.io/za0dxwyrw/oasite/me_g4eRewDwh.jpg'
+        alt=''
+      />
       <Button type='toggle' className='btn-i'>
         {/* <h1>I</h1> */}I
       </Button>
@@ -158,7 +161,12 @@ function PostList(props) {
 function Contents({opts}) {
   return (
     <div className='content'>
-      <p className='job-seek'>I'm looking for a UX internship opportunity.</p>
+      <p className='job-seek' style={{'text-align': 'center'}}>
+        I'm looking for a fulltime UX job, preferably as an UX Engineer after
+        graduation in <strong>Oct. 2020</strong>. <br />
+        The position of Web Engineer would also be cool if the work is
+        interesting.
+      </p>
       <Card
         className={`site-intro ${
           opts && opts.includes('about me') ? 'visible' : 'opt-hide'
@@ -219,16 +227,12 @@ function Contents({opts}) {
           </a>
         }
       />
-      {/* </Button> */}
-      {/* <div style={{maxWidth: `300px`, marginBottom: `1.45rem`}}></div> */}
-      {/* <Card> */}
       <PostList
 
       // className={`${
       //   opts && opts.includes('contents') ? 'visible' : 'opt-hide'
       // }`}
       />
-      {/* </Card> */}
     </div>
   )
 }
