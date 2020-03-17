@@ -78,8 +78,6 @@ function Me({setOpts, opts}) {
         className='site-filters'
         initialFilters={[
           {name: 'about me', pushed: opts.includes('about me')},
-          // {name: 'cube', pushed: opts.includes('cube')},
-          // {name: 'contents', pushed: opts.includes('contents')},
           {name: 'sidebar', pushed: opts.includes('sidebar')},
           {name: 'footer', pushed: opts.includes('footer')},
           {name: 'contact me', pushed: opts.includes('contact me')},
@@ -196,13 +194,9 @@ function Contents({opts}) {
           With a background of B.E. in Digital Media Technology, I also build🔨
           stuffs.
         </p>
-        {/* <p>Now go build something great.</p> */}
       </Card>
       <CubeMenu
         className='home-cube'
-        // className={`home-cube ${
-        //   opts && opts.includes('about me') ? 'visible' : 'opt-hide'
-        // }`}
         u={
           <a href='https://www.instagram.com/sesampicr/' target='_blank'>
             <i className='fab fa-instagram'></i>
@@ -224,23 +218,13 @@ function Contents({opts}) {
           </a>
         }
       />
-      <PostList
-
-      // className={`${
-      //   opts && opts.includes('contents') ? 'visible' : 'opt-hide'
-      // }`}
-      />
+      <PostList />
     </div>
   )
 }
 
 function Index(props) {
-  const [opts, setOpts] = useState(
-    ['job', 'sidebar', 'footer'],
-    // typeof window !== 'undefined' && window.innerWidth > 768
-    //   ? ['about me', 'contents', 'footer']
-    //   : ['about me', 'contents', 'sidebar', 'footer'],
-  )
+  const [opts, setOpts] = useState(['job', 'sidebar', 'footer'])
   useEffect(() => {
     const _hmt = _hmt || []
     const hm = document.createElement('script')
@@ -269,7 +253,6 @@ function Index(props) {
             brief='CV'
             detail='CV'
           />
-          {/* <SidebarItem to='/projects' brief='P.' detail='Projects' /> */}
           <SidebarItem
             to='/'
             brief='H.'
@@ -282,7 +265,6 @@ function Index(props) {
         <title className='hidden'>Ming YAO / @GnimOay</title>
         <link rel='icon' href='/icon.png' type='image/jpg' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
         <script
           async
           src='https://www.googletagmanager.com/gtag/js?id=G-REWTHY2S75'></script>

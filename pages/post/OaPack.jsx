@@ -33,10 +33,7 @@ function Index() {
   return (
     <Layout className='oapack-wrapper'>
       <h1>OaPack</h1>
-      <div
-        className='page-oapack reading-settings'
-        // style={{display: 'flex'}}
-      >
+      <div className='page-oapack reading-settings'>
         <p>
           This is a comic style UI package for React.js. It was designed for
           desktop, yet compatible with mobile.
@@ -121,7 +118,6 @@ function Index() {
             {name: '还行', pushed: true},
             '吧',
           ]}
-          // defaultIndex={0}
         />
         <p>
           There is also a <Psuedo>{`<FilterGroup>`}</Psuedo> that contains
@@ -136,13 +132,11 @@ function Index() {
             {name: 'Filters!', pushed: true},
             'Click MEEE!!!!!!',
           ]}
-          // defaultIndex/={0}
           onFilterUpdate={e => console.log(e)}
         />
         <FilterGroup
           single
           initialFilters={[{name: 'I..', pushed: true}, {name: 'am'}, 'single']}
-          // defaultIndex/={0}
           onFilterUpdate={e => console.log(e)}
         />
         <input className='oa-input' type='text' placeholder='input here' />
