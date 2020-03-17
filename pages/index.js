@@ -12,7 +12,6 @@ import {
 } from 'oapack'
 import Footer from '../components/Footer'
 import PostCard from '../components/PostCard'
-import {withFirebase} from '../Helpers'
 import Layout from '../components/Layout'
 import * as db from '../MyData'
 import {setModel, useModel} from 'flooks'
@@ -38,7 +37,6 @@ function Me({setOpts, opts}) {
   const {updateType} = useModel('filters', true)
   const [footCount, setFootCount] = useState(0)
   useEffect(() => {
-    console.log(window, 'sdssds')
     fetch('https://api.countapi.xyz/get/gnimoay.com/footCount')
       .then(res => res.json())
       .then(data => setFootCount(data.value))
@@ -161,7 +159,7 @@ function PostList(props) {
 function Contents({opts}) {
   return (
     <div className='content'>
-      <p className='job-seek' style={{'text-align': 'center'}}>
+      <p className='job-seek' style={{textAlign: 'center'}}>
         I'm looking for a fulltime UX job, preferably as an UX Engineer after
         graduation in <strong>Oct. 2020</strong>. <br />
         The position of Web Engineer would also be cool if the work is
@@ -205,10 +203,9 @@ function Contents({opts}) {
         // className={`home-cube ${
         //   opts && opts.includes('about me') ? 'visible' : 'opt-hide'
         // }`}
-        class='fab fa-instagram'
         u={
           <a href='https://www.instagram.com/sesampicr/' target='_blank'>
-            <i class='fab fa-instagram'></i>
+            <i className='fab fa-instagram'></i>
           </a>
         }
         f={
@@ -259,34 +256,6 @@ function Index(props) {
     gtag('js', new Date())
 
     gtag('config', 'G-REWTHY2S75')
-
-    const log = Object.keys(Object.getPrototypeOf(navigator))
-      .filter(k => !['object', 'function'].includes(typeof navigator[k]))
-      .reduce(
-        (pre, cur) => {
-          return {
-            ...pre,
-            [cur]: navigator[cur],
-            hash:
-              pre.hash +
-              (navigator[cur].toString().length > 0
-                ? navigator[cur].toString()[0]
-                : ''),
-          }
-        },
-        {
-          hash: '',
-          timestamps: props.firebase.firestore.FieldValue.arrayUnion(
-            Date.now(),
-          ),
-        },
-      )
-    log.ipAddr = props.ipAddr
-    props.firebase
-      .firestore()
-      .collection('visitor')
-      .doc(log.ipAddr.b + '___' + log.ipAddr.a)
-      .set(log, {merge: true})
   }, [])
 
   return (
@@ -330,7 +299,6 @@ function Index(props) {
     </SidebarInjector>
   )
 }
-Index = withFirebase(Index)
 Index.getInitialProps = async function(ctx) {
   return {
     ipAddr: {
