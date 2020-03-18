@@ -14,8 +14,8 @@ const Footer = props => {
       .then(data => setVisitCount(data.value))
   }, [])
   return (
-    <div className='footer-wrapper'>
-      <div className={`footer ${props.className ? props.className : ''}`}>
+    <div className={`footer-wrapper ${props.className ? props.className : ''}`}>
+      <div className='footer'>
         <div>
           <span>{visitCount}</span>
           <span> visits</span>
