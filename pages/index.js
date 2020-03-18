@@ -248,6 +248,12 @@ function Index(props) {
       items={
         <>
           <SidebarItem
+            to='https://www.notion.so/63b2e83003f240339ae065011afc88a0'
+            target='_blank'
+            brief='芝.'
+            detail='芝麻地'
+          />
+          <SidebarItem
             to='/CV_Ming_YAO.pdf'
             target='_blank'
             brief='CV'

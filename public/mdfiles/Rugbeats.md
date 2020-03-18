@@ -1,4 +1,4 @@
-![](https://gnimoay.com/rugbeats.png)
+![](https://ik.imagekit.io/za0dxwyrw/oasite/2019-11-27_02-03-51_tDAWx_CyMn.png)
 
 <span>It's a rhythm action game inspired by [Crypt of the NecroDancer](https://en.wikipedia.org/wiki/Crypt_of_the_NecroDancer). Two players are situated in a maze where they have to compete to bring the chest home, but they can only move when there is a beat in the music.</span>
 

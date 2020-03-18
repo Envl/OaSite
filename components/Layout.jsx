@@ -15,6 +15,12 @@ const Layout = props => {
       <SidebarInjector
         items={
           <>
+            <SidebarItem
+              to='https://www.notion.so/63b2e83003f240339ae065011afc88a0'
+              target='_blank'
+              brief='芝.'
+              detail='芝麻地'
+            />
             <SidebarItem to='/CV_Ming_YAO.pdf' brief='CV' detail='CV' />
             {/* <SidebarItem to='/projects' brief='P.' detail='Projects' /> */}
             <SidebarItem
