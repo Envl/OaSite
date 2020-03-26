@@ -145,7 +145,13 @@ function PostList(props) {
             key={l.title}
             className='post-lr'
             data={l}
-            href={'/post/' + l.title.split(' ').join('-')}>
+            href={
+              '/post/' +
+              l.title
+                .toLowerCase()
+                .split(' ')
+                .join('-')
+            }>
             {l.brief
               ? l.brief
               : '(Coming Soon...)Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt diam felis, sed tempor est pellentesque vel.'}
