@@ -25,7 +25,7 @@ const filters = {
   actions: ({model, setState}) => ({
     updateType(newType) {
       if (newType === 'Interaction') {
-        newType = ['Tangible Interaction', 'Interaction Design']
+        newType = ['Tangible Interaction', 'Interaction Design', 'Interaction']
       }
       setState({postType: newType})
     },
