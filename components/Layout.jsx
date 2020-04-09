@@ -4,9 +4,8 @@ import Footer from '../components/Footer'
 import {SidebarInjector, SidebarItem} from 'oapack'
 import {useRouter} from 'next/router'
 
-const Layout = props => {
+const Layout = (props) => {
   const router = useRouter()
-  console.log(router, 'kkk')
   return (
     <div
       className={'page-wrapper ' + (props.className ? props.className : '')}

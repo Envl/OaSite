@@ -23,7 +23,7 @@ const PostCard = ({data, ...props}) => {
               </span>
             </span>
           ) : (
-            <Link href={props.href}>
+            <Link href='/post/[id]' as={props.href}>
               <a target='_blank' className='post-title oa-underline'>
                 {data.title}
               </a>
@@ -32,7 +32,7 @@ const PostCard = ({data, ...props}) => {
         <span className='post-content'>{props.children}</span>
         {data.tags && (
           <div className='tag-list'>
-            {data.tags.map(tag => (
+            {data.tags.map((tag) => (
               <div
                 key={tag}
                 className={`post-tag ${tag === 'WIP' ? 'tag-wip' : ''}`}>
