@@ -35,8 +35,9 @@ function Index() {
       <h1>OaPack</h1>
       <div className='page-oapack reading-settings'>
         <p>
-          This is a comic style UI package for React.js. It was designed for
-          desktop, yet compatible with mobile.
+          This is a comic style UI kit for React.js, which features satisfying
+          mouse clicking experience. It was designed for desktop, yet compatible
+          with mobile.
         </p>
         <a className='oa-link' href='https://github.com/Envl/OaPack'>
           Github
@@ -64,7 +65,7 @@ function Index() {
           property: <Psuedo>disabled</Psuedo>.
           <br />
         </p>
-        <DropDown name='DropDown' onClick={e => console.log(e.target)}>
+        <DropDown name='DropDown' onClick={(e) => console.log(e.target)}>
           <div>Click us</div>
           <div>It just</div>
           <div>Feels Good</div>
@@ -78,7 +79,7 @@ function Index() {
         </Button>
         <Button
           type={'toggle'}
-          onClick={e => console.log(e.isToggleOn)}
+          onClick={(e) => console.log(e.isToggleOn)}
           disabled>
           disabled
         </Button>
@@ -109,7 +110,7 @@ function Index() {
           <h1>Yet another secret</h1>
         </Carousel>
         <FilterGroup
-          onFilterUpdate={e => console.log(e)}
+          onFilterUpdate={(e) => console.log(e)}
           className='oa-secret'
           initialFilters={[
             '中文',
@@ -132,12 +133,12 @@ function Index() {
             {name: 'Filters!', pushed: true},
             'Click MEEE!!!!!!',
           ]}
-          onFilterUpdate={e => console.log(e)}
+          onFilterUpdate={(e) => console.log(e)}
         />
         <FilterGroup
           single
           initialFilters={[{name: 'I..', pushed: true}, {name: 'am'}, 'single']}
-          onFilterUpdate={e => console.log(e)}
+          onFilterUpdate={(e) => console.log(e)}
         />
         <input className='oa-input' type='text' placeholder='input here' />
         <p>
@@ -153,7 +154,9 @@ function Index() {
             />
             <Button>BTN</Button>
           </div>
-          <Button onClick={e => console.log(e.target.nextSibling)}>Btn2</Button>
+          <Button onClick={(e) => console.log(e.target.nextSibling)}>
+            Btn2
+          </Button>
           <Card>
             <Card>
               <Card>Small Pyramid</Card>
@@ -162,7 +165,7 @@ function Index() {
           <DropDown
             className='fit-content'
             name='Another dropdown'
-            onClick={e => console.log(e.target)}>
+            onClick={(e) => console.log(e.target)}>
             <div>A</div>
             <div>b</div>
             <div>c</div>
