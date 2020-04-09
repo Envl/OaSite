@@ -38,8 +38,8 @@ function Me({setOpts, opts}) {
   const [footCount, setFootCount] = useState(0)
   useEffect(() => {
     fetch('https://api.countapi.xyz/get/gnimoay.com/footCount')
-      .then(res => res.json())
-      .then(data => setFootCount(data.value))
+      .then((res) => res.json())
+      .then((data) => setFootCount(data.value))
   }, [])
   return (
     <div className='me-block'>
@@ -82,7 +82,7 @@ function Me({setOpts, opts}) {
           {name: 'footer', pushed: opts.includes('footer')},
           {name: 'contact me', pushed: opts.includes('contact me')},
         ]}
-        onFilterUpdate={options => {
+        onFilterUpdate={(options) => {
           setOpts(options)
         }}
       />
@@ -97,7 +97,7 @@ function Me({setOpts, opts}) {
       <FilterGroup
         single
         className='type-filter'
-        onFilterUpdate={types => {
+        onFilterUpdate={(types) => {
           updateType(types[0])
         }}
         initialFilters={[
@@ -131,27 +131,21 @@ function PostList(props) {
   return (
     <div className={`posts ${props.className ? props.className : ''}`}>
       {db.postList
-        .filter(item => {
+        .filter((item) => {
           if (postType === 'all' || typeof postType === 'undefined') {
             return true
           } else {
             return typeof postType === 'string'
               ? item.tags.includes(postType)
-              : item.tags.some(tag => postType.includes(tag))
+              : item.tags.some((tag) => postType.includes(tag))
           }
         })
-        .map(l => (
+        .map((l) => (
           <PostCard
             key={l.title}
             className='post-lr'
             data={l}
-            href={
-              '/post/' +
-              l.title
-                .toLowerCase()
-                .split(' ')
-                .join('-')
-            }>
+            href={'/post/' + l.title.toLowerCase().split(' ').join('-')}>
             {l.brief
               ? l.brief
               : '(Coming Soon...)Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt diam felis, sed tempor est pellentesque vel.'}
@@ -164,8 +158,8 @@ function Contents({opts}) {
   return (
     <div className='content'>
       <p className='job-seek' style={{textAlign: 'center'}}>
-        I'm looking for a fulltime UX job, preferably as an UX Engineer after
-        graduation in <strong>Oct. 2020</strong>. <br />
+        I'm looking for a fulltime UX Designer/Engineer job after graduation in{' '}
+        <strong>Oct. 2020</strong>. <br />
         The position of Web Engineer would also be cool if the work is
         interesting.
       </p>
@@ -293,7 +287,7 @@ function Index(props) {
     </SidebarInjector>
   )
 }
-Index.getInitialProps = async function(ctx) {
+Index.getInitialProps = async function (ctx) {
   return {
     ipAddr: {
       a: ctx.req.connection.remoteAddress,
