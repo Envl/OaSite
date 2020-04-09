@@ -227,20 +227,32 @@ function Contents({opts}) {
 function Index(props) {
   const [opts, setOpts] = useState(['job', 'sidebar', 'footer'])
   useEffect(() => {
-    const _hmt = _hmt || []
-    const hm = document.createElement('script')
-    hm.src = 'https://hm.baidu.com/hm.js?ae9e7cdc50a29d2859ef293e6caaec12'
-    const s = document.getElementsByTagName('script')[0]
-    s.parentNode.insertBefore(hm, s)
+    // const _hmt = _hmt || []
+    // const hm = document.createElement('script')
+    // hm.src = 'https://hm.baidu.com/hm.js?ae9e7cdc50a29d2859ef293e6caaec12'
+    // const s = document.getElementsByTagName('script')[0]
+    // s.parentNode.insertBefore(hm, s)
 
-    //---------------------
-    window.dataLayer = window.dataLayer || []
-    function gtag() {
-      dataLayer.push(arguments)
-    }
-    gtag('js', new Date())
+    // //---------------------
+    // window.dataLayer = window.dataLayer || []
+    // function gtag() {
+    //   dataLayer.push(arguments)
+    // }
+    // gtag('js', new Date())
 
-    gtag('config', 'G-REWTHY2S75')
+    // gtag('config', 'G-REWTHY2S75')
+    var _gauges = _gauges || []
+    ;(function () {
+      var t = document.createElement('script')
+      t.type = 'text/javascript'
+      t.async = true
+      t.id = 'gauges-tracker'
+      t.setAttribute('data-site-id', '5e8fb2b27ca798130558a98f')
+      t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif')
+      t.src = 'https://d2fuc4clr7gvcn.cloudfront.net/track.js'
+      var s = document.getElementsByTagName('script')[0]
+      s.parentNode.insertBefore(t, s)
+    })()
   }, [])
 
   return (
