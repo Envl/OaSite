@@ -30,11 +30,11 @@ Pretty neat, eh?
 
 ## Tables?
 
-| Featre    | Support |
-| --------- | ------- |
-| tables ✔  |
-| alignment | ✔       |
-| wewt      | ✔       |
+| Featre     | Support |
+| ---------- | ------- |
+| tables ✔ |
+| alignment  | ✔     |
+| wewt       | ✔     |
 
 ## More info?
 
@@ -42,4 +42,4 @@ Read usage information and more on [GitHub](//github.com/rexxars/react-markdown)
 
 ---
 
-A component by [Espen Hovlandsdal](https://espen.codes/)
+test
