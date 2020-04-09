@@ -203,11 +203,12 @@ function Contents({opts}) {
           </a>
         }
         f={
-          <Link href='/CV_Ming_YAO.pdf' as='/CV_Ming_YAO.pdf'>
-            <a className='oa-hover-underline' target='_blank'>
-              Resume
-            </a>
-          </Link>
+          <a
+            href='/CV_Ming_YAO.pdf'
+            className='oa-hover-underline'
+            target='_blank'>
+            Resume
+          </a>
         }
         r={
           <a
