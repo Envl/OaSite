@@ -12,3 +12,7 @@
 //   }
 //   return HOC
 // }
+
+export function jdUrl(url) {
+  return 'https://cdn.jsdelivr.net/gh/Envl/OaSite/public/img/' + url
+}
