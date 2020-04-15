@@ -89,7 +89,7 @@ export const postList = [
   },
   {
     title: 'SEIM',
-    coverUrl: jdUrl('weim.png'),
+    coverUrl: jdUrl('seim.png'),
     url: 'https://www.youtube.com/watch?v=v6LTm7YHiJU',
     brief:
       'An interactive music installation that involves projection mapping, tangible interaction, generative animation, etc.',
