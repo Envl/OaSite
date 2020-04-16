@@ -1,17 +1,16 @@
 import React, {useEffect, useState} from 'react'
 import './_footer.scss'
-const Footer = props => {
+const Footer = (props) => {
   const [visitCount, setVisitCount] = useState(0)
   useEffect(() => {
     fetch(
-      'https://api.countapi.xyz/hit/gnimoay.com/visit-count-' +
-        window.location.pathname
-          .split('/')
-          .slice(1)
-          .join('-'),
+      `https://api.countapi.xyz/${
+        window.location.hostname === 'localhost' ? 'get' : 'hit'
+      }/gnimoay.com/visit-count-` +
+        window.location.pathname.split('/').slice(1).join('-'),
     )
-      .then(res => res.json())
-      .then(data => setVisitCount(data.value))
+      .then((res) => res.json())
+      .then((data) => setVisitCount(data.value))
   }, [])
   return (
     <div className={`footer-wrapper ${props.className ? props.className : ''}`}>
@@ -32,7 +31,7 @@ const Footer = props => {
         </p>
       </div>
       <button
-        onClick={evt => {
+        onClick={(evt) => {
           window.scrollTo({top: 0, behavior: 'smooth'})
         }}>
         <svg viewBox='0 0 20 20' fill='white'>
