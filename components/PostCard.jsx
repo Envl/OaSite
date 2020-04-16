@@ -1,7 +1,9 @@
 import React from 'react'
 import {Card} from 'oapack'
 import Link from 'next/link'
+import LazyImg from './LazyImg'
 import './_postCard.scss'
+import {removeJdUrl} from '../Helpers'
 
 const PostCard = ({data, ...props}) => {
   return (
@@ -42,7 +44,15 @@ const PostCard = ({data, ...props}) => {
           </div>
         )}
       </div>
-      {data.coverUrl && <img className='post-img' src={data.coverUrl} alt='' />}
+      {data.coverUrl && (
+        <LazyImg
+          className='post-img'
+          loadingClass='post-img-loading'
+          src={require('../public/img/' + removeJdUrl(data.coverUrl)).preSrc}
+          realSrc={data.coverUrl}
+          alt=''
+        />
+      )}
     </Card>
   )
 }

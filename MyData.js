@@ -24,7 +24,7 @@ export const postList = [
   },
   {
     title: '小瓶子',
-    coverUrl: jdUrl('bottle.webp'),
+    coverUrl: jdUrl('bottle.jpg'),
     url: 'https://observablehq.com/@gnimoay/untitled/3',
     brief: '在线创建你的小瓶子, 然后填满它.',
     tags: ['Web', 'Interaction', '2020'],
@@ -63,7 +63,7 @@ export const postList = [
   },
   {
     title: 'ShopWalker',
-    coverUrl: jdUrl('shopwalker.webp'),
+    coverUrl: jdUrl('shopwalker.jpg'),
     tags: ['App', 'UX', 'Evaluation', '2018'],
     brief:
       'The design and evaluation of an application which targets to facilitate daily work of a very special group – shopwalkers.',
@@ -71,7 +71,7 @@ export const postList = [
   },
   {
     title: 'BOOKIO',
-    coverUrl: jdUrl('bookio.webp'),
+    coverUrl: jdUrl('bookio.jpg'),
     url: 'https://bookio-5c798.firebaseapp.com/',
     brief: 'A free book sharing platform created using React.js.',
     tags: ['UX', 'Web', '2019'],
@@ -81,7 +81,7 @@ export const postList = [
   },
   {
     title: 'Tetris.Dual',
-    coverUrl: jdUrl('tetris.webp'),
+    coverUrl: jdUrl('tetris.jpg'),
     url: 'https://github.com/Envl/Tetris.dual',
     brief: 'Dual player Tetris game on Android that uses Bluetooth to connect.',
     tags: ['Game', 'Android', '2016'],
@@ -98,7 +98,7 @@ export const postList = [
   },
   {
     title: 'Boccaro',
-    coverUrl: jdUrl('boccaro.webp'),
+    coverUrl: jdUrl('boccaro.jpg'),
     url: 'https://github.com/Envl/Boccaro',
     brief:
       'An app to introduce traditional Chinese culture about Bocarro, built with Unity3D.',
@@ -107,7 +107,7 @@ export const postList = [
   },
   {
     title: 'sPomo',
-    coverUrl: jdUrl('spomo.webp'),
+    coverUrl: jdUrl('spomo.png'),
     brief: 'Simple Pomodoro software on windows, built with AutoHotKey.',
     tags: ['Productivity Tool', 'AHK', '2019'],
     url: 'https://github.com/Envl/sPomo',
@@ -115,7 +115,7 @@ export const postList = [
   },
   {
     title: 'Circular Clear',
-    coverUrl: jdUrl('circularclear.gif'),
+    coverUrl: jdUrl('circularclear.jpg'),
     brief:
       'A match-three puzzle game inspired by Spirograph, built with Unity3D.',
     tags: ['Game', 2016],
@@ -123,7 +123,7 @@ export const postList = [
   },
   {
     title: 'StyleBox',
-    coverUrl: jdUrl('stylebox.webp'),
+    coverUrl: jdUrl('stylebox.jpg'),
     brief:
       'It borrows the concept of class and the idea of CSS from coding to create a tool that makes styling shapes in design software easier.',
     tags: ['Interaction Design', '2019'],
@@ -131,7 +131,7 @@ export const postList = [
   },
   {
     title: 'Bagroutte',
-    coverUrl: jdUrl('bagroutte.webp'),
+    coverUrl: jdUrl('bagroutte.jpg'),
     brief:
       'A design concept derives from StyleBox into a map App, which facilitate the edit, manipulationg and reuse of route.',
     tags: ['Interaction Design', '2019'],
@@ -139,7 +139,7 @@ export const postList = [
   },
   {
     title: 'Tangible X',
-    coverUrl: jdUrl('tangibleX.webp'),
+    coverUrl: jdUrl('tangibleX.jpg'),
     brief:
       'A exploration on tangible interaction for browser and gaming using Kinect.',
     tags: ['Tangible Interaction', 'Kinect', '2015'],
@@ -148,7 +148,7 @@ export const postList = [
   },
   {
     title: 'Digi Cemetery',
-    coverUrl: jdUrl('digicemetery.webp'),
+    coverUrl: jdUrl('digicemetery.png'),
     brief: 'A website includes memorable products that died in recent years.',
     tags: ['UX', 'Web', 'Abandoned', '2019'],
     url: 'https://cemetery.netlify.com',
@@ -156,7 +156,7 @@ export const postList = [
   },
   {
     title: 'Spotioid',
-    coverUrl: jdUrl('spotioid.webp'),
+    coverUrl: jdUrl('spoti.jpg'),
     brief:
       'Info Visualization of data from Spotify, including genre, user distribution, trending, etc.',
     tags: ['UX', 'Visualization', 'Web', 'WIP', '2019'],
@@ -165,7 +165,7 @@ export const postList = [
   },
   {
     title: 'Year Meter',
-    coverUrl: jdUrl('yearmeter.webp'),
+    coverUrl: jdUrl('yearmeter.png'),
     brief:
       'A screen saver that counts the progress of this year and that of today.',
     tags: ['Design', 'Win32', '2014'],
@@ -174,7 +174,7 @@ export const postList = [
   },
   {
     title: 'BulletGO',
-    coverUrl: jdUrl('bulletgo.webp'),
+    coverUrl: jdUrl('bullet.png'),
     brief:
       'A comprehensive bullet comment solution through Wechat, PyQt and Node.js.',
     tags: ['Python', 'Node.js', '2015'],
@@ -184,7 +184,7 @@ export const postList = [
   {
     title: 'Da Vinci Code',
     url: 'https://github.com/Envl/Da_Vinci_Code',
-    coverUrl: jdUrl('davinci.webp'),
+    coverUrl: jdUrl('davinci.jpg'),
     brief:
       'A online multiplayer version of the board game Da Vinci Code, built with Unity3D.',
     tags: ['Game', 'Unity3D', '2016'],
@@ -193,7 +193,7 @@ export const postList = [
   {
     title: 'Seety',
     url: 'https://loving-mayer-0afa5d.netlify.com/catalogue',
-    coverUrl: jdUrl('seety.webp'),
+    coverUrl: jdUrl('seety.jpg'),
     brief: 'A city guide with audio stories.',
     tags: ['UX', 'Web', 'WIP', '2019'],
     time: 'Jun, 2019 - Now',

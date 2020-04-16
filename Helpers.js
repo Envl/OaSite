@@ -16,3 +16,6 @@
 export function jdUrl(url) {
   return 'https://cdn.jsdelivr.net/gh/Envl/OaSite/public/img/' + url
 }
+export function removeJdUrl(url) {
+  return url.replace('https://cdn.jsdelivr.net/gh/Envl/OaSite/public/img/', '')
+}

@@ -16,6 +16,7 @@ import Layout from '../components/Layout'
 import LazyImg from '../components/LazyImg'
 import * as db from '../MyData'
 import {setModel, useModel} from 'flooks'
+import {jdUrl} from '../Helpers'
 
 import './_index.scss'
 
@@ -53,7 +54,11 @@ function Me({setOpts, opts}) {
         <div>a UX Designer</div>
         <div>a Developer</div>
       </DropDown>
-      <img src={require('../public/img/stkm.jpg?webp')} alt='' />
+      <LazyImg
+        src={require('../public/img/me.jpg').preSrc}
+        realSrc={jdUrl('me.jpg')}
+      />
+      {/* <img src={me.preSrc} type='image/webp' alt='' /> */}
       <Button type='toggle' className='btn-i'>
         {/* <h1>I</h1> */}I
       </Button>
