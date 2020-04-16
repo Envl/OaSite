@@ -19,8 +19,6 @@ import {setModel, useModel} from 'flooks'
 
 import './_index.scss'
 
-// import me from '../public/img/me.webp'
-
 const filters = {
   state: {
     postType: 'all',
@@ -55,8 +53,7 @@ function Me({setOpts, opts}) {
         <div>a UX Designer</div>
         <div>a Developer</div>
       </DropDown>
-      <img src={require('../public/img/me.webp?lqip')} />
-      {/* <LazyImg src='./public/img/me.webp' alt='' /> */}
+      <img src={require('../public/img/stkm.jpg?webp')} alt='' />
       <Button type='toggle' className='btn-i'>
         {/* <h1>I</h1> */}I
       </Button>
