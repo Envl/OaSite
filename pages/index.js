@@ -56,7 +56,7 @@ function Me({setOpts, opts}) {
       </DropDown>
       <LazyImg
         src={require('../public/img/me.jpg').preSrc}
-        realSrc={jdUrl('me.jpg')}
+        realSrc={'img/me.jpg'}
       />
       {/* <img src={me.preSrc} type='image/webp' alt='' /> */}
       <Button type='toggle' className='btn-i'>
