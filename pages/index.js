@@ -13,10 +13,13 @@ import {
 import Footer from '../components/Footer'
 import PostCard from '../components/PostCard'
 import Layout from '../components/Layout'
+import LazyImg from '../components/LazyImg'
 import * as db from '../MyData'
 import {setModel, useModel} from 'flooks'
 
 import './_index.scss'
+
+// import me from '../public/img/me.webp'
 
 const filters = {
   state: {
@@ -52,10 +55,8 @@ function Me({setOpts, opts}) {
         <div>a UX Designer</div>
         <div>a Developer</div>
       </DropDown>
-      <img
-        src='https://ik.imagekit.io/za0dxwyrw/oasite/me_g4eRewDwh.jpg'
-        alt=''
-      />
+      <img src={require('../public/img/me.webp?lqip')} />
+      {/* <LazyImg src='./public/img/me.webp' alt='' /> */}
       <Button type='toggle' className='btn-i'>
         {/* <h1>I</h1> */}I
       </Button>
