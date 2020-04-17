@@ -224,6 +224,14 @@
     > *:nth-child(2n) {
       order: 2;
     }
+    // &::before,
+    &::before {
+      // background: red;
+      content: '';
+      flex-basis: 100%;
+      width: 1px;
+      order: 2;
+    }
   }
 }
 
