@@ -37,7 +37,9 @@ const PostCard = ({data, ...props}) => {
             {data.tags.map((tag) => (
               <div
                 key={tag}
-                className={`post-tag ${tag === 'WIP' ? 'tag-wip' : ''}`}>
+                className={`post-tag ${tag === 'WIP' ? 'tag-wip' : ''} ${
+                  tag === 'Mobile' ? 'tag-mob' : ''
+                } ${tag === 'Abandoned' ? 'tag-aban' : ''}`}>
                 {tag}
               </div>
             ))}

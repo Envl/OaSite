@@ -84,7 +84,7 @@ export const postList = [
   {
     title: 'ShopWalker',
     coverUrl: jdUrl('shopwalker.jpg'),
-    tags: ['App', 'UX', 'Evaluation', '2018'],
+    tags: ['Mobile', 'UX', 'Evaluation', '2018'],
     brief:
       'The design and evaluation of an application which targets to facilitate daily work of a very special group – shopwalkers.',
     time: 'Oct, 2018 - Dec, 2018',
@@ -122,7 +122,7 @@ export const postList = [
     url: 'https://github.com/Envl/Boccaro',
     brief:
       'An app to introduce traditional Chinese culture about Bocarro, built with Unity3D.',
-    tags: ['Unity3D', 'App', '2016'],
+    tags: ['Unity3D', 'Mobile', '2016'],
     time: '2016',
   },
   {

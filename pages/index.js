@@ -109,7 +109,7 @@ function Me({setOpts, opts}) {
           'UX',
           'Web',
           'Game',
-          'App',
+          'Mobile',
         ]}
       />
       <div className='foot'>
