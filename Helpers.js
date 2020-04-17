@@ -14,8 +14,9 @@
 // }
 
 export function jdUrl(url) {
-  if (process.env.NODE_ENV !== 'production') {
+  if (typeof process != undefined && process.env.NODE_ENV !== 'production') {
     // if (typeof window == undefined) {
+    console.log('jdurl')
     return url
   } else {
     return
