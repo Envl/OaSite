@@ -49,7 +49,11 @@ const PostCard = ({data, ...props}) => {
           className='post-img'
           loadingClass='post-img-loading'
           src={require('../public/img/' + removeJdUrl(data.coverUrl)).preSrc}
-          realSrc={require('../public/img/' + removeJdUrl(data.coverUrl)).src}
+          realSrc={
+            process.env.NODE_ENV !== 'production'
+              ? require('../public/img/' + removeJdUrl(data.coverUrl)).src
+              : data.coverUrl
+          }
           alt=''
         />
       )}

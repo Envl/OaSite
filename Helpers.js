@@ -14,15 +14,20 @@
 // }
 
 export function jdUrl(url) {
-  if (typeof process != undefined && process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV !== 'production') {
     // if (typeof window == undefined) {
-    console.log('jdurl')
     return url
   } else {
-    return
-    'https://cdn.jsdelivr.net/gh/Envl/OaSite/public/img/' + url
+    return 'https://cdn.jsdelivr.net/gh/Envl/OaSite/public/img/' + url
   }
 }
 export function removeJdUrl(url) {
-  return url.replace('https://cdn.jsdelivr.net/gh/Envl/OaSite/public/img/', '')
+  if (process.env.NODE_ENV !== 'production') {
+    return url
+  } else {
+    return url.replace(
+      'https://cdn.jsdelivr.net/gh/Envl/OaSite/public/img/',
+      '',
+    )
+  }
 }

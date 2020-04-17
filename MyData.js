@@ -1,5 +1,6 @@
 import {jdUrl} from './Helpers'
 
+console.log('MYDATA', jdUrl, jdUrl('tests'))
 export const postList = [
   {
     title: 'CyberCards',
