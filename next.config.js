@@ -34,7 +34,7 @@ module.exports = withSass(
         config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//))
         return config
       },
-      target: 'server',
+      target: 'serverless',
     }),
   ),
   // ),
