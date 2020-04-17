@@ -2,12 +2,32 @@ import {jdUrl} from './Helpers'
 
 export const postList = [
   {
+    title: 'CyberCards',
+    coverUrl: jdUrl('cards.jpg'),
+    url: 'https://toys.gnimoay.com/#/card',
+    brief: '数字生活名片夹.',
+    tags: ['Web', 'UX', 'Mobile', 'WIP', '2020'],
+    time: 'April, 2020',
+    type: 'Personal Project',
+    role: ['Development', 'Design'],
+  },
+  {
+    title: '方块日记',
+    coverUrl: jdUrl('square.jpg'),
+    url: 'https://toys.gnimoay.com/#/square',
+    brief: '一键生成彩色背景的文字卡片.',
+    tags: ['Web', 'UX', 'Mobile', '2020'],
+    time: 'April, 2020',
+    type: 'Personal Project',
+    role: ['Development', 'Design'],
+  },
+  {
     title: 'STKM',
     coverUrl: jdUrl('stkm.jpg'),
     url: 'https://stkm.now.sh/',
     brief:
       'An online camera which allows you to take stacked photos with captions.',
-    tags: ['Web', 'Camera', 'Interaction', '2020'],
+    tags: ['Web', 'UX', 'Mobile', '2020'],
     time: 'Mar, 2020 - Now',
     type: 'Personal Project',
     role: ['Development', 'Design'],
@@ -27,7 +47,7 @@ export const postList = [
     coverUrl: jdUrl('bottle.jpg'),
     url: 'https://observablehq.com/@gnimoay/untitled/3',
     brief: '在线创建你的小瓶子, 然后填满它.',
-    tags: ['Web', 'Interaction', '2020'],
+    tags: ['Web', 'Interaction', 'Mobile', '2020'],
     time: 'Feb, 2020',
     type: 'Personal Project',
     role: ['Development', 'Design'],

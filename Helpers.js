@@ -14,7 +14,13 @@
 // }
 
 export function jdUrl(url) {
-  return 'https://cdn.jsdelivr.net/gh/Envl/OaSite/public/img/' + url
+  if (process.env.NODE_ENV !== 'production') {
+    // if (typeof window == undefined) {
+    return url
+  } else {
+    return
+    'https://cdn.jsdelivr.net/gh/Envl/OaSite/public/img/' + url
+  }
 }
 export function removeJdUrl(url) {
   return url.replace('https://cdn.jsdelivr.net/gh/Envl/OaSite/public/img/', '')
