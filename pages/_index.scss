@@ -215,7 +215,7 @@
   // display: grid;
   // column-count: 2;
   @include greater-than(768px) {
-    height: 2100px;
+    height: 2200px;
     display: flex;
     flex-flow: column wrap;
     > *:nth-child(2n + 1) {
