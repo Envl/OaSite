@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
     "build": "next build ",
-    "start": "next start",
+    "start": "next-boost",
     "bs": "next build && next start"
   },
   "keywords": [],
@@ -23,6 +23,7 @@
     "lqip-loader": "^2.2.0",
     "markdown-to-jsx": "^6.10.3",
     "next": "^9.3.2",
+    "next-boost": "^0.6.5",
     "next-compose-plugins": "^2.2.0",
     "next-images": "^1.4.0",
     "next-transpile-modules": "^3.2.0",
