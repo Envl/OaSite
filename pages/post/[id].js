@@ -25,7 +25,7 @@ const Index = (props) => {
   )
 }
 Index.getInitialProps = async function (context) {
-  const fname = context.query.id[0].toUpperCase() + context.query.id.slice(1)
+  const fname = context.query.id
   const res = await fetch(
     `${
       process.env.NODE_ENV !== 'production'
