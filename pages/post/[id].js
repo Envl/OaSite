@@ -26,6 +26,7 @@ const Index = (props) => {
 }
 Index.getInitialProps = async function (context) {
   const fname = context.query.id
+  console.log('fname', fname)
   const res = await fetch(
     `${
       process.env.NODE_ENV !== 'production'

@@ -15,7 +15,6 @@
 
 export function jdUrl(url) {
   if (process.env.NODE_ENV !== 'production') {
-    // if (typeof window == undefined) {
     return url
   } else {
     return 'https://cdn.jsdelivr.net/gh/Envl/OaSite/public/img/' + url
