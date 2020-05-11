@@ -20,6 +20,17 @@
   flex-flow: row wrap;
 }
 
+.carousel-item {
+  // below for test purpose only
+  background-size: cover;
+  &:nth-child(2n + 1) {
+    background-image: url(https://picsum.photos/400/200);
+  }
+  &:nth-child(2n) {
+    background-image: url(https://picsum.photos/300/200);
+  }
+}
+
 .fooo {
   justify-content: center;
   align-items: center;

@@ -10,11 +10,11 @@ import {useRouter} from 'next/router'
 const Index = (props) => {
   const router = useRouter()
   return (
-    <Layout>
+    <Layout heading={props.heading}>
       <div className='post-page'>
         {props.status === 200 ? (
           <>
-            <h1>{router.query.id}</h1>
+            <h1>{props.heading}</h1>
             <MD className='oa-md'>{props.post}</MD>
           </>
         ) : (
@@ -26,7 +26,6 @@ const Index = (props) => {
 }
 Index.getInitialProps = async function (context) {
   const fname = context.query.id
-  console.log('fname', fname)
   const res = await fetch(
     `${
       process.env.NODE_ENV !== 'production'
@@ -36,6 +35,9 @@ Index.getInitialProps = async function (context) {
   )
   const data = await res.text()
   return {
+    heading: fname
+      .split(' ')
+      .reduce((acc, cur) => acc + cur[0].toUpperCase() + cur.substring(1), ''),
     post: data,
     status: res.status,
   }

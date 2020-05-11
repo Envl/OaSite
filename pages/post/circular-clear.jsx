@@ -5,7 +5,7 @@ import './_postPage.scss'
 
 const CircularClear = () => {
   return (
-    <Layout>
+    <Layout heading='Circular Clear'>
       <h1>Circular Clear</h1>
       <div className='html-post reading-settings'>
         <p>
@@ -23,15 +23,15 @@ const CircularClear = () => {
           the same elements aligned on a straight line. To achieve that, the
           player can spin each ring using key <strong>S D F, J K L</strong>
           respectively.
-          <img
-            style={{width: 300}}
-            src='https://i.loli.net/2019/12/04/5JBH7NWzqhIwal1.png'></img>
-          <div>
-            As shown in this image,the <span className='yellow'>yellow</span>{' '}
-            and <span className='green'>green</span> elements are aligned in one
-            line respectively, thus each of they can be cleard.
-          </div>
         </p>
+        <img
+          style={{width: 300}}
+          src='https://i.loli.net/2019/12/04/5JBH7NWzqhIwal1.png'></img>
+        <div>
+          As shown in this image,the <span className='yellow'>yellow</span> and{' '}
+          <span className='green'>green</span> elements are aligned in one line
+          respectively, thus each of they can be cleard.
+        </div>
         <p
           style={{
             display: 'flex',
@@ -50,8 +50,10 @@ const CircularClear = () => {
           or the position of the pen, many beautiful images can therefore be
           created.
         </p>
-        <h2>Game Prototype</h2>
-        <p>By combining both concepts, here is the game Circular Clear.</p>
+        <p>
+          <h2>Game Prototype</h2>
+          By combining both concepts, here is the game Circular Clear.
+        </p>
         <iframe
           src='https://www.youtube.com/embed/ay87rjPXSaI'
           frameborder='0'

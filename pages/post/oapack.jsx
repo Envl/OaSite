@@ -31,7 +31,7 @@ function Psuedo(props) {
 }
 function Index() {
   return (
-    <Layout className='oapack-wrapper'>
+    <Layout className='oapack-wrapper' heading='OaPack'>
       <h1>OaPack</h1>
       <div className='page-oapack reading-settings'>
         <p>
