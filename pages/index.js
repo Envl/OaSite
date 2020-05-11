@@ -157,6 +157,7 @@ function PostList(props) {
     </div>
   )
 }
+
 function Contents({opts}) {
   return (
     <div className='content'>

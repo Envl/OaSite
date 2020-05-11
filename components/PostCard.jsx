@@ -6,6 +6,7 @@ import './_postCard.scss'
 import {removeJdUrl} from '../Helpers'
 
 const PostCard = ({data, ...props}) => {
+  console.log('href', props.href)
   return (
     <Card
       // {...props}
