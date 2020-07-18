@@ -2,14 +2,24 @@ import {jdUrl} from './Helpers'
 
 export const postList = [
   {
-    title: 'CyberCards',
-    coverUrl: jdUrl('cards.jpg'),
-    url: 'https://toys.gnimoay.com/#/card',
-    brief: '数字生活名片夹.',
+    title: '啊!玩具!',
+    coverUrl: jdUrl('toys.png'),
+    url: 'https://toys.gnimoay.com/',
+    brief: '一个移动端小项目的合辑： 相机|卡片日记|网络名片|油画照片|等等',
     tags: ['Web', 'UX', 'Mobile', 'WIP', '2020'],
     time: 'April, 2020',
     type: 'Personal Project',
     role: ['Development', 'Design'],
+  },
+  {
+    title: 'Knots',
+    coverUrl: jdUrl('knots.jpg'),
+    url: '/#',
+    brief: '特别为播客与音乐之发现而设计的客户端(暂无链接)',
+    tags: ['iOS', 'Android', 'UX', 'Mobile', 'WIP', '2020'],
+    time: 'April, 2020',
+    type: 'Personal Project',
+    role: ['Development', 'Design', 'PM'],
   },
   {
     title: '方块日记',
@@ -81,14 +91,7 @@ export const postList = [
     tags: ['Web', 'Design', 'WIP', '2019'],
     time: 'Nov, 2019 - Now',
   },
-  {
-    title: 'ShopWalker',
-    coverUrl: jdUrl('shopwalker.jpg'),
-    tags: ['Mobile', 'UX', 'Evaluation', '2018'],
-    brief:
-      'The design and evaluation of an application which targets to facilitate daily work of a very special group – shopwalkers.',
-    time: 'Oct, 2018 - Dec, 2018',
-  },
+
   {
     title: 'BOOKIO',
     coverUrl: jdUrl('bookio.jpg'),
@@ -97,7 +100,7 @@ export const postList = [
     tags: ['UX', 'Web', '2019'],
     time: 'Nov, 2018 - Mar, 2019',
     type: 'Course Project',
-    role: ['Development', 'UX'],
+    role: ['Development', 'UX', 'PM'],
   },
   {
     title: 'Tetris.Dual',
@@ -173,6 +176,14 @@ export const postList = [
     tags: ['UX', 'Web', 'Abandoned', '2019'],
     url: 'https://cemetery.netlify.com',
     time: 'Oct, 2019 - Dec, 2019',
+  },
+  {
+    title: 'ShopWalker',
+    coverUrl: jdUrl('shopwalker.jpg'),
+    tags: ['Mobile', 'UX', 'Evaluation', '2018'],
+    brief:
+      'The design and evaluation of an application which targets to facilitate daily work of a very special group – shopwalkers.',
+    time: 'Oct, 2018 - Dec, 2018',
   },
   {
     title: 'Spotioid',
