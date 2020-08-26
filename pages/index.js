@@ -161,12 +161,12 @@ function PostList(props) {
 function Contents({opts}) {
   return (
     <div className='content'>
-      <p className='job-seek' style={{textAlign: 'center'}}>
+      {/* <p className='job-seek' style={{textAlign: 'center'}}>
         I'm looking for a fulltime UX Designer/Engineer job after graduation in{' '}
         <strong>Oct. 2020</strong>. <br />
         The position of Web Engineer would also be cool if the work is
         interesting.
-      </p>
+      </p> */}
       <Card
         className={`site-intro ${
           opts && opts.includes('about me') ? 'visible' : 'opt-hide'
