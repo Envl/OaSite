@@ -5,7 +5,7 @@ const Footer = (props) => {
   useEffect(() => {
     fetch(
       `https://api.countapi.xyz/${
-        window.location.hostname === 'localhost' ? 'get' : 'hit'
+        window.location.protocol === 'https:' ? 'hit' : 'get'
       }/gnimoay.com/visit-count-` +
         window.location.pathname.split('/').slice(1).join('-'),
     )
