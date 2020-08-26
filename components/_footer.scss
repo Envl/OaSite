@@ -1,5 +1,12 @@
 @import './variables';
 @import './media-query';
+@import './common';
+
+@include greater-than(768px) {
+  .footer-wrapper {
+    justify-content: center;
+  }
+}
 
 .footer-wrapper {
   display: flex;

@@ -83,19 +83,19 @@
     margin: 5px 0 5px 15px;
     transition-duration: $tm-mid;
     transition-timing-function: ease-in-out;
-    &:hover {
-      z-index: 1111;
-      transform: scale(2.3);
-      cursor: default;
-    }
-    @include smaller-than(768px) {
-      transform: scale(1);
-      &:hover {
-        z-index: 9999;
-        transform: scale(2.5);
-        transform-origin: right;
-      }
-    }
+    // &:hover {
+    //   z-index: 1111;
+    //   transform: scale(2.3);
+    //   cursor: default;
+    // }
+    // @include smaller-than(768px) {
+    // transform: scale(1);
+    // &:hover {
+    z-index: 9999;
+    //   transform: scale(2.5);
+    transform-origin: right;
+    // }
+    // }
   }
 }
 

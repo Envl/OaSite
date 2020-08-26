@@ -3,3 +3,9 @@
 .lazy-loading {
   filter: blur(10px);
 }
+.img-hover {
+  object-fit: contain !important;
+  transform: scale(2.3);
+  // border-radius: 40px;
+  // filter: none !important;
+}

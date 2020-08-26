@@ -9,6 +9,7 @@ const LazyImg = ({
   ...props
 }) => {
   const [loaded, setLoaded] = useState(false)
+  const [isHover, setHover] = useState(false)
   useEffect(() => {
     setLoaded(true)
   }, [])
@@ -17,7 +18,18 @@ const LazyImg = ({
     <img
       {...props}
       src={loaded ? realSrc : src}
-      className={loaded ? className : loadingClass}></img>
+      onClick={() => {
+        setHover(!isHover)
+      }}
+      // onMouseEnter={(evt) => {
+      //   setHover(true)
+      // }}
+      onMouseLeave={() => {
+        setHover(false)
+      }}
+      className={
+        (loaded ? className : loadingClass) + (isHover ? ' img-hover' : '')
+      }></img>
   )
 }
 

@@ -10,6 +10,10 @@
   .home-page {
     position: relative;
   }
+  .me-block {
+    position: sticky;
+    top: 20px;
+  }
 }
 .home-page {
   margin-top: 1%;
@@ -209,6 +213,7 @@
 .posts {
   min-width: 300px;
   margin: 12px 0 0;
+  align-content: center;
   // max-width: calc(60vw + 8px);
   // background: #663399;
   // width: 100%;
@@ -220,18 +225,19 @@
     flex-flow: column wrap;
     > *:nth-child(2n + 1) {
       order: 1;
+      margin-right: 1rem;
     }
     > *:nth-child(2n) {
       order: 2;
     }
     // &::before,
-    &::before {
-      // background: red;
-      content: '';
-      flex-basis: 100%;
-      width: 1px;
-      order: 2;
-    }
+    // &::before {
+    //   // background: red;
+    //   content: '';
+    //   flex-basis: 100%;
+    //   width: 1px;
+    //   order: 2;
+    // }
   }
 }
 
