@@ -12,10 +12,11 @@ export const postList = [
     role: ['Development', 'Design'],
   },
   {
-    title: 'Knots',
+    title: 'Knots(在线原型)',
     coverUrl: jdUrl('knots.jpg'),
-    url: '/#',
-    brief: '特别为播客与音乐之发现而设计的客户端(暂无链接)',
+    url:
+      'https://www.figma.com/proto/5oBa6FyM4pzB3YfJbgVew3/Knots?node-id=0%3A3&frame-preset-name=iPhone%2011%20Pro%20%2F%20X&scaling=scale-down',
+    brief: '特别为播客与音乐之发现而设计的客户端(迭代中)',
     tags: ['iOS', 'Android', 'UX', 'Mobile', 'WIP', '2020'],
     time: 'April, 2020',
     type: 'Personal Project',
