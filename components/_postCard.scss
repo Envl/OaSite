@@ -5,7 +5,7 @@
   padding-right: 15px;
   margin-top: 0;
   // margin-bottom: 20px;
-  margin: 0 9px 9px;
+  margin: 0 9px 9px !important;
   font-weight: normal;
   counter-increment: posts;
   max-width: 30vw;
@@ -17,7 +17,7 @@
   display: block;
   -webkit-column-break-inside: avoid;
   &:hover {
-    transform: none;
+    transform: none !important;
   }
 
   @include smaller-than(768px) {
