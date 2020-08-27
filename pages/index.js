@@ -207,12 +207,25 @@ function Contents({opts}) {
           </a>
         }
         f={
-          <a
-            href='/CV_Ming_YAO.pdf'
-            className='oa-hover-underline'
-            target='_blank'>
-            Resume
-          </a>
+          <form
+            onSubmit={(evt) => {
+              evt.preventDefault()
+              const inputEl = evt.currentTarget.querySelector('input')
+              inputEl.value = ''
+              if (inputEl.value == '24678') {
+                window.open('/CV_Ming_YAO.pdf', '_blank')
+                inputEl.placeholder = 'Code'
+              } else {
+                inputEl.placeholder = 'Invalid'
+              }
+            }}>
+            <input type='text' placeholder='Code' />
+            <button className='oa-hover-underline'>
+              Get <br />
+              Resume
+              {/* </a> */}
+            </button>
+          </form>
         }
         r={
           <a
@@ -258,12 +271,12 @@ function Index(props) {
             brief='芝.'
             detail='芝麻地'
           />
-          <SidebarItem
+          {/* <SidebarItem
             to='/CV_Ming_YAO.pdf'
             target='_blank'
             brief='CV'
             detail='CV'
-          />
+          /> */}
           <SidebarItem
             to='/'
             brief='H.'

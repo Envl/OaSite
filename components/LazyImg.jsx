@@ -14,8 +14,7 @@ const LazyImg = ({
   useEffect(() => {
     setLoaded(true)
     setMobile(
-      (window && typeof window.orientation !== 'undefined') ||
-        (navigator && navigator.userAgent.indexOf('IEMobile') !== -1),
+      typeof window != undefined && typeof window.orientation !== 'undefined',
     )
   }, [])
 
