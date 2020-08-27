@@ -6,6 +6,7 @@
 .img-hover {
   object-fit: contain !important;
   transform: scale(2.3);
+  z-index: 19999 !important;
   // border-radius: 40px;
   // filter: none !important;
 }
