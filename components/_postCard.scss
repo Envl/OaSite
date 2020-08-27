@@ -18,6 +18,7 @@
   &:hover {
     transform: none;
   }
+
   @include smaller-than(768px) {
     max-width: initial;
     padding-left: 10px;

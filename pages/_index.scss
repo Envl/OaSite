@@ -15,6 +15,13 @@
     top: 20px;
   }
 }
+@include greater-than(1080px) {
+  .posts {
+    align-content: center;
+    height: 2200px !important;
+  }
+}
+
 .home-page {
   margin-top: 1%;
   display: flex;
@@ -213,14 +220,16 @@
 .posts {
   min-width: 300px;
   margin: 12px 0 0;
-  align-content: center;
   // max-width: calc(60vw + 8px);
   // background: #663399;
   // width: 100%;
   // display: grid;
   // column-count: 2;
+  // @include greater-than(768px) {
+  //   height: 2500px;
+  // }
   @include greater-than(768px) {
-    height: 2200px;
+    height: 2500px;
     display: flex;
     flex-flow: column wrap;
     > *:nth-child(2n + 1) {
