@@ -13,9 +13,9 @@ const LazyImg = ({
   const [isHover, setHover] = useState(false)
   useEffect(() => {
     setLoaded(true)
-    // setMobile(
-    //   typeof window != undefined && typeof window.orientation !== 'undefined',
-    // )
+    setMobile(
+      typeof window != undefined && typeof window.orientation !== 'undefined',
+    )
   }, [])
 
   return (

@@ -102,7 +102,7 @@
 }
 
 .post-lr {
-  display: flex;
+  display: flex !important;
   .post-img {
     width: 0px;
     // height: auto !important;

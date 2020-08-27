@@ -288,7 +288,7 @@
 .oa-button,
 .oa-btn::after {
   // border-color: $secondaryClr;
-  border-color: #c0c0c0;
+  border-color: #c0c0c0 !important;
 }
 
 @include smaller-than(768px) {
