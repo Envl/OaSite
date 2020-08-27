@@ -4,7 +4,8 @@
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 0;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
+  margin: 0 9px 9px;
   font-weight: normal;
   counter-increment: posts;
   max-width: 30vw;
@@ -72,7 +73,7 @@
   .post-content {
     color: $fontSecondaryClr;
     font-size: $fSize;
-    @include smaller-than(768px) {
+    @include smaller-than(908px) {
       font-size: $m-fSize;
     }
   }
