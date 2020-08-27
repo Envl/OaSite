@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import './_lazyImg.scss'
 
+const isMobile =
+  typeof window.orientation !== 'undefined' ||
+  navigator.userAgent.indexOf('IEMobile') !== -1
 const LazyImg = ({
   src,
   realSrc,
@@ -21,9 +24,9 @@ const LazyImg = ({
       onClick={() => {
         setHover(!isHover)
       }}
-      // onMouseEnter={(evt) => {
-      //   setHover(true)
-      // }}
+      onMouseEnter={(evt) => {
+        !isMobile && setHover(true)
+      }}
       onMouseLeave={() => {
         setHover(false)
       }}
