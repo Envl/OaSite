@@ -16,7 +16,7 @@ import Layout from '../components/Layout'
 import LazyImg from '../components/LazyImg'
 import * as db from '../MyData'
 import {setModel, useModel} from 'flooks'
-import {jdUrl} from '../Helpers'
+import {jdUrl, copy} from '../Helpers'
 
 import './_index.scss'
 
@@ -36,6 +36,7 @@ const filters = {
 setModel('filters', filters)
 
 function Me({setOpts, opts}) {
+  const [emailNotice, setEmailNotice] = useState('')
   const {updateType} = useModel('filters', true)
   const [footCount, setFootCount] = useState(0)
   useEffect(() => {
@@ -89,14 +90,21 @@ function Me({setOpts, opts}) {
           setOpts(options)
         }}
       />
-      <a
-        href='mailto:yyaomingm@outlook.com'
-        target='_blank'
+      <div
+        // href='mailto:hi@gnimoay.com'
+        // target='_blank'
+        onClick={() => {
+          copy('hi@gnimoay.com')
+          setEmailNotice('COPIED:')
+          setTimeout(() => {
+            setEmailNotice('')
+          }, 1000)
+        }}
         className={`me-contact ${
           opts && opts.includes('contact me') ? 'visible' : 'opt-hide'
         }`}>
-        <Card>yyaomingm@outlook.com</Card>
-      </a>
+        <Card>{emailNotice} hi@gnimoay.com</Card>
+      </div>
       <FilterGroup
         single
         className='type-filter'
@@ -305,7 +313,7 @@ function Index(props) {
     </SidebarInjector>
   )
 }
-Index.getInitialProps = async function (ctx) {
+Index.getInitialProps = function (ctx) {
   return {
     ipAddr: {
       a: ctx.req.connection.remoteAddress,

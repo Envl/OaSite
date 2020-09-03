@@ -76,6 +76,10 @@
     @include smaller-than(908px) {
       font-size: $m-fSize;
     }
+    a {
+      text-decoration: underline $secondaryClr 2px;
+      color: $fontClr;
+    }
   }
   .post-img {
     flex: 1;

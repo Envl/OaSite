@@ -76,6 +76,7 @@
     margin: 0 0 5px 3px;
   }
   .me-contact {
+    cursor: pointer;
     grid-area: contact;
     justify-self: center;
   }
@@ -250,35 +251,6 @@
 .posts {
   min-width: 300px;
   margin: 12px auto;
-
-  // max-width: calc(60vw + 8px);
-  // background: #663399;
-  // width: 100%;
-  // display: grid;
-  // column-count: 2;
-  // @include greater-than(768px) {
-  //   height: 2500px;
-  // }
-  // @include greater-than(768px) {
-  //   height: 2500px;
-  //   display: flex;
-  //   flex-flow: column wrap;
-  //   > *:nth-child(2n + 1) {
-  //     order: 1;
-  //     margin-right: 1rem;
-  //   }
-  //   > *:nth-child(2n) {
-  //     order: 2;
-  //   }
-  //   // &::before,
-  //   // &::before {
-  //   //   // background: red;
-  //   //   content: '';
-  //   //   flex-basis: 100%;
-  //   //   width: 1px;
-  //   //   order: 2;
-  //   // }
-  // }
 }
 
 .oa-card,

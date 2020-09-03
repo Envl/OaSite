@@ -2,6 +2,23 @@ import {jdUrl} from './Helpers'
 
 export const postList = [
   {
+    title: '即刻Lite',
+    coverUrl: jdUrl('jike.png'),
+    url: 'https://jike.gnimoay.com/',
+    brief: (
+      <span>
+        <a href='https://www.okjike.com/' target='__blank'>
+          即刻App
+        </a>
+        的非官方客户端，支持黑暗模式，优化了信息展示效率
+      </span>
+    ),
+    tags: ['Web', 'UX', 'Mobile', 'WIP', '2020'],
+    time: 'August, 2020',
+    type: 'Personal Project',
+    role: ['Development', 'Design'],
+  },
+  {
     title: '啊!玩具!',
     coverUrl: jdUrl('toys.png'),
     url: 'https://toys.gnimoay.com/',
@@ -44,6 +61,17 @@ export const postList = [
     role: ['Development', 'Design'],
   },
   {
+    title: 'Bitcoin Visualization',
+    coverUrl: jdUrl('btc.png'),
+    url: 'https://observablehq.com/@gnimoay/bitcoin-viz',
+    brief:
+      'Visualization on news about BTC to find their influence on the price.',
+    tags: ['Web', 'Visualization', '2019'],
+    time: 'Dec, 2019 - Feb, 2020',
+    type: 'Course Project',
+    role: ['Development', 'Design'],
+  },
+  {
     title: 'Sketch Calculator',
     coverUrl: jdUrl('calc.png'),
     url: 'https://observablehq.com/@gnimoay/sketch-calculator',
@@ -63,17 +91,7 @@ export const postList = [
     type: 'Personal Project',
     role: ['Development', 'Design'],
   },
-  {
-    title: 'Bitcoin Visualization',
-    coverUrl: jdUrl('btc.png'),
-    url: 'https://observablehq.com/@gnimoay/bitcoin-viz',
-    brief:
-      'Visualization on news about BTC to find their influence on the price.',
-    tags: ['Web', 'Visualization', '2019'],
-    time: 'Dec, 2019 - Feb, 2020',
-    type: 'Course Project',
-    role: ['Development', 'Design'],
-  },
+
   {
     title: 'Rugbeats',
     coverUrl: jdUrl('rugbeats.png'),
