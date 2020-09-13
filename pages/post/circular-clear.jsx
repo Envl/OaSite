@@ -50,36 +50,32 @@ const CircularClear = () => {
           or the position of the pen, many beautiful images can therefore be
           created.
         </p>
-        <p>
-          <h2>Game Prototype</h2>
-          By combining both concepts, here is the game Circular Clear.
-        </p>
+        <h2>Game Prototype</h2>
+        <p>By combining both concepts, here is the game Circular Clear.</p>
         <iframe
           src='https://www.youtube.com/embed/ay87rjPXSaI'
           frameborder='0'
           allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
           allowfullscreen></iframe>
+        <h3>How to play</h3>
+        <ul>
+          <li>
+            Use key <strong>S D F, J K L</strong> to spin these rings
+          </li>
+          <li>
+            If there is a three-match, press <strong>SPACE</strong> to clear
+            them
+          </li>
+        </ul>
+        <h3>Download</h3>
         <p>
-          <h3>How to play</h3>
-          <ul>
-            <li>
-              Use key <strong>S D F, J K L</strong> to spin these rings
-            </li>
-            <li>
-              If there is a three-match, press <strong>SPACE</strong> to clear
-              them
-            </li>
-          </ul>
-          <h3>Download</h3>
-          <p>
-            A lo-fi playable version can be downloaded here:
-            <br /> Windows:&nbsp;
-            <a
-              href='https://send.firefox.com/download/7dbf3baa613deeb1/#v90rRRffCl8Fjyt5i_JcSw'
-              target='_blank'>
-              Demo
-            </a>
-          </p>
+          A lo-fi playable version can be downloaded here:
+          <br /> Windows:&nbsp;
+          <a
+            href='https://send.firefox.com/download/7dbf3baa613deeb1/#v90rRRffCl8Fjyt5i_JcSw'
+            target='_blank'>
+            Demo
+          </a>
         </p>
       </div>
     </Layout>
