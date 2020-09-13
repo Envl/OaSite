@@ -20,7 +20,7 @@ const Layout = (props) => {
               brief='芝.'
               detail='芝麻地'
             />
-            <SidebarItem to='/CV_Ming_YAO.pdf' brief='CV' detail='CV' />
+            {/* <SidebarItem to='/CV_Ming_YAO.pdf' brief='CV' detail='CV' /> */}
             {/* <SidebarItem to='/projects' brief='P.' detail='Projects' /> */}
             <SidebarItem
               to='/'
