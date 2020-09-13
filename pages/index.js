@@ -43,6 +43,12 @@ function Me({setOpts, opts}) {
     fetch('https://api.countapi.xyz/get/gnimoay.com/footCount')
       .then((res) => res.json())
       .then((data) => setFootCount(data.value))
+    const hash = window.location.hash.replace('#', '').toLowerCase()
+    setTimeout(() => {
+      if (['interaction', 'ux', 'web', 'game', 'mobile'].includes(hash)) {
+        updateType(hash[0].toUpperCase() + hash.substr(1))
+      }
+    }, 200)
   }, [])
   return (
     <div className='me-block'>
@@ -294,7 +300,7 @@ function Index(props) {
         </>
       }>
       <Head>
-        <title className='hidden'>Ming YAO / @GnimOay</title>
+        <title>Ming YAO / @GnimOay</title>
         <link rel='icon' href='/icon.png' type='image/jpg' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <script
