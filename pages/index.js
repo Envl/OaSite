@@ -12,7 +12,6 @@ import {
 } from 'oapack'
 import Footer from '../components/Footer'
 import PostCard from '../components/PostCard'
-import Layout from '../components/Layout'
 import LazyImg from '../components/LazyImg'
 import * as db from '../MyData'
 import {setModel, useModel} from 'flooks'
@@ -263,15 +262,13 @@ function Index(props) {
     hm.src = 'https://hm.baidu.com/hm.js?ae9e7cdc50a29d2859ef293e6caaec12'
     const s = document.getElementsByTagName('script')[0]
     s.parentNode.insertBefore(hm, s)
-
     //---------------------
     window.dataLayer = window.dataLayer || []
     function gtag() {
       dataLayer.push(arguments)
     }
     gtag('js', new Date())
-
-    gtag('config', 'G-REWTHY2S75')
+    gtag('config', 'UA-150711963-4')
   }, [])
 
   return (
@@ -306,11 +303,6 @@ function Index(props) {
         <script
           async
           src='https://www.googletagmanager.com/gtag/js?id=UA-150711963-4'></script>
-        <script>
-          window.dataLayer = window.dataLayer || [] function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()) gtag('config', 'UA-150711963-4')
-        </script>
       </Head>
       <div className='home-page'>
         <div className='home-body'>
