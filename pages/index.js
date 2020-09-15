@@ -304,8 +304,13 @@ function Index(props) {
         <link rel='icon' href='/icon.png' type='image/jpg' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <script
-          defer
-          src='https://www.googletagmanager.com/gtag/js?id=G-REWTHY2S75'></script>
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=UA-150711963-4'></script>
+        <script>
+          window.dataLayer = window.dataLayer || [] function gtag()
+          {dataLayer.push(arguments)}
+          gtag('js', new Date()) gtag('config', 'UA-150711963-4')
+        </script>
       </Head>
       <div className='home-page'>
         <div className='home-body'>
