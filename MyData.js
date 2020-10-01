@@ -2,9 +2,29 @@ import {jdUrl} from './Helpers'
 
 export const postList = [
   {
+    title: '个人网站2020',
+    coverUrl: jdUrl('2020-site.png'),
+    url: 'https://2020.gnimoay.com/',
+    brief: '新年新气象，正在搭建中',
+    tags: ['Web', 'Visualization', 'WIP', '2020'],
+    time: 'September, 2020',
+    type: 'Personal Project',
+    role: ['Development', 'Design'],
+  },
+  {
+    title: 'adicted',
+    coverUrl: jdUrl('adicted.png'),
+    url: 'https://2020.gnimoay.com/#adicted',
+    brief: '换个思路记单词',
+    tags: ['Web', 'Mobile', 'UX', 'WIP', '2020'],
+    time: 'September, 2020',
+    type: 'Personal Project',
+    role: ['Development', 'Design'],
+  },
+  {
     title: '即刻Lite',
     coverUrl: jdUrl('jike.png'),
-    url: 'https://jike.gnimoay.com/',
+    url: 'https://2020.gnimoay.com/#jike',
     brief: (
       <span>
         <a href='https://www.okjike.com/' target='__blank'>
@@ -23,7 +43,7 @@ export const postList = [
     coverUrl: jdUrl('toys.png'),
     url: 'https://toys.gnimoay.com/',
     brief: '一个移动端小项目的合辑： 相机|卡片日记|网络名片|油画照片|等等',
-    tags: ['Web', 'UX', 'Mobile', 'WIP', '2020'],
+    tags: ['Web', 'UX', 'Mobile', '2020'],
     time: 'April, 2020',
     type: 'Personal Project',
     role: ['Development', 'Design'],
@@ -52,7 +72,7 @@ export const postList = [
   {
     title: 'STKM',
     coverUrl: jdUrl('stkm.jpg'),
-    url: 'https://stkm.now.sh/',
+    url: 'https://stkm.gnimoay.com/',
     brief:
       'An online camera which allows you to take stacked photos with captions.',
     tags: ['Web', 'UX', 'Mobile', '2020'],
