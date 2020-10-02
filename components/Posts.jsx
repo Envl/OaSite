@@ -6,7 +6,7 @@ import './_posts.scss'
 export default function Posts({zmd}) {
   return (
     <Card className='async-article-posts'>
-      {Object.values(zmd).map((v, i) => (
+      {Object.values(zmd.slice(-7, zmd.length)).map((v, i) => (
         <a
           key={'post' + i}
           className='async-article-posts__link'
