@@ -2,7 +2,7 @@
 
 .async-article-posts {
   margin: auto auto 8px;
-  display: flex;
+  display: flex !important;
   flex-direction: column-reverse;
   width: calc(100% - 3.7rem);
   grid-row: 3/5;
