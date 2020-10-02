@@ -1,0 +1,28 @@
+@import './common';
+
+.async-article-posts {
+  margin: auto auto 8px;
+  display: flex;
+  flex-direction: column-reverse;
+  width: calc(100% - 3.7rem);
+  grid-row: 3/5;
+  justify-content: center;
+  height: 91%;
+  align-items: center;
+  &:hover {
+    transform: none;
+  }
+}
+.async-article-posts__link {
+  width: fit-content;
+  // font-weight: bold;
+  // font-size: 18px;
+  margin-right: 5px;
+  cursor: pointer;
+  color: $fontClr;
+  display: block;
+  margin: 4px auto;
+  &:hover {
+    text-decoration: underline;
+  }
+}

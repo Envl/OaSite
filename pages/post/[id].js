@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import fetch from 'isomorphic-unfetch'
-import MarkDown from 'react-markdown'
 import './_postPage.scss'
 import {SidebarInjector} from 'oapack'
 import Layout from '../../components/Layout'

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import fetch from 'isomorphic-unfetch'
 import {useEffect, useState} from 'react'
 import {
   Button,
@@ -10,6 +11,7 @@ import {
   CubeMenu,
   FilterGroup,
 } from 'oapack'
+import Posts from '../components/Posts'
 import Footer from '../components/Footer'
 import PostCard from '../components/PostCard'
 import LazyImg from '../components/LazyImg'
@@ -146,6 +148,8 @@ function PostList(props) {
   const {postType} = useModel('filters')
   return (
     <div className={`posts ${props.className ? props.className : ''}`}>
+      <Posts zmd={props.zmd} />
+
       {db.postList
         .filter((item) => {
           if (postType === 'all' || typeof postType === 'undefined') {
@@ -171,15 +175,9 @@ function PostList(props) {
   )
 }
 
-function Contents({opts}) {
+function Contents({opts, zmd}) {
   return (
     <div className='content'>
-      {/* <p className='job-seek' style={{textAlign: 'center'}}>
-        I'm looking for a fulltime UX Designer/Engineer job after graduation in{' '}
-        <strong>Oct. 2020</strong>. <br />
-        The position of Web Engineer would also be cool if the work is
-        interesting.
-      </p> */}
       <Card
         className={`site-intro ${
           opts && opts.includes('about me') ? 'visible' : 'opt-hide'
@@ -249,7 +247,7 @@ function Contents({opts}) {
           </a>
         }
       />
-      <PostList />
+      <PostList zmd={zmd} />
     </div>
   )
 }
@@ -307,7 +305,7 @@ function Index(props) {
       <div className='home-page'>
         <div className='home-body'>
           <Me setOpts={setOpts} opts={opts} />
-          <Contents opts={opts} />
+          <Contents opts={opts} zmd={props.zmd} />
         </div>
         <Footer
           className={opts && opts.includes('footer') ? 'visible' : 'opt-hide'}
@@ -316,8 +314,14 @@ function Index(props) {
     </SidebarInjector>
   )
 }
-Index.getInitialProps = function (ctx) {
+Index.getInitialProps = async function (ctx) {
+  const zmd = await (
+    await fetch(
+      'https://potion-api.now.sh/table?id=b13a7a6b113d423895424dd2a46816e8',
+    )
+  ).json()
   return {
+    zmd: zmd,
     ipAddr: {
       a: ctx.req.connection.remoteAddress,
       b: ctx.req.headers['x-forwarded-for'],
