@@ -243,7 +243,9 @@
   text-transform: none;
   // min-width: 300px;
   max-width: 80vw;
-  margin: auto;
+  width: fit-content;
+  margin: 2rem 4rem;
+  // margin: auto;
   &:hover {
     transform: translateY(0);
   }
