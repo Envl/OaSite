@@ -15,7 +15,7 @@ const Layout = (props) => {
         items={
           <>
             <SidebarItem
-              to='https://www.notion.so/63b2e83003f240339ae065011afc88a0'
+              to='https://zmd.hedwig.pub/'
               target='_blank'
               brief='芝.'
               detail='芝麻地'

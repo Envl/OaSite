@@ -1,13 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import fetch from 'isomorphic-unfetch'
 import './_postPage.scss'
-import {SidebarInjector} from 'oapack'
 import Layout from '../../components/Layout'
 import MD from 'markdown-to-jsx'
-import {useRouter} from 'next/router'
 
 const Index = (props) => {
-  const router = useRouter()
   return (
     <Layout heading={props.heading}>
       <div className='post-page'>
