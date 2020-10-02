@@ -3,15 +3,17 @@ import Layout from '../components/Layout'
 import './post/_postPage.scss'
 
 export default function NotionPage({html, heading, exists}) {
-  return exists ? (
-    <Layout heading={heading}>
-      <div className='post-page'>
-        <h1>{heading}</h1>
-        <div dangerouslySetInnerHTML={{__html: html}}></div>
-      </div>
+  return (
+    <Layout heading={heading || 'Page does not exist'}>
+      {exists ? (
+        <div className='post-page'>
+          <h1>{heading}</h1>
+          <div dangerouslySetInnerHTML={{__html: html}}></div>
+        </div>
+      ) : (
+        'This page does not exist.'
+      )}
     </Layout>
-  ) : (
-    'This page does not exist.'
   )
 }
 
