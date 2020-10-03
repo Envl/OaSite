@@ -31,7 +31,8 @@
     "oapack": "0.1.27",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-markdown": "^4.2.2"
+    "react-markdown": "^4.2.2",
+    "react-notion": "^0.8.2"
   },
   "devDependencies": {}
 }

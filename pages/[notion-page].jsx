@@ -19,14 +19,15 @@ export default function NotionPage({html, heading, exists}) {
 
 NotionPage.getInitialProps = async ({req, query}) => {
   const pageID = query['notion-page']
-  const res = await fetch('https://potion-api.now.sh/html?id=' + pageID)
+  const res = await fetch('https://notion-api.gnimoay.com/html?id=' + pageID)
   const html = await res.text()
   let result = await (
     await fetch(
-      'https://potion-api.now.sh/table?id=b13a7a6b113d423895424dd2a46816e8',
+      'https://notion.envl.workers.dev/v1/table/b13a7a6b113d423895424dd2a46816e8',
     )
   ).json()
   result = result.filter((item) => item.id.split('-').join('') === pageID)[0]
-  const heading = result ? result.fields.Name : null
+  console.log('id', pageID)
+  const heading = result ? result.Name : null
   return {html, heading, exists: result ? true : false}
 }

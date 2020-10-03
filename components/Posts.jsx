@@ -10,7 +10,7 @@ export default function Posts({zmd}) {
       {Object.values(zmd.slice(-7, zmd.length)).map((v, i) => (
         <Link href={'/' + v.id.split('-').join('')} key={'post' + i}>
           <a className='async-article-posts__link' target='_blank'>
-            {v.fields.Name}
+            {v.Name}
           </a>
         </Link>
       ))}
