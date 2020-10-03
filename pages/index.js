@@ -85,7 +85,7 @@ function Index(props) {
 Index.getInitialProps = async function (ctx) {
   const zmd = await (
     await fetch(
-      'https://notion-api.gnimoay.com/table?id=b13a7a6b113d423895424dd2a46816e8',
+      'https://notion.envl.workers.dev/v1/table/63b2e83003f240339ae065011afc88a0',
     )
   ).json()
   return {
