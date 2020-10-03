@@ -5,7 +5,7 @@ export const postList = [
     title: '个人网站2020',
     coverUrl: jdUrl('2020-site.png'),
     url: 'https://2020.gnimoay.com/',
-    brief: '新年新气象，正在搭建中',
+    brief: '新年新气象，搭建中',
     tags: ['Web', 'Visualization', 'WIP', '2020'],
     time: 'September, 2020',
     type: 'Personal Project',
