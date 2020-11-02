@@ -1,24 +1,27 @@
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/Layout'
+import Hurray from '../components/Hurray'
 import {NotionRenderer} from 'react-notion'
-
 // import "react-notion/src/styles.css";
 // import "prismjs/themes/prism-tomorrow.css";
 import './post/_postPage.scss'
 
-export default function NotionPage({html, heading, exists,blockMap}) {
+export default function NotionPage({html, heading, exists, blockMap}) {
   return (
-    <Layout heading={heading || 'Page does not exist'}>
-      {exists ? (
-        <div className='post-page'>
-          <h1>{heading}</h1>
-          <div dangerouslySetInnerHTML={{__html: html}}></div>
-        </div>
-        // <NotionRenderer blockMap={blockMap}/>
-      ) : (
-        'This page does not exist.'
-      )}
-    </Layout>
+    <>
+      <Hurray />
+      <Layout heading={heading || 'Page does not exist'}>
+        {exists ? (
+          <div className='post-page'>
+            <h1>{heading}</h1>
+            <div dangerouslySetInnerHTML={{__html: html}}></div>
+          </div>
+        ) : (
+          // <NotionRenderer blockMap={blockMap}/>
+          'This page does not exist.'
+        )}
+      </Layout>
+    </>
   )
 }
 
@@ -27,9 +30,7 @@ NotionPage.getInitialProps = async ({req, query}) => {
   const res = await fetch('https://notion-api.gnimoay.com/html?id=' + pageID)
   const html = await res.text()
   let blockMap = await (
-    await fetch(
-      'https://notion.envl.workers.dev/v1/page/'+pageID,
-    )
+    await fetch('https://notion.envl.workers.dev/v1/page/' + pageID)
   ).json()
   let result = await (
     await fetch(
@@ -39,5 +40,5 @@ NotionPage.getInitialProps = async ({req, query}) => {
   result = result.filter((item) => item.id.split('-').join('') === pageID)[0]
   // console.log('id', pageID)
   const heading = result ? result.Name : null
-  return {html, heading, exists: result ? true : false,blockMap}
+  return {html, heading, exists: result ? true : false, blockMap}
 }

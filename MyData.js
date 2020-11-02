@@ -74,7 +74,7 @@ export const postList = [
     coverUrl: jdUrl('stkm.jpg'),
     url: 'https://stkm.gnimoay.com/',
     brief:
-      'An online camera which allows you to take stacked photos with captions.',
+      'A Web-based camera which allows you to take stacking photos with captions.',
     tags: ['Web', 'UX', 'Mobile', '2020'],
     time: 'Mar, 2020 - Now',
     type: 'Personal Project',
