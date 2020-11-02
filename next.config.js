@@ -17,7 +17,7 @@ module.exports = withSass(
         // Perform customizations to webpack config
         // Important: return the modified config
         config.module.rules.push({
-          test: /\.(jpe?g|png|gif)$/,
+          test: /\.(jpe?g|png)$/,
           use: [
             {
               loader: 'lqip-loader',
