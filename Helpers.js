@@ -13,6 +13,20 @@
 //   return HOC
 // }
 
+export async function like(domain, keyword, hit = false) {
+  return (
+    await (
+      await fetch(
+        'https://api.countapi.xyz/' +
+          (hit ? 'hit/' : 'get/') +
+          domain +
+          '/' +
+          keyword,
+      )
+    ).json()
+  ).value
+}
+
 export function copy(text) {
   const fake = document.body.appendChild(document.createElement('textArea'))
   fake.style.position = 'absolute'
