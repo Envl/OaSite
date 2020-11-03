@@ -1,5 +1,6 @@
 const withSass = require('@zeit/next-sass')
 const withCSS = require('@zeit/next-css')
+const withTM = require('next-transpile-modules')(['oapack'])
 const withPlugins = require('next-compose-plugins')
 const withImages = require('next-images')
 
@@ -10,8 +11,7 @@ if (typeof require !== 'undefined' && process.env.NODE_ENV === 'development') {
 module.exports = withSass(
   withCSS(
     // withImages(
-    // withTM(
-    {
+    withTM({
       webpack: (config, {buildId, dev, isServer, defaultLoaders, webpack}) => {
         // Note: we provide webpack above so you should not `require` it
         // Perform customizations to webpack config
@@ -35,8 +35,7 @@ module.exports = withSass(
         return config
       },
       target: 'serverless',
-    },
-    // ),
+    }),
   ),
   // ),
 )
