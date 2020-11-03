@@ -4,6 +4,7 @@
   bottom: 30vh;
   z-index: 9999;
   cursor: pointer;
+  user-select: none;
   &:hover .hurray-cft {
     transform: rotate(-90deg) translate(6px, -10px) scale(1.2);
   }

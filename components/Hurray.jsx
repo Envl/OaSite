@@ -5,8 +5,10 @@ import './_hurray.scss'
 
 export default function Hurray() {
   const [counter, setCounter] = useState(0)
+  const [isVertical, setIsVertical] = useState(false)
   useEffect(() => {
     like('gnimoay.com', 'sesame').then((v) => setCounter(v))
+    setIsVertical(window.innerHeight > window.innerWidth)
   })
   return (
     <div
@@ -19,7 +21,7 @@ export default function Hurray() {
         }
         confetti({
           particleCount: 100,
-          startVelocity: 50,
+          startVelocity: isVertical ? 32 : 50,
           angle: 120 + Math.random() * 40,
           spread: 50,
           origin: origin,
