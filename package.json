@@ -23,7 +23,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "lqip-loader": "^2.2.0",
     "markdown-to-jsx": "^6.10.3",
-    "next": "^9.3.2",
+    "next": "^10.0.0",
     "next-boost": "^0.6.5",
     "next-compose-plugins": "^2.2.0",
     "next-images": "^1.4.0",
