@@ -1,12 +1,14 @@
-import React from 'react'
-import {Card, CubeMenu} from 'oapack'
+import * as db from '../MyData'
+
+import { Card, CubeMenu } from 'oapack'
+
 import PostCard from '../components/PostCard'
 import Posts from '../components/Posts'
-import * as db from '../MyData'
-import {useModel} from 'flooks'
+import React from 'react'
+import { useModel } from 'flooks'
 
 function PostList(props) {
-  const {postType} = useModel('filters')
+  const { postType } = useModel('filters')
   return (
     <div className={`posts ${props.className ? props.className : ''}`}>
       <Posts zmd={props.zmd} />
@@ -36,10 +38,10 @@ function PostList(props) {
   )
 }
 
-export default function Contents({opts, zmd}) {
+export default function Contents({ opts, zmd }) {
   return (
     <div className='content'>
-      <Card
+      {/* <Card
         className={`site-intro ${
           opts && opts.includes('about me') ? 'visible' : 'opt-hide'
         }`}>
@@ -70,7 +72,7 @@ export default function Contents({opts, zmd}) {
           With a background of B.E. in Digital Media Technology, I also build🔨
           stuffs.
         </p>
-      </Card>
+      </Card> */}
       <CubeMenu
         className='home-cube'
         u={

@@ -1,12 +1,13 @@
-import {useEffect, useState} from 'react'
-import {setModel, useModel} from 'flooks'
-import {Button, FilterGroup, DropDown, Card} from 'oapack'
-import LazyImg from '../components/LazyImg'
-import {jdUrl, copy} from '../Helpers'
+import { Button, Card, DropDown, FilterGroup } from 'oapack'
+import { copy, jdUrl } from '../Helpers'
+import { setModel, useModel } from 'flooks'
+import { useEffect, useState } from 'react'
 
-export default function Me({setOpts, opts}) {
+import LazyImg from '../components/LazyImg'
+
+export default function Me({ setOpts, opts }) {
   const [emailNotice, setEmailNotice] = useState('')
-  const {updateType} = useModel('filters', true)
+  const { updateType } = useModel('filters', true)
   const [footCount, setFootCount] = useState(0)
   useEffect(() => {
     fetch('https://api.countapi.xyz/get/gnimoay.com/footCount')
@@ -41,25 +42,25 @@ export default function Me({setOpts, opts}) {
       <FilterGroup
         className='block-filters'
         initialFilters={[
-          {name: 'c', pushed: false},
-          {name: 'o', pushed: false},
-          {name: 'd', pushed: true},
-          {name: 'e', pushed: true},
+          { name: 'c', pushed: false },
+          { name: 'o', pushed: false },
+          { name: 'd', pushed: true },
+          { name: 'e', pushed: true },
 
-          {name: 's', pushed: false},
-          {name: 'i', pushed: false},
-          {name: 'g', pushed: false},
-          {name: 'n', pushed: false},
-          {name: ':)', pushed: true, disabled: true},
+          { name: 's', pushed: false },
+          { name: 'i', pushed: false },
+          { name: 'g', pushed: false },
+          { name: 'n', pushed: false },
+          { name: ':)', pushed: true, disabled: true },
         ]}
       />
       <FilterGroup
         className='site-filters'
         initialFilters={[
-          {name: 'about me', pushed: opts.includes('about me')},
-          {name: 'sidebar', pushed: opts.includes('sidebar')},
-          {name: 'footer', pushed: opts.includes('footer')},
-          {name: 'contact me', pushed: opts.includes('contact me')},
+          // {name: 'about me', pushed: opts.includes('about me')},
+          { name: 'sidebar', pushed: opts.includes('sidebar') },
+          { name: 'footer', pushed: opts.includes('footer') },
+          { name: 'contact me', pushed: opts.includes('contact me') },
         ]}
         onFilterUpdate={(options) => {
           setOpts(options)
@@ -87,7 +88,7 @@ export default function Me({setOpts, opts}) {
           updateType(types[0])
         }}
         initialFilters={[
-          {name: 'all', pushed: true},
+          { name: 'all', pushed: true },
           'Interaction',
           'UX',
           'Web',
