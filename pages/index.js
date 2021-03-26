@@ -1,26 +1,26 @@
-import Link from 'next/link'
-import Head from 'next/head'
-import fetch from 'isomorphic-unfetch'
-import {useEffect, useState} from 'react'
-import {SidebarInjector, SidebarItem} from 'oapack'
-import {setModel} from 'flooks'
-
-import Me from '../components/Me'
-import Footer from '../components/Footer'
-import Contents from '../components/Contents'
-
 import './_index.scss'
+
+import { SidebarInjector, SidebarItem } from 'oapack'
+import { useEffect, useState } from 'react'
+
+import Contents from '../components/Contents'
+import Footer from '../components/Footer'
+import Head from 'next/head'
+import Link from 'next/link'
+import Me from '../components/Me'
+import fetch from 'isomorphic-unfetch'
+import { setModel } from 'flooks'
 
 const filters = {
   state: {
     postType: 'all',
   },
-  actions: ({model, setState}) => ({
+  actions: ({ model, setState }) => ({
     updateType(newType) {
       if (newType === 'Interaction') {
         newType = ['Tangible Interaction', 'Interaction Design', 'Interaction']
       }
-      setState({postType: newType})
+      setState({ postType: newType })
     },
   }),
 }
@@ -83,11 +83,13 @@ function Index(props) {
   )
 }
 Index.getInitialProps = async function (ctx) {
-  const zmd = await (
-    await fetch(
-      'https://notion.envl.workers.dev/v1/table/63b2e83003f240339ae065011afc88a0',
-    )
-  ).json()
+  const zmd = (
+    await (
+      await fetch(
+        'https://potion.gnimoay.com/table?id=b13a7a6b113d423895424dd2a46816e8',
+      )
+    ).json()
+  ).map((post) => ({ ...post, Name: post.fields.Name }))
   return {
     zmd: zmd,
     ipAddr: {

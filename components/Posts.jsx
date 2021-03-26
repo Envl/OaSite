@@ -1,10 +1,10 @@
-import React from 'react'
-import {Card} from 'oapack'
-import Link from 'next/link'
-
 import './_posts.scss'
 
-export default function Posts({zmd}) {
+import { Card } from 'oapack'
+import Link from 'next/link'
+import React from 'react'
+
+export default function Posts({ zmd }) {
   return (
     <Card className='async-article-posts'>
       {Object.values(zmd.slice(-7, zmd.length)).map((v, i) => {

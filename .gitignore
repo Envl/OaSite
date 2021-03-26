@@ -2,3 +2,5 @@
 /.next
 /out 
 # _ApiKeys.js
+
+.vercel
