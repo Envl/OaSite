@@ -49,29 +49,31 @@ function Index(props) {
       items={
         <>
           <SidebarItem
-            to='https://https://zmd.hedwig.pub/'
-            target='_blank'
-            brief='芝.'
-            detail='芝麻地'
+            to="https://zmd.hedwig.pub/"
+            target="_blank"
+            brief="芝."
+            detail="芝麻地"
           />
           <SidebarItem
-            to='/'
-            brief='H.'
-            detail='Home'
-            className='sidebar-active'
+            to="/"
+            brief="H."
+            detail="Home"
+            className="sidebar-active"
           />
         </>
-      }>
+      }
+    >
       <Head>
         <title>Ming YAO / @GnimOay</title>
-        <link rel='icon' href='/icon.png' type='image/jpg' />
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <link rel="icon" href="/icon.png" type="image/jpg" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <script
           async
-          src='https://www.googletagmanager.com/gtag/js?id=UA-150711963-4'></script>
+          src="https://www.googletagmanager.com/gtag/js?id=UA-150711963-4"
+        ></script>
       </Head>
-      <div className='home-page'>
-        <div className='home-body'>
+      <div className="home-page">
+        <div className="home-body">
           <Me setOpts={setOpts} opts={opts} />
           <Contents opts={opts} zmd={props.zmd} />
         </div>
@@ -82,20 +84,24 @@ function Index(props) {
     </SidebarInjector>
   )
 }
-Index.getInitialProps = async function (ctx) {
+
+export async function getStaticProps() {
   const zmd = (
     await (
       await fetch(
-        'https://potion.gnimoay.com/table?id=b13a7a6b113d423895424dd2a46816e8',
+        'https://potion.gnimoay.com/table?id=b13a7a6b113d423895424dd2a46816e8'
       )
     ).json()
-  ).map((post) => ({ ...post, Name: post.fields.Name }))
+  ).map(post => ({ ...post, Name: post.fields.Name }))
   return {
-    zmd: zmd,
-    ipAddr: {
-      a: ctx.req.connection.remoteAddress,
-      b: ctx.req.headers['x-forwarded-for'],
+    props: {
+      zmd: zmd,
     },
+    revalidate: 60, // per 60 seconds
+    // ipAddr: {
+    //   a: ctx.req.connection.remoteAddress,
+    //   b: ctx.req.headers['x-forwarded-for'],
+    // },
   }
 }
 export default Index

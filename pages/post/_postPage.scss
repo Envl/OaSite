@@ -52,7 +52,7 @@
     // display: block;
     margin: 0 auto 1.5rem;
     max-width: 55vw;
-    width: fit-content;
+    width: 100%;
     display: block;
     // width: 80vw;
     // margin: 1.5vw;
@@ -67,7 +67,7 @@
 
 .oa-md {
   max-width: 800px;
-  margin: 0 5vw 10vw;
+  margin: 0 0 10vw;
   font-size: $fSize;
   line-height: 1.5;
   word-wrap: break-word;
@@ -106,7 +106,6 @@ iframe {
     }
   }
   .oa-md {
-    width: 90vw;
     p {
       font-size: $m-fSize;
     }
