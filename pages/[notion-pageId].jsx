@@ -49,5 +49,5 @@ export async function getStaticProps({ params }) {
   result = result.filter(item => item.id.split('-').join('') === pageId)[0]
   const heading = result ? result.fields.Name : null
 
-  return { props: { html, heading, exists: !!result }, revalidate: 60 //per 60 secs }
+  return { props: { html, heading, exists: !!result }, revalidate: 60 } //per 60 secs
 }

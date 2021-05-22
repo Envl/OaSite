@@ -2,6 +2,7 @@ import * as db from '../MyData'
 
 import { Card, CubeMenu } from 'oapack'
 
+import LazyImg from './LazyImg'
 import PostCard from '../components/PostCard'
 import Posts from '../components/Posts'
 import React from 'react'
@@ -14,21 +15,22 @@ function PostList(props) {
       <Posts zmd={props.zmd} />
 
       {db.postList
-        .filter((item) => {
+        .filter(item => {
           if (postType === 'all' || typeof postType === 'undefined') {
             return true
           } else {
             return typeof postType === 'string'
               ? item.tags.includes(postType)
-              : item.tags.some((tag) => postType.includes(tag))
+              : item.tags.some(tag => postType.includes(tag))
           }
         })
-        .map((l) => (
+        .map(l => (
           <PostCard
             key={l.title}
-            className='post-lr'
+            className="post-lr"
             data={l}
-            href={'/post/' + l.title.toLowerCase().split(' ').join('-')}>
+            href={'/post/' + l.title.toLowerCase().split(' ').join('-')}
+          >
             {l.brief
               ? l.brief
               : '(Coming Soon...)Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt diam felis, sed tempor est pellentesque vel.'}
@@ -40,7 +42,7 @@ function PostList(props) {
 
 export default function Contents({ opts, zmd }) {
   return (
-    <div className='content'>
+    <div className="content">
       {/* <Card
         className={`site-intro ${
           opts && opts.includes('about me') ? 'visible' : 'opt-hide'
@@ -74,38 +76,45 @@ export default function Contents({ opts, zmd }) {
         </p>
       </Card> */}
       <CubeMenu
-        className='home-cube'
+        className="home-cube"
         u={
-          <a href='https://www.instagram.com/sesampicr/' target='_blank'>
-            <i className='fab fa-instagram'></i>
+          <a href="https://www.instagram.com/sesampicr/" target="_blank">
+            <i className="fab fa-instagram"></i>
           </a>
         }
         f={
-          <form
-            onSubmit={(evt) => {
-              evt.preventDefault()
-              const inputEl = evt.currentTarget.querySelector('input')
-              inputEl.value = ''
-              if (inputEl.value == '24678') {
-                window.open('/CV_Ming_YAO.pdf', '_blank')
-                inputEl.placeholder = 'Code'
-              } else {
-                inputEl.placeholder = 'Invalid'
-              }
-            }}>
-            <input type='text' placeholder='Code' />
-            <button className='oa-hover-underline'>
-              Get <br />
-              Resume
-              {/* </a> */}
-            </button>
-          </form>
+          // <form
+          //   onSubmit={(evt) => {
+          //     evt.preventDefault()
+          //     const inputEl = evt.currentTarget.querySelector('input')
+          //     inputEl.value = ''
+          //     if (inputEl.value == '24678') {
+          //       window.open('/CV_Ming_YAO.pdf', '_blank')
+          //       inputEl.placeholder = 'Code'
+          //     } else {
+          //       inputEl.placeholder = 'Invalid'
+          //     }
+          //   }}>
+          //   <input type='text' placeholder='Code' />
+          //   <button className='oa-hover-underline'>
+          //     Get <br />
+          //     Resume
+          //     {/* </a> */}
+          //   </button>
+          // </form>
+          // <Ima
+          <LazyImg
+            src={require('../public/img/sesampicr.png').preSrc}
+            realSrc="img/sesampicr.png"
+            className="sesam-qr-code"
+          />
         }
         r={
           <a
-            className='oa-hover-underline'
-            href='https://github.com/envl'
-            target='_blank'>
+            className="oa-hover-underline"
+            href="https://github.com/envl"
+            target="_blank"
+          >
             Github
           </a>
         }

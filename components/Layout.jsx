@@ -1,37 +1,63 @@
-import React from 'react'
-import Head from 'next/head'
-import Footer from '../components/Footer'
-import {SidebarInjector, SidebarItem} from 'oapack'
-import {useRouter} from 'next/router'
+import './_layout.scss'
 
-const Layout = (props) => {
+import React, { useEffect, useRef, useState } from 'react'
+import { SidebarInjector, SidebarItem } from 'oapack'
+
+import Footer from '../components/Footer'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+
+const Layout = props => {
+  const canvas = useRef(null)
   const router = useRouter()
+
+  const drawProgress = () => {
+    const max = document.body.clientHeight - window.innerHeight
+    const prog = window.scrollY / max
+    const ctx = canvas.current.getContext('2d')
+    ctx.clearRect(0, 0, 6, 300)
+    ctx.fillRect(0, 0, 6, prog * 300)
+    window.requestAnimationFrame(drawProgress)
+  }
+
+  useEffect(() => {
+    const ctx = canvas.current.getContext('2d')
+    ctx.fillStyle = 'rgb(74, 76, 163)'
+    const max = document.body.clientHeight - window.innerHeight
+    const prog = window.scrollY / max
+    drawProgress()
+  }, [])
   return (
     <div
       className={'page-wrapper ' + (props.className ? props.className : '')}
       // style={{overflowX: 'hidden', overflowY: 'scroll'}}
     >
+      <canvas
+        className="prog-canva"
+        width="6"
+        height="300"
+        ref={canvas}
+      ></canvas>
       <SidebarInjector
         items={
           <>
             <SidebarItem
-              to='https://zmd.hedwig.pub/'
-              target='_blank'
-              brief='芝.'
-              detail='芝麻地'
+              to="https://zmd.hedwig.pub/"
+              target="_blank"
+              brief="芝."
+              detail="芝麻地"
             />
-            {/* <SidebarItem to='/CV_Ming_YAO.pdf' brief='CV' detail='CV' /> */}
-            {/* <SidebarItem to='/projects' brief='P.' detail='Projects' /> */}
             <SidebarItem
-              to='/'
-              brief='H.'
-              detail='Home'
+              to="/"
+              brief="H."
+              detail="Home"
               // className='sidebar-active'
             />
           </>
-        }>
+        }
+      >
         <Head>
-          <title className='hidden'>
+          <title className="hidden">
             {props.heading
               ? props.heading
               : router.query.id
@@ -39,15 +65,16 @@ const Layout = (props) => {
               : /\/post\/.*/.exec(router.pathname)[0].substr(6)}
             / @GnimOay
           </title>
-          <link rel='icon' href='/icon.png' type='image/jpg' />
+          <link rel="icon" href="/icon.png" type="image/jpg" />
           <meta
-            name='viewport'
-            content='initial-scale=1.0, width=device-width, user-scalable=no'
+            name="viewport"
+            content="initial-scale=1.0, width=device-width, user-scalable=no"
           />
-          <meta httpEquiv='Content-Type' content='text/html; charset=UTF-8' />
+          <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
           <script
             defer
-            src='https://www.googletagmanager.com/gtag/js?id=G-REWTHY2S75'></script>
+            src="https://www.googletagmanager.com/gtag/js?id=G-REWTHY2S75"
+          ></script>
         </Head>
         {props.children}
       </SidebarInjector>

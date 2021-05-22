@@ -195,10 +195,16 @@
   &.hover-l {
     transform: rotateY(-90deg);
   }
-  &.hover-u {
-    // transform: rotateX(-90deg) rotateY(0deg);
-    animation: 3s linear 0.7s infinite spinning;
+  .facet-f {
+    overflow: visible;
   }
+  .sesam-qr-code {
+    width: 100%;
+  }
+  // &.hover-u {
+  //   // transform: rotateX(-90deg) rotateY(0deg);
+  //   animation: 3s linear 0.7s infinite spinning;
+  // }
   .cube-facet {
     // border: solid 1px black;
     font-size: 1.25rem;
@@ -277,6 +283,12 @@
     top: 0;
     right: 15vw;
     transform: rotateX(-25deg) rotateY(-45deg) !important;
+    &.hover-f {
+      .sesam-qr-code {
+        width: 100%;
+        transform: none;
+      }
+    }
   }
   .me-block {
     margin-bottom: 20px;
