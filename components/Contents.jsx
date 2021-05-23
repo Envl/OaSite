@@ -12,7 +12,7 @@ function PostList(props) {
   const { postType } = useModel('filters')
   return (
     <div className={`posts ${props.className ? props.className : ''}`}>
-      <Posts zmd={props.zmd} />
+      {props.zmd && <Posts zmd={props.zmd} />}
 
       {db.postList
         .filter(item => {

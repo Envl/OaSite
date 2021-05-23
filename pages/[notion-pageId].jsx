@@ -5,6 +5,9 @@ import Layout from '../components/Layout'
 import fetch from 'isomorphic-unfetch'
 
 export default function NotionPage({ html, heading, exists, blockMap }) {
+  if (!html) {
+    return 'Oops..'
+  }
   return (
     <>
       <Hurray />
@@ -43,7 +46,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const pageId = params['notion-pageId']
   const res = await fetch('https://potion.gnimoay.com/html?id=' + pageId)
-  console.log('res', res, params)
   const html = await res.text()
   let result = await (await fetch(zmdTableUrl)).json()
   result = result.filter(item => item.id.split('-').join('') === pageId)[0]

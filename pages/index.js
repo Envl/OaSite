@@ -86,13 +86,18 @@ function Index(props) {
 }
 
 export async function getStaticProps() {
-  const zmd = (
-    await (
-      await fetch(
-        'https://potion.gnimoay.com/table?id=b13a7a6b113d423895424dd2a46816e8'
-      )
-    ).json()
-  ).map(post => ({ ...post, Name: post.fields.Name }))
+  let zmd = null
+  try {
+    zmd = (
+      await (
+        await fetch(
+          'https://potion.gnimoay.com/table?id=b13a7a6b113d423895424dd2a46816e8'
+        )
+      ).json()
+    ).map(post => ({ ...post, Name: post.fields.Name }))
+  } catch (err) {
+    zmd = null
+  }
   return {
     props: {
       zmd: zmd,
