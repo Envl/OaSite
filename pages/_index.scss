@@ -274,13 +274,14 @@
 
 @include smaller-than(768px) {
   .home-body {
+    margin-top: 25vh;
     flex-direction: column;
     align-items: center;
   }
 
   .oa-cube {
     position: absolute;
-    top: 0;
+    top: 25vh;
     right: 15vw;
     transform: rotateX(-25deg) rotateY(-45deg) !important;
     &.hover-f {

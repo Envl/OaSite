@@ -43,6 +43,7 @@ function PostList(props) {
 export default function Contents({ opts, zmd }) {
   return (
     <div className="content">
+      {/* TODO schools/cities with review  :thumb-up:  :thumb-down: */}
       {/* <Card
         className={`site-intro ${
           opts && opts.includes('about me') ? 'visible' : 'opt-hide'
@@ -83,26 +84,6 @@ export default function Contents({ opts, zmd }) {
           </a>
         }
         f={
-          // <form
-          //   onSubmit={(evt) => {
-          //     evt.preventDefault()
-          //     const inputEl = evt.currentTarget.querySelector('input')
-          //     inputEl.value = ''
-          //     if (inputEl.value == '24678') {
-          //       window.open('/CV_Ming_YAO.pdf', '_blank')
-          //       inputEl.placeholder = 'Code'
-          //     } else {
-          //       inputEl.placeholder = 'Invalid'
-          //     }
-          //   }}>
-          //   <input type='text' placeholder='Code' />
-          //   <button className='oa-hover-underline'>
-          //     Get <br />
-          //     Resume
-          //     {/* </a> */}
-          //   </button>
-          // </form>
-          // <Ima
           <LazyImg
             src={require('../public/img/sesampicr.png').preSrc}
             realSrc="img/sesampicr.png"
