@@ -21,7 +21,7 @@ export async function like(domain, keyword, hit = false) {
           (hit ? 'hit/' : 'get/') +
           domain +
           '/' +
-          keyword,
+          keyword
       )
     ).json()
   ).value
@@ -55,7 +55,7 @@ export function removeJdUrl(url) {
   } else {
     return url.replace(
       'https://cdn.jsdelivr.net/gh/Envl/OaSite/public/img/',
-      '',
+      ''
     )
   }
 }

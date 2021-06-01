@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 
 import Layout from '../../components/Layout'
 import MD from 'markdown-to-jsx'
-import fetch from 'isomorphic-unfetch'
 
 const Index = props => {
   return (

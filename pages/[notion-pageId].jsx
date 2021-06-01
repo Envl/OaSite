@@ -1,8 +1,12 @@
 import './post/_postPage.scss'
+import './prism.css'
 
+import { blogsTableUrl, zmdTableUrl } from '../Constants'
+
+import Head from 'next/head'
 import Hurray from '../components/Hurray'
 import Layout from '../components/Layout'
-import fetch from 'isomorphic-unfetch'
+import { useEffect } from 'react'
 
 export default function NotionPage({ html, heading, exists, blockMap }) {
   if (!html) {
@@ -10,6 +14,9 @@ export default function NotionPage({ html, heading, exists, blockMap }) {
   }
   return (
     <>
+      <Head>
+        <script src={require('../prism')} defer async></script>
+      </Head>
       <Hurray />
       <Layout heading={heading || 'Page does not exist'}>
         {exists ? (
@@ -26,12 +33,17 @@ export default function NotionPage({ html, heading, exists, blockMap }) {
   )
 }
 
-const zmdTableUrl =
-  'https://potion.gnimoay.com/table?id=b13a7a6b113d423895424dd2a46816e8'
+const tableList = [zmdTableUrl, blogsTableUrl]
+async function loadPostsEntries() {
+  const rsps = await Promise.all(tableList.map(url => fetch(url)))
+  return (await Promise.all(rsps.map(r => r.json())))
+    .reduce((acc, cur) => [...acc, ...cur], [])
+    .filter(p => p.fields.public || p.emoji) // zmd的post没设置public属性
+}
 
 export async function getStaticPaths() {
-  const result = await (await fetch(zmdTableUrl)).json()
-  const paths = result.map(d => ({
+  const results = await loadPostsEntries()
+  const paths = results.map(d => ({
     params: {
       'notion-pageId': d.id.split('-').join(''),
     },
@@ -47,9 +59,9 @@ export async function getStaticProps({ params }) {
   const pageId = params['notion-pageId']
   const res = await fetch('https://potion.gnimoay.com/html?id=' + pageId)
   const html = await res.text()
-  let result = await (await fetch(zmdTableUrl)).json()
-  result = result.filter(item => item.id.split('-').join('') === pageId)[0]
-  const heading = result ? result.fields.Name : null
+  let results = await loadPostsEntries()
+  results = results.filter(item => item.id.split('-').join('') === pageId)[0]
+  const heading = results ? results.fields.Name : null
 
-  return { props: { html, heading, exists: !!result }, revalidate: 60 } //per 60 secs
+  return { props: { html, heading, exists: !!results }, revalidate: 6 } //per 6 secs
 }

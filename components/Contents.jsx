@@ -1,19 +1,19 @@
 import * as db from '../MyData'
 
+import { BlogPosts, ZMDPosts } from './Posts'
 import { Card, CubeMenu } from 'oapack'
 
 import LazyImg from './LazyImg'
 import PostCard from '../components/PostCard'
-import Posts from '../components/Posts'
 import React from 'react'
 import { useModel } from 'flooks'
 
-function PostList(props) {
+function PostList({ className, blogs, zmd }) {
   const { postType } = useModel('filters')
   return (
-    <div className={`posts ${props.className ? props.className : ''}`}>
-      {props.zmd && <Posts zmd={props.zmd} />}
-
+    <div className={`posts ${className ? className : ''}`}>
+      {blogs && <BlogPosts posts={blogs} />}
+      {zmd && <ZMDPosts zmd={zmd} />}
       {db.postList
         .filter(item => {
           if (postType === 'all' || typeof postType === 'undefined') {
@@ -40,7 +40,7 @@ function PostList(props) {
   )
 }
 
-export default function Contents({ opts, zmd }) {
+export default function Contents({ opts, zmd, blogs }) {
   return (
     <div className="content">
       {/* TODO schools/cities with review  :thumb-up:  :thumb-down: */}
@@ -100,7 +100,7 @@ export default function Contents({ opts, zmd }) {
           </a>
         }
       />
-      <PostList zmd={zmd} />
+      <PostList zmd={zmd} blogs={blogs} />
     </div>
   )
 }

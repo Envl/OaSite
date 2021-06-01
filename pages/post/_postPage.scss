@@ -3,7 +3,7 @@
 // for notion page
 .post-page {
   margin: 3rem auto;
-  max-width: 800px;
+  max-width: 700px;
 
   .callout {
     width: fit-content;
@@ -16,6 +16,10 @@
       width: 32px;
       margin: 0 1rem 0 0;
     }
+  }
+
+  p {
+    margin-top: 5px;
   }
 }
 

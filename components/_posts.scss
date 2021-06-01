@@ -30,3 +30,24 @@
     text-decoration: underline;
   }
 }
+
+.blog-posts {
+  display: flex;
+  max-width: 800px;
+  grid-column: 1/3;
+  flex-wrap: wrap;
+  margin: 0 8px 2rem;
+  h2 {
+    width: 100%;
+  }
+}
+
+.blog-post__link {
+  color: $fontClr;
+  text-decoration: underline;
+  font-size: 1.18rem;
+  margin: auto 1rem 0.6rem;
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+}

@@ -1,6 +1,7 @@
 import './_index.scss'
 
 import { SidebarInjector, SidebarItem } from 'oapack'
+import { blogsTableUrl, zmdTableUrl } from '../Constants'
 import { useEffect, useState } from 'react'
 
 import Contents from '../components/Contents'
@@ -8,7 +9,6 @@ import Footer from '../components/Footer'
 import Head from 'next/head'
 import Link from 'next/link'
 import Me from '../components/Me'
-import fetch from 'isomorphic-unfetch'
 import { setModel } from 'flooks'
 
 const filters = {
@@ -26,8 +26,9 @@ const filters = {
 }
 setModel('filters', filters)
 
-function Index(props) {
+function Index({ zmd, blogs }) {
   const [opts, setOpts] = useState(['job', 'sidebar', 'footer'])
+
   useEffect(() => {
     const _hmt = _hmt || []
     const hm = document.createElement('script')
@@ -75,7 +76,7 @@ function Index(props) {
       <div className="home-page">
         <div className="home-body">
           <Me setOpts={setOpts} opts={opts} />
-          <Contents opts={opts} zmd={props.zmd} />
+          <Contents opts={opts} zmd={zmd} blogs={blogs} />
         </div>
         <Footer
           className={opts && opts.includes('footer') ? 'visible' : 'opt-hide'}
@@ -85,28 +86,32 @@ function Index(props) {
   )
 }
 
+async function loadPosts(url) {
+  return (await (await fetch(url)).json())
+    .map(post => ({
+      ...post,
+      Name: post.fields.Name,
+    }))
+    .filter(p => p.fields.public || p.emoji) // zmd的post没设置public属性
+}
+
 export async function getStaticProps() {
-  let zmd = null
+  let zmd = null,
+    blogs = null
   try {
-    zmd = (
-      await (
-        await fetch(
-          'https://potion.gnimoay.com/table?id=b13a7a6b113d423895424dd2a46816e8'
-        )
-      ).json()
-    ).map(post => ({ ...post, Name: post.fields.Name }))
+    zmd = await loadPosts(zmdTableUrl)
+    blogs = await loadPosts(blogsTableUrl)
   } catch (err) {
+    console.log(err)
     zmd = null
+    blogs = null
   }
   return {
     props: {
       zmd: zmd,
+      blogs: blogs,
     },
-    revalidate: 60, // per 60 seconds
-    // ipAddr: {
-    //   a: ctx.req.connection.remoteAddress,
-    //   b: ctx.req.headers['x-forwarded-for'],
-    // },
+    revalidate: 6, // per 6 seconds
   }
 }
 export default Index
