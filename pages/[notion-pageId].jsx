@@ -33,8 +33,8 @@ export default function NotionPage({ html, heading, exists, blockMap }) {
   )
 }
 
-const tableList = [zmdTableUrl, blogsTableUrl]
 async function loadPostsEntries() {
+  const tableList = [zmdTableUrl, blogsTableUrl]
   const rsps = await Promise.all(tableList.map(url => fetch(url)))
   return (await Promise.all(rsps.map(r => r.json())))
     .reduce((acc, cur) => [...acc, ...cur], [])

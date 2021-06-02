@@ -87,12 +87,10 @@ function Index({ zmd, blogs }) {
 }
 
 async function loadPosts(url) {
-  return (await (await fetch(url)).json())
-    .map(post => ({
-      ...post,
-      Name: post.fields.Name,
-    }))
-    .filter(p => p.fields.public || p.emoji) // zmd的post没设置public属性
+  return (await (await fetch(url)).json()).map(post => ({
+    ...post,
+    Name: post.fields.Name,
+  }))
 }
 
 export async function getStaticProps() {
@@ -100,7 +98,7 @@ export async function getStaticProps() {
     blogs = null
   try {
     zmd = await loadPosts(zmdTableUrl)
-    blogs = await loadPosts(blogsTableUrl)
+    blogs = (await loadPosts(blogsTableUrl)).filter(p => p.fields.public) // zmd的post没设置public属性
   } catch (err) {
     console.log(err)
     zmd = null
