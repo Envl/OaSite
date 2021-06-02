@@ -66,6 +66,7 @@ function Index({ zmd, blogs }) {
     >
       <Head>
         <title>Ming YAO / @GnimOay</title>
+        <meta name="description" content="a good human being." />
         <link rel="icon" href="/icon.png" type="image/jpg" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <script

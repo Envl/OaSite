@@ -57,7 +57,7 @@ const Layout = props => {
         }
       >
         <Head>
-          <title className="hidden">
+          <title>
             {props.heading
               ? props.heading
               : router.query.id
