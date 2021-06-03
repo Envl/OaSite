@@ -1,4 +1,0 @@
-[[redirects]]
-from = "http://envl.netlify.com/*"
-to = "http://www.gnimoay.com/:splat"
-force = true
