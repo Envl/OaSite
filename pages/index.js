@@ -66,10 +66,16 @@ function Index({ zmd, blogs }) {
     >
       <Head>
         <title>Ming YAO / @GnimOay</title>
-        <meta name="description" content="a good human being." />
-        <link rel="icon" href="/icon.png" type="image/jpg" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:title" content="Ming YAO / @GnimOay"></meta>
+        <meta name="description" content="not a bad human being." />
+        <meta property="og:url" content="https://gnimoay.com"></meta>
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <meta
+          name="viewport"
+          content="initial-scale=1.0, width=device-width, user-scalable=no"
+        />
         <script
+          defer
           async
           src="https://www.googletagmanager.com/gtag/js?id=UA-150711963-4"
         ></script>
@@ -110,7 +116,7 @@ export async function getStaticProps() {
       zmd: zmd,
       blogs: blogs,
     },
-    revalidate: 6, // per 6 seconds
+    revalidate: 60, // per 60 seconds
   }
 }
 export default Index

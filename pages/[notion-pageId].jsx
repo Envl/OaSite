@@ -1,10 +1,7 @@
 import './post/_postPage.scss'
-import './prism.css'
 
 import { blogsTableUrl, zmdTableUrl } from '../Constants'
 
-import Head from 'next/head'
-import Hurray from '../components/Hurray'
 import Layout from '../components/Layout'
 import { useEffect } from 'react'
 
@@ -13,23 +10,17 @@ export default function NotionPage({ html, heading, exists, blockMap }) {
     return 'Oops..'
   }
   return (
-    <>
-      <Head>
-        <script src={require('../prism')} defer async></script>
-      </Head>
-      <Hurray />
-      <Layout heading={heading || 'Page does not exist'}>
-        {exists ? (
-          <div className="post-page">
-            <h1>{heading}</h1>
-            <div dangerouslySetInnerHTML={{ __html: html }}></div>
-          </div>
-        ) : (
-          // <NotionRenderer blockMap={blockMap}/>
-          'This page does not exist.'
-        )}
-      </Layout>
-    </>
+    <Layout heading={heading || 'Page does not exist'}>
+      {exists ? (
+        <div className="post-page">
+          <h1>{heading}</h1>
+          <div dangerouslySetInnerHTML={{ __html: html }}></div>
+        </div>
+      ) : (
+        // <NotionRenderer blockMap={blockMap}/>
+        'This page does not exist.'
+      )}
+    </Layout>
   )
 }
 
@@ -66,5 +57,5 @@ export async function getStaticProps({ params }) {
   results = results.filter(item => item.id.split('-').join('') === pageId)[0]
   const heading = results ? results.fields.Name : null
 
-  return { props: { html, heading, exists: !!results }, revalidate: 6 } //per 6 secs
+  return { props: { html, heading, exists: !!results }, revalidate: 60 } //per 60 secs
 }
