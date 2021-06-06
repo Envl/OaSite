@@ -11,8 +11,8 @@ export default function Me({ setOpts, opts }) {
   const [footCount, setFootCount] = useState(0)
   useEffect(() => {
     fetch('https://api.countapi.xyz/get/gnimoay.com/footCount')
-      .then((res) => res.json())
-      .then((data) => setFootCount(data.value))
+      .then(res => res.json())
+      .then(data => setFootCount(data.value))
     const hash = window.location.hash.replace('#', '').toLowerCase()
     setTimeout(() => {
       if (['interaction', 'ux', 'web', 'game', 'mobile'].includes(hash)) {
@@ -21,13 +21,13 @@ export default function Me({ setOpts, opts }) {
     }, 200)
   }, [])
   return (
-    <div className='me-block'>
-      <div className='me-status'>❤️: 🎮🍟📷🚴‍♂️🏸🎵🏓</div>
-      <Button type='toggle' className='btn-hi' pressed='true'>
+    <div className="me-block">
+      <div className="me-status">❤️: 🎮🍟📷🚴‍♂️🏸🎵🏓</div>
+      <Button type="toggle" className="btn-hi" pressed="true">
         {/* <h2>Hi,</h2> */}
         Hi
       </Button>
-      <DropDown name=" I'm Ming YAO" className='dscp'>
+      <DropDown name=" I'm Ming YAO" className="dscp">
         <div>a UX Designer</div>
         <div>a Developer</div>
       </DropDown>
@@ -36,11 +36,11 @@ export default function Me({ setOpts, opts }) {
         realSrc={'img/me.jpg'}
       />
       {/* <img src={me.preSrc} type='image/webp' alt='' /> */}
-      <Button type='toggle' className='btn-i'>
+      <Button type="toggle" className="btn-i">
         {/* <h1>I</h1> */}I
       </Button>
       <FilterGroup
-        className='block-filters'
+        className="block-filters"
         initialFilters={[
           { name: 'c', pushed: false },
           { name: 'o', pushed: false },
@@ -55,14 +55,14 @@ export default function Me({ setOpts, opts }) {
         ]}
       />
       <FilterGroup
-        className='site-filters'
+        className="site-filters"
         initialFilters={[
           // {name: 'about me', pushed: opts.includes('about me')},
           { name: 'sidebar', pushed: opts.includes('sidebar') },
           { name: 'footer', pushed: opts.includes('footer') },
           { name: 'contact me', pushed: opts.includes('contact me') },
         ]}
-        onFilterUpdate={(options) => {
+        onFilterUpdate={options => {
           setOpts(options)
         }}
       />
@@ -78,13 +78,14 @@ export default function Me({ setOpts, opts }) {
         }}
         className={`me-contact ${
           opts && opts.includes('contact me') ? 'visible' : 'opt-hide'
-        }`}>
+        }`}
+      >
         <Card>{emailNotice} hi@gnimoay.com</Card>
       </div>
       <FilterGroup
         single
-        className='type-filter'
-        onFilterUpdate={(types) => {
+        className="type-filter"
+        onFilterUpdate={types => {
           updateType(types[0])
         }}
         initialFilters={[
@@ -96,7 +97,7 @@ export default function Me({ setOpts, opts }) {
           'Mobile',
         ]}
       />
-      <div className='foot'>
+      <div className="foot">
         <div>
           {footCount}
           <span> 人来踩过</span>
@@ -105,8 +106,23 @@ export default function Me({ setOpts, opts }) {
           onClick={() => {
             fetch('https://api.countapi.xyz/hit/gnimoay.com/footCount')
             setFootCount(footCount + 1)
-          }}>
-          <i className='fas fa-shoe-prints'></i>
+          }}
+        >
+          <svg
+            style={{ width: 16 }}
+            className="svg-inline--fa fa-shoe-prints fa-w-20"
+            aria-hidden="true"
+            focusable="false"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 512"
+            data-fa-i2svg=""
+          >
+            <path
+              fill="currentColor"
+              d="M192 160h32V32h-32c-35.35 0-64 28.65-64 64s28.65 64 64 64zM0 416c0 35.35 28.65 64 64 64h32V352H64c-35.35 0-64 28.65-64 64zm337.46-128c-34.91 0-76.16 13.12-104.73 32-24.79 16.38-44.52 32-104.73 32v128l57.53 15.97c26.21 7.28 53.01 13.12 80.31 15.05 32.69 2.31 65.6.67 97.58-6.2C472.9 481.3 512 429.22 512 384c0-64-84.18-96-174.54-96zM491.42 7.19C459.44.32 426.53-1.33 393.84.99c-27.3 1.93-54.1 7.77-80.31 15.04L256 32v128c60.2 0 79.94 15.62 104.73 32 28.57 18.88 69.82 32 104.73 32C555.82 224 640 192 640 128c0-45.22-39.1-97.3-148.58-120.81z"
+            ></path>
+          </svg>
         </Button>
       </div>
     </div>

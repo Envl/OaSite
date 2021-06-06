@@ -26,7 +26,7 @@
     "next-images": "^1.6.2",
     "next-transpile-modules": "^4.1.0",
     "node-sass": "^4.14.1",
-    "oapack": "0.1.27",
+    "oapack": "^0.1.31",
     "raw-body": "^2.4.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
