@@ -21,7 +21,7 @@
     "flooks": "^1.2.0",
     "lqip-loader": "^2.2.1",
     "markdown-to-jsx": "^6.11.4",
-    "next": "^10.0.0",
+    "next": "^11.1.0",
     "next-compose-plugins": "^2.2.0",
     "next-images": "^1.6.2",
     "next-transpile-modules": "^4.1.0",
