@@ -46,7 +46,7 @@ export function jdUrl(url) {
   if (process.env.NODE_ENV !== 'production') {
     return url
   } else {
-    return 'https://cdn.jsdelivr.net/gh/Envl/OaSite/public/img/' + url
+    return 'https://cdn.jsdelivr.net/gh/Envl/OaSite@master/public/img/' + url
   }
 }
 export function removeJdUrl(url) {
@@ -54,7 +54,7 @@ export function removeJdUrl(url) {
     return url
   } else {
     return url.replace(
-      'https://cdn.jsdelivr.net/gh/Envl/OaSite/public/img/',
+      'https://cdn.jsdelivr.net/gh/Envl/OaSite@master/public/img/',
       ''
     )
   }

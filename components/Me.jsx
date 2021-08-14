@@ -100,7 +100,7 @@ export default function Me({ setOpts, opts }) {
       <div className="foot">
         <div>
           {footCount}
-          <span> 人来踩过</span>
+          <span> 人留下了脚印</span>
         </div>
         <Button
           onClick={() => {
