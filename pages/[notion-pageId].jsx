@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 
 export default function NotionPage({ html, heading, exists, blockMap }) {
   if (!html) {
-    return 'Oops..'
+    return 'Loading..' // TODO loading animation
   }
   return (
     <Layout heading={heading || 'Page does not exist'}>
@@ -45,7 +45,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   }
 }
 

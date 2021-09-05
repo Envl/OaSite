@@ -18,7 +18,7 @@ const LazyImg = ({
       (entries, observer) => {
         if (!loaded && entries[0].isIntersecting) {
           setLoaded(true)
-          console.log('boom', entries, observer)
+          // console.log('boom', entries, observer)
         }
       },
       { rootMargin: '200px' }
