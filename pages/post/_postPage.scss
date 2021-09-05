@@ -21,6 +21,18 @@
   p {
     margin-top: 5px;
   }
+  blockquote {
+    margin-top: 0;
+    border: solid $thirdClr;
+    border-width: 0 0 0 4px;
+    padding-left: 0.5rem;
+  }
+  ul {
+    margin: 0;
+  }
+  li {
+    margin: 15px 0 3px;
+  }
 }
 
 @include greater-than(768px) {
