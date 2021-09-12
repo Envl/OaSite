@@ -1,3 +1,5 @@
+@import './media-query';
+
 .hurray-button {
   position: fixed;
   right: 4px;
@@ -7,6 +9,20 @@
   user-select: none;
   &:hover .hurray-cft {
     transform: rotate(-90deg) translate(6px, -10px) scale(1.2);
+  }
+}
+
+@include smaller-than(768px) {
+  .hurray-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 3rem;
+    bottom: 0;
+    .hurray-cft {
+      transform: none;
+    }
   }
 }
 

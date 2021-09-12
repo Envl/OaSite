@@ -45,7 +45,7 @@ const Layout = props => {
         <title>{myTitle}</title>
         <meta property="og:title" content={myTitle}></meta>
         <link rel="icon" href="/icon.png" type="image/png" />
-        
+
         <meta
           name="viewport"
           content="initial-scale=1.0, width=device-width, user-scalable=no"
@@ -56,7 +56,6 @@ const Layout = props => {
           src="https://www.googletagmanager.com/gtag/js?id=UA-150711963-4"
         ></script>
       </Head>
-      <Hurray />
       <canvas
         className="prog-canva"
         width="6"
@@ -78,6 +77,7 @@ const Layout = props => {
       >
         {props.children}
       </SidebarInjector>
+      <Hurray />
       <Footer />
     </div>
   )
