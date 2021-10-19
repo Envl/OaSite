@@ -1,5 +1,3 @@
-import './_index.scss'
-
 import { SidebarInjector, SidebarItem } from 'oapack'
 import { blogsTableUrl, zmdTableUrl } from '../Constants'
 import { useEffect, useState } from 'react'
@@ -93,11 +91,13 @@ function Index({ zmd, blogs }) {
   )
 }
 
-async function loadPosts(url) {
-  return (await (await fetch(url)).json()).map(post => ({
-    ...post,
-    Name: post.fields.Name,
-  }))
+async function loadPosts(tableUrl) {
+  const rsp = await fetch(tableUrl, { method: 'POST' })
+  const posts = (await rsp.json()).results
+  posts.forEach(p => {
+    p.id = p.id.split('-').join('')
+  })
+  return posts
 }
 
 export async function getStaticProps() {
@@ -105,7 +105,9 @@ export async function getStaticProps() {
     blogs = null
   try {
     zmd = await loadPosts(zmdTableUrl)
-    blogs = (await loadPosts(blogsTableUrl)).filter(p => p.fields.public) // zmd的post没设置public属性
+    blogs = (await loadPosts(blogsTableUrl)).filter(
+      p => p.properties.public.checkbox
+    ) // zmd的post没设置public属性
   } catch (err) {
     console.log(err)
     zmd = null

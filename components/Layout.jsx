@@ -1,6 +1,3 @@
-import './_layout.scss'
-import '../prism.css'
-
 import React, { useEffect, useRef, useState } from 'react'
 import { SidebarInjector, SidebarItem } from 'oapack'
 

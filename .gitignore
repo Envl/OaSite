@@ -3,5 +3,6 @@
 /out
 /.vscode
 # _ApiKeys.js
+API.HTTP
 
 .vercel

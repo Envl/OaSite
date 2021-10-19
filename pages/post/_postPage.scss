@@ -1,28 +1,56 @@
 @import '../../components/common';
 
-// for notion page
+// for notion page rendered by react-notion
 .post-page {
   margin: 3rem auto;
   max-width: 700px;
-
-  .callout {
+  white-space: pre-line;
+  figure {
+    width: inherit !important;
+    margin: 0 !important;
+    div {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  }
+  .notion-blank {
+    display: none;
+  }
+  .notion-callout {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
     width: fit-content;
     background: #eee;
     border-radius: 8px;
     padding: 0.3rem 1.4rem 0.3rem 1rem;
     display: flex;
     align-items: center;
-    img {
-      width: 32px;
-      margin: 0 1rem 0 0;
+    span {
+      margin: 0 0.5rem 0 0;
+      transform: scale(1.3);
+      transform-origin: 50% 70%;
     }
   }
 
+  h2 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+
   p {
-    margin-top: 5px;
+    display: block;
+    margin-top: 3px;
+    margin-bottom: 21px;
   }
   blockquote {
     margin-top: 0;
+    margin-left: 0;
     border: solid $thirdClr;
     border-width: 0 0 0 4px;
     padding-left: 0.5rem;

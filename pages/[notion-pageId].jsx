@@ -1,45 +1,55 @@
-import './post/_postPage.scss'
+import { NotionRenderer } from 'react-notion'
 
-import { blogsTableUrl, zmdTableUrl } from '../Constants'
+import {
+  blogsTableUrl,
+  notionApi,
+  notionBlockMapApi,
+  zmdTableUrl,
+} from '../Constants'
 
 import Layout from '../components/Layout'
 import { useEffect } from 'react'
 
-export default function NotionPage({ html, heading, exists, blockMap }) {
-  if (!html) {
+let notionPosts = []
+
+export default function NotionPage({ html, blocks, blockMap, heading }) {
+  if (!blocks && !html && !blockMap) {
     return 'Loading..' // TODO loading animation
   }
   return (
     <Layout heading={heading || 'Page does not exist'}>
-      {exists ? (
-        <div className="post-page">
-          <h1>{heading}</h1>
-          <div dangerouslySetInnerHTML={{ __html: html }}></div>
-        </div>
-      ) : (
-        // <NotionRenderer blockMap={blockMap}/>
-        'This page does not exist.'
-      )}
+      <div className="post-page">
+        <h1>{heading}</h1>
+        {blockMap && <NotionRenderer blockMap={blockMap} />}
+        {html && <div dangerouslySetInnerHTML={{ __html: html }}></div>}
+      </div>
     </Layout>
   )
 }
 
 async function loadPostsEntries() {
   const tableList = [zmdTableUrl, blogsTableUrl]
-  const rsps = await Promise.all(tableList.map(url => fetch(url)))
-  const posts = (await Promise.all(rsps.map(r => r.json()))).reduce(
-    (acc, cur) => [...acc, ...cur],
-    []
+  const rsps = await Promise.all(
+    tableList.map(url => fetch(url, { method: 'POST' }))
   )
-  console.log('posts entries', posts)
-  return posts.filter(p => p.fields.public || p.emoji) // zmd的post没设置public属性
+  const posts = (await Promise.all(rsps.map(r => r.json())))
+    .map(d => d.results)
+    .flat()
+
+  posts.forEach(d => {
+    d.id = d.id.split('-').join('')
+  })
+
+  notionPosts = posts.filter(
+    p => p.properties.public?.checkbox || !p.properties.public
+  ) // zmd的post没设置public属性
 }
 
 export async function getStaticPaths() {
-  const results = await loadPostsEntries()
-  const paths = results.map(d => ({
+  await loadPostsEntries()
+  const paths = notionPosts.map(d => ({
     params: {
-      'notion-pageId': d.id.split('-').join(''),
+      'notion-pageId': d.id,
     },
   }))
 
@@ -51,11 +61,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const pageId = params['notion-pageId']
-  const res = await fetch('https://potion.gnimoay.com/html?id=' + pageId)
-  const html = await res.text()
-  let results = await loadPostsEntries()
-  results = results.filter(item => item.id.split('-').join('') === pageId)[0]
-  const heading = results ? results.fields.Name : null
 
-  return { props: { html, heading, exists: !!results }, revalidate: 60 } //per 60 secs
+  const blockMap = await (await fetch(notionBlockMapApi + pageId)).json()
+  // const html = await (await fetch(notionHtmlApi + pageId)).text()
+
+  const heading = (await (await fetch(notionApi + 'blocks/' + pageId)).json())
+    .child_page.title
+
+  return { props: { blockMap, heading }, revalidate: 60 } //per 60 secs
 }

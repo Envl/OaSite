@@ -130,12 +130,12 @@
       font-size: 17px !important;
     }
   }
-  img {
+  .img-area {
+    max-width: 160px;
     grid-area: img;
     border-radius: $comic-radius;
     z-index: 1000;
     filter: brightness(1.1);
-    width: calc(100% - 6px);
     margin: $control-margin;
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
@@ -274,14 +274,14 @@
 
 @include smaller-than(768px) {
   .home-body {
-    margin-top: 25vh;
+    margin-top: 15vh;
     flex-direction: column;
     align-items: center;
   }
 
   .oa-cube {
     position: absolute;
-    top: 25vh;
+    top: 15vh;
     right: 15vw;
     transform: rotateX(-25deg) rotateY(-45deg) !important;
     &.hover-f {
@@ -306,9 +306,8 @@
       'type type' auto
       'foot foot' min-content
       / 1fr 3fr;
-    img {
-      // justify-self: start;
-      width: 160px;
+    .img-area {
+      max-width: 130px;
     }
     .dropdown {
       width: max-content;

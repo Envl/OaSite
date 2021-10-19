@@ -1,9 +1,12 @@
 import { Button, Card, DropDown, FilterGroup } from 'oapack'
+
+import meImg from '../public/img/me.jpg'
 import { copy, jdUrl } from '../Helpers'
 import { setModel, useModel } from 'flooks'
 import { useEffect, useState } from 'react'
 
-import LazyImg from '../components/LazyImg'
+// import LazyImg from '../components/LazyImg'
+import Image from 'next/image'
 
 export default function Me({ setOpts, opts }) {
   const [emailNotice, setEmailNotice] = useState('')
@@ -31,11 +34,9 @@ export default function Me({ setOpts, opts }) {
         <div>a UX Designer</div>
         <div>a Developer</div>
       </DropDown>
-      <LazyImg
-        src={require('../public/img/me.jpg').preSrc}
-        realSrc={'img/me.jpg'}
-      />
-      {/* <img src={me.preSrc} type='image/webp' alt='' /> */}
+      <div className="img-area">
+        <Image src={meImg} />
+      </div>
       <Button type="toggle" className="btn-i">
         {/* <h1>I</h1> */}I
       </Button>

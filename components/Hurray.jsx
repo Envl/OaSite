@@ -1,18 +1,17 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import confetti from 'canvas-confetti'
-import {like} from '../Helpers'
-import './_hurray.scss'
+import { like } from '../Helpers'
 
 export default function Hurray() {
   const [counter, setCounter] = useState(0)
   const [isVertical, setIsVertical] = useState(false)
   useEffect(() => {
-    like('gnimoay.com', 'sesame').then((v) => setCounter(v))
+    like('gnimoay.com', 'sesame').then(v => setCounter(v))
     setIsVertical(window.innerHeight > window.innerWidth)
   })
   return (
     <div
-      className='hurray-button'
+      className="hurray-button"
       onClick={async () => {
         setCounter(await like('gnimoay.com', 'sesame', true))
         const origin = {
@@ -26,9 +25,10 @@ export default function Hurray() {
           spread: 50,
           origin: origin,
         })
-      }}>
-      <span className='hurray-cft'>🎉</span>
-      <span className='hurray-count'>{counter}</span>
+      }}
+    >
+      <span className="hurray-cft">🎉</span>
+      <span className="hurray-count">{counter}</span>
     </div>
   )
 }

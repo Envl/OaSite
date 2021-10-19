@@ -1,16 +1,14 @@
-//
 import Layout from '../../components/Layout'
 import React from 'react'
-import './_postPage.scss'
 
 const CircularClear = () => {
   return (
-    <Layout heading='Circular Clear'>
+    <Layout heading="Circular Clear">
       <h1>Circular Clear</h1>
-      <div className='html-post reading-settings'>
+      <div className="html-post reading-settings">
         <p>
           This is a match-three puzzle game that was inspired by&nbsp;
-          <a target='_blank' href='https://en.wikipedia.org/wiki/Spirograph'>
+          <a target="_blank" href="https://en.wikipedia.org/wiki/Spirograph">
             Spirograph
           </a>
           . The player can use keyboard to spin different rings to make same
@@ -25,11 +23,12 @@ const CircularClear = () => {
           respectively.
         </p>
         <img
-          style={{width: 300}}
-          src='https://i.loli.net/2019/12/04/5JBH7NWzqhIwal1.png'></img>
+          style={{ width: 300 }}
+          src="https://i.loli.net/2019/12/04/5JBH7NWzqhIwal1.png"
+        ></img>
         <div>
-          As shown in this image,the <span className='yellow'>yellow</span> and{' '}
-          <span className='green'>green</span> elements are aligned in one line
+          As shown in this image,the <span className="yellow">yellow</span> and{' '}
+          <span className="green">green</span> elements are aligned in one line
           respectively, thus each of they can be cleard.
         </div>
         <p
@@ -37,13 +36,14 @@ const CircularClear = () => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-          }}>
+          }}
+        >
           A normal Spirograph works in this way:
           <img
-            src='https://ik.imagekit.io/za0dxwyrw/oasite/spirograph_OGIL0KqJh.gif'
-            style={{marginBottom: 0}}
+            src="https://ik.imagekit.io/za0dxwyrw/oasite/spirograph_OGIL0KqJh.gif"
+            style={{ marginBottom: 0 }}
           />
-          <div style={{justifySelf: 'center'}}>source: wikipedia</div>
+          <div style={{ justifySelf: 'center' }}>source: wikipedia</div>
         </p>
         <p>
           If the circle keeps spinning, we only need to change the color of path
@@ -53,10 +53,11 @@ const CircularClear = () => {
         <h2>Game Prototype</h2>
         <p>By combining both concepts, here is the game Circular Clear.</p>
         <iframe
-          src='https://www.youtube.com/embed/ay87rjPXSaI'
-          frameborder='0'
-          allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-          allowfullscreen></iframe>
+          src="https://www.youtube.com/embed/ay87rjPXSaI"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
         <h3>How to play</h3>
         <ul>
           <li>
@@ -72,8 +73,9 @@ const CircularClear = () => {
           A lo-fi playable version can be downloaded here:
           <br /> Windows:&nbsp;
           <a
-            href='https://send.firefox.com/download/7dbf3baa613deeb1/#v90rRRffCl8Fjyt5i_JcSw'
-            target='_blank'>
+            href="https://send.firefox.com/download/7dbf3baa613deeb1/#v90rRRffCl8Fjyt5i_JcSw"
+            target="_blank"
+          >
             Demo
           </a>
         </p>

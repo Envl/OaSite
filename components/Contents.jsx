@@ -1,9 +1,12 @@
 import * as db from '../MyData'
 
+import sesamPicrImg from '../public/img/sesampicr.png'
+
 import { BlogPosts, ZMDPosts } from './Posts'
 import { Card, CubeMenu } from 'oapack'
+import Image from 'next/image'
 
-import LazyImg from './LazyImg'
+// import LazyImg from './LazyImg'
 import PostCard from '../components/PostCard'
 import React from 'react'
 import { useModel } from 'flooks'
@@ -105,9 +108,11 @@ export default function Contents({ opts, zmd, blogs }) {
           </a>
         }
         f={
-          <LazyImg
-            src={require('../public/img/sesampicr.png').preSrc}
-            realSrc="img/sesampicr.png"
+          <Image
+            src="/../public/img/sesampicr.png"
+            width={300}
+            height={300}
+            // realSrc="img/sesampicr.png"
             className="sesam-qr-code"
           />
         }
