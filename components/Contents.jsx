@@ -10,6 +10,7 @@ import Image from 'next/image'
 import PostCard from '../components/PostCard'
 import React from 'react'
 import { useModel } from 'flooks'
+import { jdUrl } from '../Helpers'
 
 function PostList({ className, blogs, zmd }) {
   const { postType } = useModel('filters')
@@ -109,10 +110,9 @@ export default function Contents({ opts, zmd, blogs }) {
         }
         f={
           <Image
-            src="/../public/img/sesampicr.png"
+            src={jdUrl('sesampicr.png', true)}
             width={300}
             height={300}
-            // realSrc="img/sesampicr.png"
             className="sesam-qr-code"
           />
         }

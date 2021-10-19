@@ -27,8 +27,8 @@ export function copy(text) {
     fake.parentNode.removeChild(fake)
   }
 }
-export function jdUrl(url) {
-  if (process.env.NODE_ENV !== 'production') {
+export function jdUrl(url, forceRemote = false) {
+  if (process.env.NODE_ENV !== 'production' && !forceRemote) {
     return url
   } else {
     return 'https://cdn.jsdelivr.net/gh/Envl/OaSite@master/public/img/' + url
