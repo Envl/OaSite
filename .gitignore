@@ -6,3 +6,4 @@
 API.HTTP
 
 .vercel
+.env
