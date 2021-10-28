@@ -2,10 +2,22 @@
 @import './media-query';
 @import './utils';
 
+@font-face {
+  font-family: 'arkyakumono';
+  src: url('https://cdn.jsdelivr.net/gh/houkanshan/mojikumi@0.0.1/fonts/arkyakumono.woff')
+      format('woff'),
+    url('https://cdn.jsdelivr.net/gh/houkanshan/mojikumi@0.0.1/fonts/arkyakumono.ttf')
+      format('truetype'),
+    url('https://cdn.jsdelivr.net/gh/houkanshan/mojikumi@0.0.1/fonts/arkyakumono.svg#arkicons')
+      format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   color: $fontClr;
   overflow-x: hidden;
-  font-family: 'Noto Sans SC', sans-serif;
+  font-family: 'arkyakumono', 'Noto Sans SC', sans-serif;
   -webkit-font-smoothing: antialiased;
   margin: 0;
   min-height: 100vh;

@@ -26,6 +26,13 @@ const Layout = props => {
     ctx.fillStyle = 'rgb(74, 76, 163)'
     const prog = window.scrollY / max
     drawProgress()
+
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+    gtag('config', 'UA-150711963-4')
   }, [])
 
   const myTitle = `${
@@ -42,7 +49,6 @@ const Layout = props => {
         <title>{myTitle}</title>
         <meta property="og:title" content={myTitle}></meta>
         <link rel="icon" href="/icon.png" type="image/png" />
-
         <meta
           name="viewport"
           content="initial-scale=1.0, width=device-width, user-scalable=no"

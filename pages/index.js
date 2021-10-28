@@ -28,12 +28,6 @@ function Index({ zmd, blogs }) {
   const [opts, setOpts] = useState(['job', 'sidebar', 'footer'])
 
   useEffect(() => {
-    const _hmt = _hmt || []
-    const hm = document.createElement('script')
-    hm.src = 'https://hm.baidu.com/hm.js?ae9e7cdc50a29d2859ef293e6caaec12'
-    const s = document.getElementsByTagName('script')[0]
-    s.parentNode.insertBefore(hm, s)
-    //---------------------
     window.dataLayer = window.dataLayer || []
     function gtag() {
       dataLayer.push(arguments)
