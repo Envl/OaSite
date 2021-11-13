@@ -7,8 +7,8 @@ let transporter = nodemailer.createTransport({
   port: 465,
   secure: true, // true for 465, false for other ports
   auth: {
-    user: 'hi@gnimoay.com',
-    pass: process.env.EXMAIL_SECRET,
+    user: 'hi@knowto.app',
+    pass: process.env.KNOWTO_EXMAIL_SECRET,
   },
 })
 
