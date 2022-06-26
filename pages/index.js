@@ -8,6 +8,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Me from '../components/Me'
 import { setModel } from 'flooks'
+import { ICONS } from '../components/icons'
 
 const filters = {
   state: {
@@ -38,19 +39,65 @@ function Index({ zmd, blogs }) {
 
   return (
     <SidebarInjector
-      className={opts && opts.includes('sidebar') ? 'visible' : 'opt-hide'}
+      className={
+        (opts && opts.includes('sidebar') ? 'visible' : 'opt-hide') +
+        ` side-wrapper`
+      }
       items={
         <>
           <SidebarItem
+            to="https://github.com/envl"
+            target="_blank"
+            brief={<ICONS name="github" />}
+            detail={
+              <span>
+                <ICONS name="github" />
+                Github
+              </span>
+            }
+          />
+          <SidebarItem
+            to="https://t.me/didnotponder"
+            target="_blank"
+            brief={<ICONS name="telegram" />}
+            detail={
+              <span>
+                <ICONS name="telegram" style={{ marginRight: 1.1 }} />
+                Channel
+              </span>
+            }
+          />
+          <SidebarItem
+            to="https://twitter.com/SesamPicr"
+            target="_blank"
+            brief={<ICONS name="twitter" />}
+            detail={
+              <span>
+                <ICONS name="twitter" />
+                Twitter
+              </span>
+            }
+          />
+          <SidebarItem
             to="https://zmd.hedwig.pub/"
             target="_blank"
-            brief="芝."
-            detail="芝麻地"
+            brief={<ICONS name="news-paper" />}
+            detail={
+              <span>
+                <ICONS name="news-paper" />
+                芝麻地
+              </span>
+            }
           />
           <SidebarItem
             to="/"
-            brief="H."
-            detail="Home"
+            brief={<ICONS name="home" />}
+            detail={
+              <span>
+                <ICONS name="home" />
+                Home
+              </span>
+            }
             className="sidebar-active"
           />
         </>

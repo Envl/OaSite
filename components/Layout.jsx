@@ -6,6 +6,7 @@ import Head from 'next/head'
 import Hurray from './Hurray'
 import prismjs from '../prism'
 import { useRouter } from 'next/router'
+import { ICONS } from './icons'
 
 const Layout = props => {
   const canvas = useRef(null)
@@ -69,12 +70,59 @@ const Layout = props => {
         items={
           <>
             <SidebarItem
+              to="https://github.com/envl"
+              target="_blank"
+              brief={<ICONS name="github" />}
+              detail={
+                <span>
+                  <ICONS name="github" />
+                  Github
+                </span>
+              }
+            />
+            <SidebarItem
+              to="https://t.me/didnotponder"
+              target="_blank"
+              brief={<ICONS name="telegram" />}
+              detail={
+                <span>
+                  <ICONS name="telegram" style={{ marginRight: 1.1 }} />
+                  Channel
+                </span>
+              }
+            />
+            <SidebarItem
+              to="https://twitter.com/SesamPicr"
+              target="_blank"
+              brief={<ICONS name="twitter" />}
+              detail={
+                <span>
+                  <ICONS name="twitter" />
+                  Twitter
+                </span>
+              }
+            />
+            <SidebarItem
               to="https://zmd.hedwig.pub/"
               target="_blank"
-              brief="芝."
-              detail="芝麻地"
+              brief={<ICONS name="news-paper" />}
+              detail={
+                <span>
+                  <ICONS name="news-paper" />
+                  芝麻地
+                </span>
+              }
             />
-            <SidebarItem to="/" brief="H." detail="Home" />
+            <SidebarItem
+              to="/"
+              brief={<ICONS name="home" />}
+              detail={
+                <span>
+                  <ICONS name="home" />
+                  Home
+                </span>
+              }
+            />
           </>
         }
       >

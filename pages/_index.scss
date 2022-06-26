@@ -49,6 +49,13 @@
     padding-right: 10px;
   }
 }
+
+.side-wrapper {
+  svg {
+    vertical-align: text-bottom;
+  }
+}
+
 .opt-hide {
   display: none !important;
 }
