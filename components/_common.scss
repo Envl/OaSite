@@ -32,6 +32,13 @@ a {
 .page-wrapper {
   min-height: 100vh;
 }
+
+.side-wrapper {
+  svg {
+    vertical-align: text-bottom;
+  }
+}
+
 .sidebar-active {
   color: $primaryClr !important;
 }

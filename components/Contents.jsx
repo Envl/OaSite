@@ -3,7 +3,7 @@ import * as db from '../MyData'
 import sesamPicrImg from '../public/img/sesampicr.png'
 
 import { BlogPosts, ZMDPosts } from './Posts'
-import { Card, CubeMenu } from 'oapack'
+import { Card } from 'oapack'
 import Image from 'next/image'
 
 // import LazyImg from './LazyImg'
@@ -80,7 +80,7 @@ export default function Contents({ opts, zmd, blogs }) {
           stuffs.
         </p>
       </Card> */}
-      <CubeMenu
+      {/* <CubeMenu
         className="home-cube"
         u={
           <a
@@ -125,7 +125,7 @@ export default function Contents({ opts, zmd, blogs }) {
             Github
           </a>
         }
-      />
+      /> */}
       <PostList zmd={zmd} blogs={blogs} />
     </div>
   )

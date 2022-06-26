@@ -67,6 +67,7 @@ const Layout = props => {
         ref={canvas}
       ></canvas>
       <SidebarInjector
+        className="side-wrapper"
         items={
           <>
             <SidebarItem
