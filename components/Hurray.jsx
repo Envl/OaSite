@@ -13,7 +13,7 @@ export default function Hurray() {
     <div
       className="hurray-button"
       onClick={async () => {
-        setCounter(await like('gnimoay.com', 'sesame', true))
+        // setCounter(await like('gnimoay.com', 'sesame', true))
         const origin = {
           x: 1,
           y: 0.7,
@@ -28,7 +28,7 @@ export default function Hurray() {
       }}
     >
       <span className="hurray-cft">🎉</span>
-      <span className="hurray-count">{counter}</span>
+      {/* <span className="hurray-count">{counter}</span> */}
     </div>
   )
 }

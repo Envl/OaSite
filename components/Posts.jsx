@@ -13,7 +13,7 @@ function renderPostLink(post) {
 }
 
 export function ZMDPosts({ zmd }) {
-  console.log('zmd', zmd)
+  // console.log('zmd', zmd)
   return (
     <Card className="zmd-posts">
       <h3>芝麻地 - 关于设计与编程的Newsletter</h3>

@@ -13,9 +13,9 @@ export default function Me({ setOpts, opts }) {
   const { updateType } = useModel('filters', true)
   const [footCount, setFootCount] = useState(0)
   useEffect(() => {
-    fetch('https://api.countapi.xyz/get/gnimoay.com/footCount')
-      .then(res => res.json())
-      .then(data => setFootCount(data.value))
+    // fetch('https://api.countapi.xyz/get/gnimoay.com/footCount')
+    //   .then(res => res.json())
+    //   .then(data => setFootCount(data.value))
     const hash = window.location.hash.replace('#', '').toLowerCase()
     setTimeout(() => {
       if (['interaction', 'ux', 'web', 'game', 'mobile'].includes(hash)) {
@@ -98,7 +98,7 @@ export default function Me({ setOpts, opts }) {
           'Mobile',
         ]}
       />
-      <div className="foot">
+      {/* <div className="foot">
         <div>
           {footCount}
           <span> 人留下了脚印</span>
@@ -125,7 +125,7 @@ export default function Me({ setOpts, opts }) {
             ></path>
           </svg>
         </Button>
-      </div>
+      </div> */}
     </div>
   )
 }
