@@ -2,23 +2,23 @@ import React, { useEffect, useState } from 'react'
 
 const Footer = props => {
   const [visitCount, setVisitCount] = useState(0)
-  useEffect(() => {
-    fetch(
-      `https://api.countapi.xyz/${
-        window.location.protocol === 'https:' ? 'hit' : 'get'
-      }/gnimoay.com/visit-count-` +
-        window.location.pathname.split('/').slice(1).join('-')
-    )
-      .then(res => res.json())
-      .then(data => setVisitCount(data.value))
-  }, [])
+  // useEffect(() => {
+  //   fetch(
+  //     `https://api.countapi.xyz/${
+  //       window.location.protocol === 'https:' ? 'hit' : 'get'
+  //     }/gnimoay.com/visit-count-` +
+  //       window.location.pathname.split('/').slice(1).join('-')
+  //   )
+  //     .then(res => res.json())
+  //     .then(data => setVisitCount(data.value))
+  // }, [])
   return (
     <div className={`footer-wrapper ${props.className ? props.className : ''}`}>
       <div className="footer">
-        <div>
+        {/* <div>
           <span>{visitCount}</span>
           <span> visits</span>
-        </div>
+        </div> */}
 
         <div>All rights reserved</div>
         <p
