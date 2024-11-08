@@ -1,6 +1,18 @@
-import {jdUrl} from './Helpers'
+import { jdUrl } from './Helpers'
 
 export const postList = [
+  {
+    id: 'podques',
+    title: 'PodQuest',
+    brief: 'Podcast Search Engine and Player',
+    url: 'https://www.podquest.ai',
+    logoUrl: 'https://www.podquest.ai/logo256.png',
+    coverUrl:
+      'https://r2.gnimoay.com/images/2024-11-76f5ec1a899f7f011128f48b9180ae80.png',
+    size: 's',
+    tags: ['Podcast'],
+    time: 'Sep, 2024',
+  },
   {
     title: '个人网站2020',
     coverUrl: jdUrl('2020-site.png'),
@@ -27,7 +39,7 @@ export const postList = [
     url: 'https://2020.gnimoay.com/#jike',
     brief: (
       <span>
-        <a href='https://www.okjike.com/' target='__blank'>
+        <a href="https://www.okjike.com/" target="__blank">
           即刻App
         </a>
         的非官方客户端，支持黑暗模式，优化了信息展示效率
@@ -51,8 +63,7 @@ export const postList = [
   {
     title: 'Knots(在线原型)',
     coverUrl: jdUrl('knots.jpg'),
-    url:
-      'https://www.figma.com/proto/5oBa6FyM4pzB3YfJbgVew3/Knots?node-id=0%3A3&frame-preset-name=iPhone%2011%20Pro%20%2F%20X&scaling=scale-down',
+    url: 'https://www.figma.com/proto/5oBa6FyM4pzB3YfJbgVew3/Knots?node-id=0%3A3&frame-preset-name=iPhone%2011%20Pro%20%2F%20X&scaling=scale-down',
     brief: '特别为播客与音乐之发现而设计的客户端(迭代中)',
     tags: ['iOS', 'Android', 'UX', 'Mobile', 'WIP', '2020'],
     time: 'April, 2020',
